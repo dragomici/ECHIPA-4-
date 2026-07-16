@@ -7,7 +7,7 @@ You can track the team's progress, Epic breakdowns, and Story Points directly on
 
 ## 👥 Team
 * **David** - Team Lead / Architecture & Core Components
-* **Diana** - Frontend Landing Page
+* **Delia** - Frontend Landing Page
 * **Alexandra** - Frontend Dashboar
 
 ## 🎯 Objective
