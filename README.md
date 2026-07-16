@@ -1,172 +1,75 @@
-# Frontend Internship Project – E-commerce Landing Page
-This is the repository for Team 4 for the summer practice project (IBM Consulting FutureNow).
-
-## 📌 Organization & Tasks (Trello)
-You can track the team's progress, Epic breakdowns, and Story Points directly on our Trello board by accessing the link below:
-🔗 **[Click here to view the Trello board](https://trello.com/b/0zm7ZoVj/ibm-echipa-4)**
-
-## 👥 Team
-* **David** - Team Lead / Architecture & Core Components
-* **Delia** - Frontend Landing Page
-* **Alexandra** - Frontend Dashboar
-
-## 🎯 Objective
-The goal of this project is to evaluate your ability to translate a UI design into a clean, maintainable React application while following established frontend architecture and styling methodologies.
-You are required to recreate the following Figma design as accurately as possible:
-* **Figma Design:** [E-commerce Landing Page With Dashboard](https://www.figma.com/design/JgM3iNzg4Pn6LSyUm3mQvK/97--Ecommerce-Landing-Page-With-Dashboard--Community-?node-id=0-1&p=f&t=jwuYmtQ9NGxIeK4Y-0) 
-
----
-
-## 🛠️ Installation & Setup
-Follow these steps to run the project locally on your machine:
-
-1. **Clone the repository:**
-   ```bash
-   git clone <URL-UL-REPOSITORULUI-TAU>
-   cd <NUMELE-FOLDERULUI>
-   
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   # or
-   yarn install
-
-## 💻 Technical Requirements
-React
-Build the project using React.
-
-Use functional components only.
-
-Organize components logically and avoid duplicated code.
-
-Keep components small and reusable.
-
-Atomic Design
-Structure the application following the Atomic Design methodology:
-
-Atoms – Buttons, Inputs, Icons, Labels, etc.
-
-Molecules – Search bars, Product Cards, Navigation Items, etc.
-
-Organisms – Header, Hero Section, Product Grid, Footer, etc.
-
-Templates – Overall page layout.
-
-Pages – Final rendered page.
-
-Styling
-Use CSS.
-
-Follow the BEM (Block Element Modifier) naming convention.
-
-Avoid inline styles unless absolutely necessary.
-
-Keep styles modular and maintainable.
-
-## 🎨 UI Implementation
-Replicate the Figma design as closely as possible. Match:
-
-Layout
-
-Typography
-
-Colors & Spacing
-
-Icons & Images
-
-Borders & Shadows
-
-Ensure consistent spacing and alignment throughout the application.
-
-Responsiveness
-The application should be responsive.
-
-At a minimum, support: Desktop, Tablet, and Mobile.
-
-The layout should adapt naturally without breaking or causing horizontal scrolling.
-
-Component Quality
-Components should have a single responsibility.
-
-Reuse components whenever possible.
-
-Avoid unnecessary prop drilling.
-
-Keep the code readable and easy to maintain.
-
-## 📂 Project Structure
-Organize the project into meaningful folders. A suggested structure is:
-
-src/
-
-├── assets/
-
-├── components/
-
-│     ├── atoms/
-
-│     ├── molecules/
-
-│     ├── organisms/
-
-│     ├── templates/
-
-│     └── pages/
-
-├── styles/
-
-├── hooks/
-
-├── utils/
-
-└── App.jsx
-
-## ⚙️ Code Quality & Bonus Points
-Code Quality
-Use meaningful variable and component names.
-
-Remove unused code.
-
-Keep files well organized.
-
-Follow consistent formatting and avoid code duplication.
-
-Bonus Points
-The following are optional but will be considered a plus:
-
-Proper loading states
-
-Hover and focus states
-
-Smooth animations/transitions
-
-Accessibility (semantic HTML, ARIA where appropriate)
-
-Lazy loading where applicable
-
-Custom hooks when they improve code organization
-
-## 📦 Deliverables & Evaluation Criteria
-Deliverables
-Please submit:
-
-A Git repository containing your source code.
-
-A README including: Installation steps, commands to run the project, and any assumptions or implementation notes.
-
-Evaluation Criteria
-Your submission will be evaluated based on:
-
-Accuracy of the Figma implementation
-
-React best practices & proper use of Atomic Design
-
-Correct use of the BEM methodology
-
-Component reusability & responsive design
-
-Code quality, organization, maintainability, and attention to detail.
-Component reusability & responsive design
-
-Code quality, organization, maintainability, and attention to detail.
+# React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+
+```
