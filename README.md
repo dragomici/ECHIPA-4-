@@ -1,4 +1,16 @@
 # Frontend Internship Project – E-commerce Landing Page
+# 🛒 Summer Practice Project - E-commerce Landing Page & Dashboard
+
+This is the repository for Team 4 for the summer practice project (IBM Consulting FutureNow).
+
+## 📌 Organization & Tasks (Trello)
+You can track the team's progress, Epic breakdowns, and Story Points directly on our Trello board by accessing the link below:
+🔗 **[Click here to view the Trello board](https://trello.com/b/0zm7ZoVj/ibm-echipa-4)**
+
+## 👥 Team
+* **David** - Team Lead / Architecture & Core Components
+* **Diana** - Frontend Landing Page
+* **Alexandra** - Frontend Dashboar
 
 ## 🎯 Objective
 The goal of this project is to evaluate your ability to translate a UI design into a clean, maintainable React application while following established frontend architecture and styling methodologies.
