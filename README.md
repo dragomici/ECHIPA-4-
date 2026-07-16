@@ -1,6 +1,4 @@
 # Frontend Internship Project – E-commerce Landing Page
-# 🛒 Summer Practice Project - E-commerce Landing Page & Dashboard
-
 This is the repository for Team 4 for the summer practice project (IBM Consulting FutureNow).
 
 ## 📌 Organization & Tasks (Trello)
