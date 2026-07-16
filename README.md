@@ -1,3 +1,17 @@
+
+# 🛒 Summer Practice Project - E-commerce Landing Page & Dashboard
+
+This is the repository for Team 4 for the summer practice project (IBM Consulting FutureNow).
+
+## 📌 Organization & Tasks (Trello)
+You can track the team's progress, Epic breakdowns, and Story Points directly on our Trello board by accessing the link below:
+🔗 **[Click here to view the Trello board](https://trello.com/b/0zm7ZoVj/ibm-echipa-4)**
+
+## 👥 Team
+* **David** - Team Lead / Architecture & Core Components
+* **Delia** - Frontend Landing Page
+* **Alexandra** - Frontend Dashboard
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
