@@ -1,4 +1,5 @@
 import Button from './components/atoms/Button';
+import Input from './components/atoms/Input';
 
 const App = () => {
   return (
@@ -6,10 +7,15 @@ const App = () => {
       <h1>E-commerce Landing Page</h1>
       <p>Baza proiectului a fost setată cu succes în TypeScript!</p>
       
-      {/* Container pentru butoane care folosește clase CSS, nu inline styles */}
       <div className="button-group">
         <Button variant="primary">Buton Primary</Button>
         <Button variant="secondary">Buton Secondary</Button>
+      </div>
+
+      
+      <div className="button-group">
+        <Input type="text" placeholder="Caută un produs..." />
+        <Input type="email" placeholder="E-mail greșit" hasError={true} />
       </div>
     </div>
   );
