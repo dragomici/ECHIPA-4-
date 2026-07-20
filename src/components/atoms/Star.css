@@ -1,0 +1,15 @@
+/* --- BLOCK: Forma de bază a steluței --- */
+.star {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.star--filled {
+  fill: #fdc040; 
+}
+
+.star--empty {
+  fill: #d3d3d3; 
+}
