@@ -1,13 +1,12 @@
 import React from 'react';
 import './Link.css';
 
-
 interface LinkProps {
-  href: string;                                    // Destinația link-ului (ex: "/about" sau "https://...")
-  children: React.ReactNode;                       // Textul sau iconița din interior
-  variant?: 'primary' | 'secondary' | 'muted';     // Stilul vizual
-  target?: '_blank' | '_self' | '_parent' | '_top';// Unde se deschide link-ul (ex: _blank pentru fila nouă)
-  className?: string;                              // Permite clase suplimentare din exterior
+  href: string;
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'muted';
+  target?: '_blank' | '_self' | '_parent' | '_top';
+  className?: string;
 }
 
 export const Link: React.FC<LinkProps> = ({
@@ -17,15 +16,16 @@ export const Link: React.FC<LinkProps> = ({
   target = '_self',
   className = '',
 }) => {
-  
-   const rel = target === '_blank' ? 'noopener noreferrer' : undefined;
+  const rel = target === '_blank' ? 'noopener noreferrer' : undefined;
+  const variantClass = variant !== 'primary' ? `link--${variant}` : '';
+  const combinedClasses = `${variantClass} ${className}`.trim();
 
   return (
     <a
       href={href}
       target={target}
       rel={rel}
-      className={`link link--${variant} ${className}`}
+      className={combinedClasses || undefined}
     >
       {children}
     </a>
