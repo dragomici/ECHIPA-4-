@@ -1,0 +1,51 @@
+/* Stilul de bază pentru blocul BEM .badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.625rem; /* ~4px sus/jos, ~10px stânga/dreapta */
+  font-size: 0.75rem; /* ~12px */
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 12px;
+  text-transform: capitalize;
+  letter-spacing: 0.2px;
+}
+
+/* Modificatori BEM pentru culori */
+
+/* Badge Roz / Roșiatic pentru produse populare (Hot) */
+.badge--hot {
+  background-color: #FDE2E4;
+  color: #F85D5D;
+}
+
+/* Badge Albastru / Turcoaz pentru produse noi (New) */
+.badge--new {
+  background-color: #DEF9EC;
+  color: #3BB77E;
+}
+
+/* Badge Portocaliu / Galben pentru reduceri (Sale) */
+.badge--sale {
+  background-color: #FFF3EB;
+  color: #FDC040;
+}
+
+/* Badge Verde (In Stock / Success) */
+.badge--success {
+  background-color: #E8F6EA;
+  color: #2A9D8F;
+}
+
+/* Badge Portocaliu Închis (Warning) */
+.badge--warning {
+  background-color: #FFF3E0;
+  color: #E65100;
+}
+
+/* Badge Gri / Muted (Info) */
+.badge--info {
+  background-color: #F2F3F4;
+  color: #7E7E7E;
+}
