@@ -11,7 +11,6 @@ interface IconWrapperProps {
 export const IconWrapper: React.FC<IconWrapperProps> = ({
   children,
   size = 'md',
-  color,
   className = '',
 }) => {
   return (
@@ -21,3 +20,6 @@ export const IconWrapper: React.FC<IconWrapperProps> = ({
     </span>
   );
 };
+
+/*git commit -m "refactor: remove Typography component and add global typography CSS resets",   
+  git push origin atom/typography */
