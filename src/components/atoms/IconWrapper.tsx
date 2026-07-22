@@ -16,9 +16,7 @@ export const IconWrapper: React.FC<IconWrapperProps> = ({
 }) => {
   return (
     <span
-      className={`icon-wrapper icon-wrapper--${size} ${className}`.trim()}
-      style={color ? { color } : undefined}
-    >
+      className={`icon-wrapper icon-wrapper--${size} ${className}`}>
       {children}
     </span>
   );
