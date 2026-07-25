@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../atoms/Button/Button';
 import './Pagination.css';
 
 interface PaginationProps {
@@ -9,7 +10,7 @@ interface PaginationProps {
 
 export const Pagination: React.FC<PaginationProps> = ({
   currentPage = 1,
-  totalPages = 5, 
+  totalPages = 5,
   onPageChange
 }) => {
   
@@ -25,38 +26,40 @@ export const Pagination: React.FC<PaginationProps> = ({
     <nav className="pagination" aria-label="Pagination">
       <ul className="pagination__list">
         
+        
         <li className="pagination__item">
-          <button 
+          <Button 
             className="pagination__button"
             disabled={currentPage === 1}
             onClick={() => handlePageClick(currentPage - 1)}
           >
             Prev
-          </button>
+          </Button>
         </li>
 
         
         {pages.map((page) => (
           <li key={page} className="pagination__item">
-            <button
+            <Button
               className={`pagination__button ${currentPage === page ? 'pagination__button--active' : ''}`}
               onClick={() => handlePageClick(page)}
             >
               {page}
-            </button>
+            </Button>
           </li>
         ))}
 
         
         <li className="pagination__item">
-          <button 
+          <Button 
             className="pagination__button"
             disabled={currentPage === totalPages}
             onClick={() => handlePageClick(currentPage + 1)}
           >
             Next
-          </button>
+          </Button>
         </li>
+        
       </ul>
     </nav>
   );
