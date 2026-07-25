@@ -1,5 +1,5 @@
-import Button from './components/atoms/Button';
-import Input from './components/atoms/Input';
+import Button from './components/atoms/Button/Button';
+import Input from './components/atoms/Input/Input';
 
 const App = () => {
   return (
@@ -12,8 +12,7 @@ const App = () => {
         <Button variant="secondary">Buton Secondary</Button>
       </div>
 
-      
-      <div className="button-group">
+      <div className="button-group" style={{ marginTop: '20px' }}>
         <Input type="text" placeholder="Caută un produs..." />
         <Input type="email" placeholder="E-mail greșit" hasError={true} />
       </div>
