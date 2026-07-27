@@ -1,0 +1,39 @@
+.product-grid-section {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.product-grid-section__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #253D4E;
+  margin-bottom: 24px;
+}
+
+.product-grid {
+  display: grid;
+  gap: 20px;
+  /* Default to 1 column on mobile */
+  grid-template-columns: 1fr;
+}
+
+/* Tablet (2 columns) */
+@media (min-width: 576px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Desktop (3 or 4 columns) */
+@media (min-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large Desktop (5 columns, typical for Home-2 Popular Products) */
+@media (min-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
