@@ -1,0 +1,42 @@
+.header-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #7E7E7E;
+}
+
+.header-action__icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-action__badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #3BB77E;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-action__text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7E7E7E;
+}
+
+@media (max-width: 768px) {
+  .header-action__text {
+    display: none;
+  }
+}
