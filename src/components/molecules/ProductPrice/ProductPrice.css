@@ -1,0 +1,18 @@
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-price__current {
+  font-size: 18px;
+  font-weight: 700;
+  color: #3BB77E;
+}
+
+.product-price__old {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ADADAD;
+  text-decoration: line-through;
+}
