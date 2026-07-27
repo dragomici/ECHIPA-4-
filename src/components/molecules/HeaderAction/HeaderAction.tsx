@@ -1,15 +1,15 @@
 import React from 'react';
 import './HeaderAction.css';
 
-interface HeaderActionProps {
+interface HeaderActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: React.ReactNode;
   text: string;
   badgeCount?: number;
 }
 
-const HeaderAction: React.FC<HeaderActionProps> = ({ icon, text, badgeCount }) => {
+const HeaderAction: React.FC<HeaderActionProps> = ({ icon, text, badgeCount, ...props }) => {
   return (
-    <div className="header-action">
+    <button type="button" className="header-action" {...props}>
       <div className="header-action__icon-wrapper">
         {icon}
         {badgeCount !== undefined && badgeCount > 0 && (
@@ -17,7 +17,7 @@ const HeaderAction: React.FC<HeaderActionProps> = ({ icon, text, badgeCount }) =
         )}
       </div>
       <span className="header-action__text">{text}</span>
-    </div>
+    </button>
   );
 };
 

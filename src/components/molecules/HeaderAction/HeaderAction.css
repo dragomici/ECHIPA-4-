@@ -4,6 +4,14 @@
   gap: 8px;
   cursor: pointer;
   color: #7E7E7E;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.header-action:focus-visible {
+  outline: 2px solid #3BB77E;
+  outline-offset: 4px;
 }
 
 .header-action__icon-wrapper {
