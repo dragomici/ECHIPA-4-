@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   border-bottom: 1px solid #ececec;
-  padding: 15px 0;
+  padding: 0.9375rem 0;
   background-color: #ffffff;
 }
 
@@ -9,41 +9,41 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1600px;
+  max-width: 100rem;
   margin: 0 auto;
-  padding: 0 15px;
-  gap: 20px;
+  padding: 0 0.9375rem;
+  gap: 1.25rem;
 }
 
 .header__logo h2 {
   margin: 0;
   color: #3bb77e;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 700;
 }
 
 .header__search {
   flex-grow: 1;
-  max-width: 700px;
-  margin: 0 40px;
+  max-width: 43.75rem;
+  margin: 0 2.5rem;
 }
 
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
-@media (max-width: 992px) {
+@media (max-width: 62rem) {
   .header__search {
     display: none;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .header__container {
     justify-content: space-between;
   }
   
   .header__actions {
-    gap: 10px;
+    gap: 0.625rem;
   }
 }
