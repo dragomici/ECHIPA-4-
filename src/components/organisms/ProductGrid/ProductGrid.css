@@ -15,19 +15,16 @@
   gap: 20px;
   grid-template-columns: 1fr;
 }
-
 @media (min-width: 576px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (min-width: 992px) {
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
 @media (min-width: 1200px) {
   .product-grid {
     grid-template-columns: repeat(5, 1fr);
