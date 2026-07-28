@@ -34,10 +34,9 @@
   gap: 20px;
 }
 
-/* Responsive styles */
 @media (max-width: 992px) {
   .header__search {
-    display: none; /* Hide search bar on smaller screens, replaced by mobile menu */
+    display: none;
   }
 }
 
