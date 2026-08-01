@@ -1,7 +1,7 @@
 import React from 'react';
-import Badge from '../../atoms/Badge';
-import Button from '../../atoms/Button';
-import Star from '../../atoms/Star';
+import Badge from '../../atoms/Badge/Badge';
+import Button from '../../atoms/Button/Button';
+import Star from '../../atoms/Star/Star';
 import ProductPrice from '../../molecules/ProductPrice/ProductPrice';
 import './ProductCard.css';
 
@@ -31,7 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div className="product-card">
       <div className="product-card__image-wrapper">
-        <img src={imageUrl} alt={title} className="product-card__image" />
+        <img src={imageUrl} alt={title} className="product-card__image" loading="lazy" />
         {badgeText && badgeVariant && (
           <div className="product-card__badge">
             <Badge text={badgeText} variant={badgeVariant} />

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MainLayout } from './components/templates/MainLayout/MainLayout';
 import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
+import Spinner from './components/atoms/Spinner/Spinner';
 
 const LandingPage = () => {
   return (
@@ -25,11 +26,13 @@ const DashboardPage = () => {
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        
-        <Route path="/dashboard" element={<DashboardPage />} />
-      </Routes>
+      <React.Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          
+          <Route path="/dashboard" element={<DashboardPage />} />
+        </Routes>
+      </React.Suspense>
     </BrowserRouter>
   );
 }
