@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           <SearchBar />
         </div>
 
-        <div className="header__actions">
+        <nav className="header__actions" aria-label="Primary Actions">
           <HeaderAction
             icon={<img src={CompareIcon} alt="Compare" />}
             text="Compare"
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
             icon={<img src={AccountIcon} alt="Account" />}
             text="Account"
           />
-        </div>
+        </nav>
       </div>
     </header>
   );
