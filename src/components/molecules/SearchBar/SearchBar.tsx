@@ -35,7 +35,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       
       
       <div className="search-bar__button-wrapper">
-        <Button type="submit">
+        <Button type="submit" aria-label="Search">
           <svg 
             className="search-bar__icon" 
             viewBox="0 0 24 24" 

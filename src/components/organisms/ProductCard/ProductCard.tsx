@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   badgeVariant,
 }) => {
   return (
-    <div className="product-card">
+    <article className="product-card">
       <div className="product-card__image-wrapper">
         <img src={imageUrl} alt={title} className="product-card__image" />
         {badgeText && badgeVariant && (
@@ -53,10 +53,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
         <div className="product-card__footer">
           <ProductPrice currentPrice={currentPrice} oldPrice={oldPrice} />
-          <Button variant="primary">Add</Button>
+          <Button variant="primary" aria-label={`Add ${title} to cart`}>Add</Button>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
