@@ -1,0 +1,19 @@
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.checkbox-group__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #253D4E;
+  margin: 0;
+}
+
+.checkbox-group__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
