@@ -43,6 +43,19 @@
   max-width: 28.125rem;
 }
 
+.newsletter-banner__form-container {
+  position: relative;
+  max-width: 28.125rem;
+}
+
+.newsletter-banner__error-text {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 1.25rem;
+  color: #ff4d4f;
+  font-size: 0.875rem;
+}
+
 .newsletter-banner__input-wrapper {
   display: flex;
   align-items: center;
@@ -63,10 +76,16 @@
 }
 
 .newsletter-banner__form .input-group__field {
-  border: none;
+  border: 1px solid transparent;
+  border-radius: 1.25rem;
   background: transparent;
-  padding: 0.625rem 0;
+  padding: 0.625rem 0.625rem;
   width: 100%;
+  transition: border-color 0.3s;
+}
+
+.newsletter-banner__form .input-group__field--error {
+  border: 1px solid #ff4d4f;
 }
 
 .newsletter-banner__form .input-group__field:focus {

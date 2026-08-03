@@ -7,12 +7,32 @@ import './Newsletter.css';
 
 const Newsletter: React.FC = () => {
   const [email, setEmail] = useState('');
+  const [isValid, setIsValid] = useState(true);
+
+  const validateEmail = (val: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(val);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setEmail(val);
+    
+    if (val.length === 0) {
+      setIsValid(true);
+    } else {
+      setIsValid(validateEmail(val));
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (email && validateEmail(email)) {
       console.log('Subscribed with:', email);
       setEmail('');
+      setIsValid(true);
+    } else {
+      setIsValid(false);
     }
   };
 
@@ -27,20 +47,24 @@ const Newsletter: React.FC = () => {
           Start Your Daily Shopping with <span className="newsletter-banner__highlight">Nest Mart</span>
         </p>
         
-        <form className="newsletter-banner__form" onSubmit={handleSubmit}>
-          <div className="newsletter-banner__input-wrapper">
-            <img src={EmailIcon} alt="" className="newsletter-banner__icon" aria-hidden="true" />
-            <Input 
-              type="email" 
-              placeholder="Your email address" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              aria-label="Email address"
-            />
-          </div>
-          <Button type="submit" variant="primary">Subscribe</Button>
-        </form>
+        <div className="newsletter-banner__form-container">
+          <form className="newsletter-banner__form" onSubmit={handleSubmit}>
+            <div className="newsletter-banner__input-wrapper">
+              <img src={EmailIcon} alt="" className="newsletter-banner__icon" aria-hidden="true" />
+              <Input 
+                type="email" 
+                placeholder="Your email address" 
+                value={email}
+                onChange={handleChange}
+                required
+                aria-label="Email address"
+                hasError={!isValid}
+              />
+            </div>
+            <Button type="submit" variant="primary">Subscribe</Button>
+          </form>
+          {!isValid && <span className="newsletter-banner__error-text">Invalid email address</span>}
+        </div>
       </div>
 
       <div className="newsletter-banner__image-wrapper">
