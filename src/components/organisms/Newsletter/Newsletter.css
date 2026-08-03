@@ -1,0 +1,113 @@
+.newsletter-banner {
+  background-color: #d8f1e5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  margin: 40px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.newsletter-banner__content {
+  flex: 1;
+  max-width: 50%;
+  z-index: 2;
+}
+
+.newsletter-banner__title {
+  font-size: 2.5rem;
+  color: #253D4E;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.newsletter-banner__subtitle {
+  font-size: 1.1rem;
+  color: #7E7E7E;
+  margin-bottom: 35px;
+}
+
+.newsletter-banner__highlight {
+  color: #3bb77e;
+  font-weight: 600;
+}
+
+.newsletter-banner__form {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 5px;
+  align-items: center;
+  max-width: 450px;
+}
+
+.newsletter-banner__input-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-left: 20px;
+}
+
+.newsletter-banner__icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
+.newsletter-banner__form .input-group {
+  margin: 0;
+  flex: 1;
+}
+
+.newsletter-banner__form .input-group__field {
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.newsletter-banner__form .input-group__field:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.newsletter-banner__form .btn {
+  border-radius: 50px;
+  padding: 12px 35px;
+}
+
+.newsletter-banner__image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.newsletter-banner__image {
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .newsletter-banner {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .newsletter-banner__content {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .newsletter-banner__image-wrapper {
+    position: static;
+    justify-content: center;
+  }
+}
