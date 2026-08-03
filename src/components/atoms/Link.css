@@ -1,0 +1,30 @@
+a {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+  cursor: pointer;
+  color: var(--color-primary, #3BB77E);
+}
+
+a:hover {
+  color: var(--color-primary-dark, #29A56C);
+  text-decoration: underline;
+}
+
+.link--secondary {
+  color: var(--color-text-main, #253D4E);
+}
+
+.link--secondary:hover {
+  color: var(--color-primary, #3BB77E);
+}
+
+.link--muted {
+  color: var(--color-text-muted, #7E7E7E);
+}
+
+.link--muted:hover {
+  color: var(--color-text-main, #253D4E);
+}
