@@ -1,11 +1,11 @@
 .newsletter-banner {
   background-color: #d8f1e5;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 60px;
-  margin: 40px 0;
+  padding: 2.5rem 3.75rem;
+  margin: 2.5rem 0;
   overflow: hidden;
   position: relative;
 }
@@ -19,14 +19,14 @@
 .newsletter-banner__title {
   font-size: 2.5rem;
   color: #253D4E;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .newsletter-banner__subtitle {
   font-size: 1.1rem;
   color: #7E7E7E;
-  margin-bottom: 35px;
+  margin-bottom: 2.25rem;
 }
 
 .newsletter-banner__highlight {
@@ -37,23 +37,23 @@
 .newsletter-banner__form {
   display: flex;
   background-color: #ffffff;
-  border-radius: 50px;
-  padding: 5px;
+  border-radius: 3.125rem;
+  padding: 0.3125rem;
   align-items: center;
-  max-width: 450px;
+  max-width: 28.125rem;
 }
 
 .newsletter-banner__input-wrapper {
   display: flex;
   align-items: center;
   flex: 1;
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 .newsletter-banner__icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.625rem;
   opacity: 0.5;
 }
 
@@ -65,7 +65,7 @@
 .newsletter-banner__form .input-group__field {
   border: none;
   background: transparent;
-  padding: 10px 0;
+  padding: 0.625rem 0;
   width: 100%;
 }
 
@@ -75,8 +75,8 @@
 }
 
 .newsletter-banner__form .btn {
-  border-radius: 50px;
-  padding: 12px 35px;
+  border-radius: 3.125rem;
+  padding: 0.75rem 2.25rem;
 }
 
 .newsletter-banner__image-wrapper {
@@ -90,20 +90,20 @@
 
 .newsletter-banner__image {
   max-width: 100%;
-  max-height: 350px;
+  max-height: 21.875rem;
   object-fit: contain;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .newsletter-banner {
     flex-direction: column;
-    padding: 30px;
+    padding: 1.875rem;
     text-align: center;
   }
 
   .newsletter-banner__content {
     max-width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
 
   .newsletter-banner__image-wrapper {
