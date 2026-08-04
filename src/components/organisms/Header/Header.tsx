@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../../molecules/SearchBar/SearchBar';
+import { SearchBar } from '../../molecules/SearchBar/SearchBar';
 import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
 import NestLogo from '../../../assets/NestIcon.svg';
 import CompareIcon from '../../../assets/CompareIcon.svg';

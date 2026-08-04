@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { type ReactNode, useState } from 'react';
 import './DashboardLayout.css';
 
 interface DashboardLayoutProps {

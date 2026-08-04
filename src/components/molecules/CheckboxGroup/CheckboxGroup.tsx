@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from '../../atoms/Checkbox';
+import Checkbox from '../../atoms/Checkbox/Checkbox';
 import './CheckboxGroup.css';
 
 export interface CheckboxOption {
@@ -25,7 +25,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({ title, options, onChange 
             id={option.id}
             label={option.label}
             checked={option.checked}
-            onChange={onChange ? (e) => onChange(option.id, e) : undefined}
+            onChange={onChange ? (e: React.ChangeEvent<HTMLInputElement>) => onChange(option.id, e) : undefined}
           />
         ))}
       </div>
