@@ -1,0 +1,132 @@
+.newsletter-banner {
+  background-color: var(--color-brand-light-green);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 3.75rem;
+  margin: 2.5rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.newsletter-banner__content {
+  flex: 1;
+  max-width: 50%;
+  z-index: 2;
+}
+
+.newsletter-banner__title {
+  font-size: 2.5rem;
+  color: var(--color-brand-dark);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.newsletter-banner__subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.25rem;
+}
+
+.newsletter-banner__highlight {
+  color: var(--color-brand-green);
+  font-weight: 600;
+}
+
+.newsletter-banner__form {
+  display: flex;
+  background-color: var(--color-background);
+  border-radius: 3.125rem;
+  padding: 0.3125rem;
+  align-items: center;
+  max-width: 28.125rem;
+}
+
+.newsletter-banner__form-container {
+  position: relative;
+  max-width: 28.125rem;
+}
+
+.newsletter-banner__error-text {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 1.25rem;
+  color: var(--color-error);
+  font-size: 0.875rem;
+}
+
+.newsletter-banner__input-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-left: 1.25rem;
+}
+
+.newsletter-banner__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.625rem;
+  opacity: 0.5;
+}
+
+.newsletter-banner__form .input-group {
+  margin: 0;
+  flex: 1;
+}
+
+.newsletter-banner__form .input-group__field {
+  border: 1px solid transparent;
+  border-radius: 1.25rem;
+  background: transparent;
+  padding: 0.625rem 0.625rem;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.newsletter-banner__form .input-group__field--error {
+  border: 1px solid var(--color-error);
+}
+
+.newsletter-banner__form .input-group__field:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.newsletter-banner__form .btn {
+  border-radius: 3.125rem;
+  padding: 0.75rem 2.25rem;
+}
+
+.newsletter-banner__image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.newsletter-banner__image {
+  max-width: 100%;
+  max-height: 21.875rem;
+  object-fit: contain;
+}
+
+@media (max-width: 48rem) {
+  .newsletter-banner {
+    flex-direction: column;
+    padding: 1.875rem;
+    text-align: center;
+  }
+
+  .newsletter-banner__content {
+    max-width: 100%;
+    margin-bottom: 1.875rem;
+  }
+
+  .newsletter-banner__image-wrapper {
+    position: static;
+    justify-content: center;
+  }
+}
