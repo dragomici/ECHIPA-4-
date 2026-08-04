@@ -1,5 +1,5 @@
 .newsletter-banner {
-  background-color: #d8f1e5;
+  background-color: var(--color-brand-light-green);
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
@@ -18,25 +18,25 @@
 
 .newsletter-banner__title {
   font-size: 2.5rem;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .newsletter-banner__subtitle {
   font-size: 1.1rem;
-  color: #7E7E7E;
+  color: var(--color-text-muted);
   margin-bottom: 2.25rem;
 }
 
 .newsletter-banner__highlight {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-weight: 600;
 }
 
 .newsletter-banner__form {
   display: flex;
-  background-color: #ffffff;
+  background-color: var(--color-background);
   border-radius: 3.125rem;
   padding: 0.3125rem;
   align-items: center;
@@ -52,7 +52,7 @@
   position: absolute;
   bottom: -1.5rem;
   left: 1.25rem;
-  color: #ff4d4f;
+  color: var(--color-error);
   font-size: 0.875rem;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .newsletter-banner__form .input-group__field--error {
-  border: 1px solid #ff4d4f;
+  border: 1px solid var(--color-error);
 }
 
 .newsletter-banner__form .input-group__field:focus {
