@@ -1,0 +1,33 @@
+.social-group {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Flexbox gap pentru spațiere */
+}
+
+.social-group__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-main, #333333);
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.social-group__link:hover {
+  color: var(--color-primary, #007bff);
+  transform: translateY(-2px);
+}
+
+.social-group__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsiveness pentru Mobile: centrare automată */
+@media (max-width: 768px) {
+  .social-group {
+    justify-content: center;
+    gap: 12px;
+  }
+}
