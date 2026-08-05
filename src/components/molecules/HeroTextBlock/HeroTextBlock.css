@@ -1,0 +1,41 @@
+.hero-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.hero-text-block__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-title, #1a1a1a);
+  margin: 0;
+}
+
+.hero-text-block__description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text-subtle, #555555);
+  margin: 0;
+}
+
+.hero-text-block__cta {
+  margin-top: 8px;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .hero-text-block {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text-block__title {
+    font-size: 2rem;
+  }
+
+  .hero-text-block__description {
+    font-size: 1rem;
+  }
+}
