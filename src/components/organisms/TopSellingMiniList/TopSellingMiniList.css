@@ -1,0 +1,45 @@
+/* Container Organism Mini-List */
+.top-selling-mini-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.top-selling-mini-list__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-title, #111827);
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-border, #e5e7eb);
+}
+
+.top-selling-mini-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.top-selling-mini-list__item {
+  width: 100%;
+}
+
+.top-selling-mini-list__item .product-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+}
+
+.top-selling-mini-list__item .product-card__image-container {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+}
+
+.top-selling-mini-list__item .product-card__title {
+  font-size: 0.875rem;
+  line-height: 1.2;
+}

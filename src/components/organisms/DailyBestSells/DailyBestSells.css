@@ -1,0 +1,80 @@
+.daily-best-sells {
+  width: 100%;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.daily-best-sells__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-title, #111827);
+  margin: 0;
+}
+
+.daily-best-sells__container {
+  display: flex;
+  gap: 24px;
+}
+
+.daily-best-sells__banner {
+  flex: 0 0 280px;
+  background-color: var(--color-bg-subtle, #f3f4f6);
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  min-height: 400px;
+}
+
+.daily-best-sells__banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.daily-best-sells__banner-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-title, #111827);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.daily-best-sells__banner-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-subtle, #4b5563);
+  margin: 0;
+}
+
+.daily-best-sells__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .daily-best-sells__container {
+    flex-direction: column;
+  }
+
+  .daily-best-sells__banner {
+    flex: none;
+    width: 100%;
+    min-height: 220px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .daily-best-sells__grid {
+    grid-template-columns: 1fr;
+  }
+}
