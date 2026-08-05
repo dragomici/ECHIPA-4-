@@ -1,0 +1,89 @@
+/* Organism Container */
+.deals-of-the-day {
+  width: 100%;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.deals-of-the-day__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 2px solid var(--color-border, #e5e7eb);
+  padding-bottom: 16px;
+}
+
+.deals-of-the-day__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-title, #111827);
+  margin: 0;
+}
+
+.deals-countdown {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--color-bg-subtle, #f3f4f6);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.deals-countdown__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-subtle, #4b5563);
+}
+
+.deals-countdown__timer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.deals-countdown__unit {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  background: var(--color-primary, #ef4444);
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.deals-countdown__value {
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.deals-countdown__text {
+  font-size: 0.75rem;
+}
+
+.deals-countdown__separator {
+  font-weight: 700;
+  color: var(--color-primary, #ef4444);
+}
+
+.deals-of-the-day__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 576px) {
+  .deals-of-the-day__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deals-countdown {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
