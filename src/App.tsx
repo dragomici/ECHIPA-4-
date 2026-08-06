@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { MainLayout } from './components/templates/MainLayout/MainLayout';
 import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
 import Spinner from './components/atoms/Spinner/Spinner';
+import PageTransition from './components/atoms/PageTransition/PageTransition';
 
 const LandingPage = () => {
   return (
@@ -23,15 +24,25 @@ const DashboardPage = () => {
   );
 };
 
+// Componentă internă pentru declanșarea animației la schimbarea rutei
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <PageTransition key={location.pathname}>
+      <Routes location={location}>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Routes>
+    </PageTransition>
+  );
+};
+
 function App() {
   return (
     <BrowserRouter>
       <React.Suspense fallback={<Spinner />}>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          
-          <Route path="/dashboard" element={<DashboardPage />} />
-        </Routes>
+        <AnimatedRoutes />
       </React.Suspense>
     </BrowserRouter>
   );
