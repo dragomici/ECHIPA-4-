@@ -44,6 +44,7 @@ const Home2: React.FC = () => {
               <DealsOfTheDay 
                 title={t('sections.dealsOfTheDay')} 
                 products={mockDeals} 
+                isLoading={isLoading}
               />
             </section>
           </div>
@@ -55,10 +56,10 @@ const Home2: React.FC = () => {
         </section>
 
         <section className="home2__mini-lists">
-          <TopSellingMiniList title={t('sections.topSelling')} products={mockProducts} />
-          <TopSellingMiniList title={t('sections.trendingProducts')} products={mockProducts} />
-          <TopSellingMiniList title={t('sections.recentlyAdded')} products={mockProducts} />
-          <TopSellingMiniList title={t('sections.topRated')} products={mockProducts} />
+          <TopSellingMiniList title={t('sections.topSelling')} products={mockProducts} isLoading={isLoading} />
+          <TopSellingMiniList title={t('sections.trendingProducts')} products={mockProducts} isLoading={isLoading} />
+          <TopSellingMiniList title={t('sections.recentlyAdded')} products={mockProducts} isLoading={isLoading} />
+          <TopSellingMiniList title={t('sections.topRated')} products={mockProducts} isLoading={isLoading} />
         </section>
 
         <Newsletter />
