@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from '../ProductCard/ProductCard';
+import ResponsiveGrid from '../../atoms/ResponsiveGrid/ResponsiveGrid';
 import './ProductGrid.css';
 
 export interface Product {
@@ -24,7 +25,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ title, products }) => {
   return (
     <section className="product-grid-section">
       {title && <h2 className="product-grid-section__title">{title}</h2>}
-      <div className="product-grid">
+      <ResponsiveGrid columns={{ mobile: 1, tablet: 2, desktop: 4, xl: 5 }} gap="1.25rem">
         {products.map((product) => (
           <ProductCard
             key={product.id}
@@ -39,7 +40,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ title, products }) => {
             badgeVariant={product.badgeVariant}
           />
         ))}
-      </div>
+      </ResponsiveGrid>
     </section>
   );
 };
