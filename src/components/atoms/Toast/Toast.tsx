@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ToastType } from '../../../context/ToastContext';
+import type { ToastType } from '../../../context/ToastContext';
 import './Toast.css';
 
 interface ToastProps {
@@ -24,7 +24,7 @@ export const Toast: React.FC<ToastProps> = ({ id, message, type, onClose }) => {
     setIsClosing(true);
     setTimeout(() => {
       onClose(id);
-    }, 400); // match animation duration
+    }, 400);
   };
 
   const getIcon = () => {
