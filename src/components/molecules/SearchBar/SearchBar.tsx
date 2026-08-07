@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Input from '../../atoms/Input/Input'; 
-import Button from '../../atoms/Button/Button';
 import './SearchBar.css';
 
 interface SearchBarProps {
@@ -9,7 +7,7 @@ interface SearchBarProps {
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ 
-  placeholder = 'Search here...', 
+  placeholder = 'Search for items...', 
   onSearch 
 }) => {
   const [searchValue, setSearchValue] = useState('');
@@ -24,32 +22,38 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <form className="search-bar" onSubmit={handleSubmit}>
       
+      <div className="search-bar__category">
+        <span>All Categories</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+
+      <div className="search-bar__divider"></div>
+      
       <div className="search-bar__input-wrapper">
-        <Input
+        <input
           type="text"
+          className="search-bar__input"
           placeholder={placeholder}
           value={searchValue}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
         />
       </div>
       
-      
-      <div className="search-bar__button-wrapper">
-        <Button type="submit" aria-label="Search">
-          <svg 
-            className="search-bar__icon" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </Button>
-      </div>
+      <button type="submit" className="search-bar__btn" aria-label="Search">
+        <svg 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
     </form>
   );
 };

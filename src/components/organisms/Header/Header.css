@@ -1,8 +1,59 @@
 .header {
   width: 100%;
-  border-bottom: 1px solid #ececec;
-  padding: 0.9375rem 0;
   background-color: #ffffff;
+}
+
+.header__top-bar {
+  width: 100%;
+  border-bottom: 0.0625rem solid #ececec;
+  height: 2.3125rem;
+  display: flex;
+  align-items: center;
+}
+
+.header__top-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+  font-size: 0.8125rem;
+  color: #7e7e7e;
+  font-weight: 500;
+}
+
+.header__top-bar-left, .header__top-bar-right, .header__top-bar-center {
+  display: flex;
+  align-items: center;
+}
+
+.header__top-bar-divider {
+  margin: 0 0.5rem;
+  color: #ececec;
+}
+
+.header__top-bar-highlight {
+  color: #3bb77e;
+  font-weight: 600;
+}
+
+.header__top-bar-dropdown {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header__top-bar-dropdown svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-left: 0.25rem;
+}
+
+.header__main {
+  border-bottom: 0.0625rem solid #ececec;
+  padding: 0.9375rem 0;
 }
 
 .header__container {
@@ -22,10 +73,45 @@
   font-weight: 700;
 }
 
-.header__search {
+.header__search-area {
   flex-grow: 1;
-  max-width: 43.75rem;
-  margin: 0 2.5rem;
+  max-width: 55rem;
+  margin: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__location-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 40px;
+  padding: 0 1rem;
+  background-color: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  white-space: nowrap;
+}
+
+.header__location-btn svg:first-child {
+  width: 16px;
+  height: 16px;
+  color: #7e7e7e;
+}
+
+.header__location-btn .location-text {
+  color: #3bb77e;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.header__location-btn .location-chevron {
+  width: 14px;
+  height: 14px;
+  color: #7e7e7e;
 }
 
 .header__actions {
@@ -34,7 +120,10 @@
   gap: 1.25rem;
 }
 @media (max-width: 62rem) {
-  .header__search {
+  .header__top-bar {
+    display: none;
+  }
+  .header__search-area {
     display: none;
   }
 }

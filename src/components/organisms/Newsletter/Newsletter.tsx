@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
 import Button from '../../atoms/Button/Button';
-import StayHomeImage from '../../../assets/StayHome.png';
+import DeliveryGuy from '../../../assets/delivery-guy.png';
 import EmailIcon from '../../../assets/emailus.svg';
 import './Newsletter.css';
 
@@ -69,10 +69,9 @@ const Newsletter: React.FC = () => {
 
       <div className="newsletter-banner__image-wrapper">
         <img 
-          src={StayHomeImage} 
-          alt="Delivery man with fresh groceries" 
+          src={DeliveryGuy} 
+          alt="Delivery Person" 
           className="newsletter-banner__image" 
-          loading="lazy" 
         />
       </div>
     </section>
