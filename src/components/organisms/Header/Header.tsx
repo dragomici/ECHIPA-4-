@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SearchBar } from '../../molecules/SearchBar/SearchBar';
+import MobileDrawer from '../MobileDrawer/MobileDrawer';
 import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
 import NestLogo from '../../../assets/NestIcon.svg';
 import CompareIcon from '../../../assets/CompareIcon.svg';
@@ -9,8 +10,12 @@ import AccountIcon from '../../../assets/acountIcon.svg';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   return (
-    <header className="header">
+    <>
+      <MobileDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
+      <header className="header">
       <div className="header__top-bar">
         <div className="header__top-bar-container">
           <div className="header__top-bar-left">
@@ -39,6 +44,19 @@ const Header: React.FC = () => {
       
       <div className="header__main">
         <div className="header__container">
+        
+        <button 
+          className="header__mobile-menu-btn" 
+          onClick={() => setIsDrawerOpen(true)}
+          aria-label="Open mobile menu"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
         <div className="header__logo">
           <img src={NestLogo} alt="Nest Logo" />
         </div>
@@ -79,6 +97,7 @@ const Header: React.FC = () => {
       </div>
     </div>
   </header>
+  </>
   );
 };
 
