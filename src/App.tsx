@@ -1,17 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { MainLayout } from './components/templates/MainLayout/MainLayout';
 import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
 import Spinner from './components/atoms/Spinner/Spinner';
 
-const LandingPage = () => {
-  return (
-    <MainLayout>
-      <h1>Bine ai venit pe E-Commerce Landing Page!</h1>
-      <p>Acesta este conținutul public. Accesează <a href="/dashboard">Dashboard-ul aici</a>.</p>
-    </MainLayout>
-  );
-};
+const Home2 = React.lazy(() => import('./components/pages/Home2/Home2'));
 
 const DashboardPage = () => {
   return (
@@ -28,7 +20,7 @@ function App() {
     <BrowserRouter>
       <React.Suspense fallback={<Spinner />}>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<Home2 />} />
           
           <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
