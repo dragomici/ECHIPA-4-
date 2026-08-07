@@ -1,5 +1,8 @@
 .newsletter-banner {
-  background-color: var(--color-brand-light-green);
+  background-color: #BCE3C9;
+  background-image: url('../../../assets/banner-pattern.png');
+  background-size: cover;
+  background-position: left center;
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
@@ -99,18 +102,26 @@
 }
 
 .newsletter-banner__image-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
   position: absolute;
+  top: 0;
   right: 0;
   bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .newsletter-banner__image {
-  max-width: 100%;
-  max-height: 21.875rem;
+  height: 110%;
+  width: auto;
   object-fit: contain;
+  object-position: bottom right;
+  margin-right: 2rem;
+  margin-bottom: -1rem;
 }
 
 @media (max-width: 48rem) {
