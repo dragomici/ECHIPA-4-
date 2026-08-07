@@ -25,7 +25,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ title, products }) => {
   return (
     <section className="product-grid-section">
       {title && <h2 className="product-grid-section__title">{title}</h2>}
-      <ResponsiveGrid columns={{ mobile: 1, tablet: 2, desktop: 4, xl: 5 }} gap="1.25rem">
+      <ResponsiveGrid columns={{ mobile: 2, tablet: 3, desktop: 4, xl: 5 }} gap="1.25rem">
         {products.map((product) => (
           <ProductCard
             key={product.id}
