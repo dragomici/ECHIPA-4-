@@ -39,12 +39,12 @@ export const Footer: React.FC = () => {
         </div>
         
         <div className="footer__social">
-          <SocialGroup />
+          <SocialGroup items={[]} />
         </div>
       </div>
       
       <div className="footer__bottom">
-        <p>&copy; 2024 E-Commerce. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} E-Commerce. All rights reserved.</p>
       </div>
     </footer>
   );

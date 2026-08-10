@@ -1,5 +1,5 @@
 import React from 'react';
-import { Category } from '../../molecules/Category/Category';
+const Category: React.FC<{title: string}> = ({title}) => <div className="category-card"><h3>{title}</h3></div>;
 import './CategoriesSlider.css';
 
 export const CategoriesSlider: React.FC = () => {

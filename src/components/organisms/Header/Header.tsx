@@ -1,47 +1,97 @@
-import React, { useState } from 'react';
-import { MobileDrawer } from '../MobileDrawer/MobileDrawer';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useScrollDirection } from '../../../hooks/useScrollDirection';
+import { SearchBar } from '../../molecules/SearchBar/SearchBar';
+import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
+import { useWishlist } from '../../../hooks/useWishlist';
+import { useCart } from '../../../hooks/useCart';
+import NestLogo from '../../../assets/NestIcon.svg';
+import CompareIcon from '../../../assets/CompareIcon.svg';
+import WishlistIcon from '../../../assets/wishlistIcon.svg';
+import CartIcon from '../../../assets/cartIcon.svg';
+import AccountIcon from '../../../assets/acountIcon.svg';
 import './Header.css';
 
-export const Header: React.FC = () => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
-  const closeDrawer = () => setIsDrawerOpen(false);
+const Header: React.FC = () => {
+  const { wishlistCount } = useWishlist();
+  const { cartCount } = useCart();
+  const navigate = useNavigate();
+  const scrollDirection = useScrollDirection();
 
   return (
-    <header className="header">
-      <div className="header__container">
-        <button className="header__hamburger" onClick={toggleDrawer} aria-label="Open menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-
-        <div className="header__logo">
-          <span>E-Commerce</span>
+    <header className={`header ${scrollDirection === 'down' ? 'header--hidden' : ''}`}>
+      <div className="header__top-bar">
+        <div className="header__top-bar-container">
+          <div className="header__top-bar-left">
+            <span>About Us</span>
+            <span className="header__top-bar-divider">|</span>
+            <span>My Account</span>
+            <span className="header__top-bar-divider">|</span>
+            <span>Wishlist</span>
+            <span className="header__top-bar-divider">|</span>
+            <span>Order Tracking</span>
+          </div>
+          
+          <div className="header__top-bar-center">
+            <span>100% Secure delivery without contacting the courier</span>
+          </div>
+          
+          <div className="header__top-bar-right">
+            <span>Need help? Call Us: <span className="header__top-bar-highlight">+ 1800 900</span></span>
+            <span className="header__top-bar-divider">|</span>
+            <span className="header__top-bar-dropdown">English <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+            <span className="header__top-bar-divider">|</span>
+            <span className="header__top-bar-dropdown">USD <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </div>
         </div>
-
-        <nav className="header__nav-desktop">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="/categories">Categories</a>
-          <a href="/offers">Offers</a>
-        </nav>
-
-        <div className="header__actions">
-          <button aria-label="Cart">
+      </div>
+      
+      <div className="header__main">
+        <div className="header__container">
+        <div className="header__logo">
+          <img src={NestLogo} alt="Nest Logo" />
+        </div>
+        
+        <div className="header__search-area">
+          <SearchBar />
+          
+          <button className="header__location-btn" aria-label="Your Location">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="9" cy="21" r="1"></circle>
-              <circle cx="20" cy="21" r="1"></circle>
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span className="location-text">Your Location</span>
+            <svg className="location-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
         </div>
-      </div>
 
-      <MobileDrawer isOpen={isDrawerOpen} onClose={closeDrawer} />
-    </header>
+        <nav className="header__actions" aria-label="Primary Actions">
+          <HeaderAction
+            icon={<img src={CompareIcon} alt="Compare" />}
+            text="Compare"
+          />
+          <HeaderAction
+            icon={<img src={WishlistIcon} alt="Wishlist" />}
+            text="Wishlist"
+            badgeCount={wishlistCount}
+          />
+          <HeaderAction
+            icon={<img src={CartIcon} alt="Cart" />}
+            text="Cart"
+            badgeCount={cartCount}
+            onClick={() => navigate('/cart')}
+          />
+          <HeaderAction
+            icon={<img src={AccountIcon} alt="Account" />}
+            text="Account"
+          />
+        </nav>
+      </div>
+    </div>
+  </header>
   );
 };
+
+export default Header;

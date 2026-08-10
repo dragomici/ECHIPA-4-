@@ -7,7 +7,7 @@ export const Hero: React.FC = () => {
     <section className="hero">
       <div className="hero__overlay">
         <div className="hero__content">
-          <HeroTextBlock />
+          <HeroTextBlock title="Welcome" description="Discover amazing products" ctaText="Shop Now" />
         </div>
       </div>
     </section>
