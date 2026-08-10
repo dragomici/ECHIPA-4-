@@ -1,4 +1,5 @@
 import React from 'react';
+import { useScrollDirection } from '../../../hooks/useScrollDirection';
 import { SearchBar } from '../../molecules/SearchBar/SearchBar';
 import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
 import NestLogo from '../../../assets/NestIcon.svg';
@@ -9,8 +10,10 @@ import AccountIcon from '../../../assets/acountIcon.svg';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const scrollDirection = useScrollDirection();
+
   return (
-    <header className="header">
+    <header className={`header ${scrollDirection === 'down' ? 'header--hidden' : ''}`}>
       <div className="header__top-bar">
         <div className="header__top-bar-container">
           <div className="header__top-bar-left">
