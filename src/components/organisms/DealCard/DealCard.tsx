@@ -1,6 +1,7 @@
 import React from 'react';
 import './DealCard.css';
 import { useCountdown } from '../../../hooks/useCountdown';
+import { useCart } from '../../../hooks/useCart';
 
 export interface DealCardProps {
   id: string;
@@ -23,8 +24,18 @@ const DealCard: React.FC<DealCardProps> = ({
   targetDate = new Date().toISOString(),
 }) => {
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
+  const { addToCart } = useCart();
   
   const formatTwoDigits = (num: number) => String(num).padStart(2, '0');
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: title,
+      title,
+      price: currentPrice,
+      imageUrl,
+    });
+  };
 
   return (
     <div className="deal-card">
@@ -74,7 +85,10 @@ const DealCard: React.FC<DealCardProps> = ({
               {oldPrice && <span className="deal-card__price-old">${oldPrice.toFixed(2)}</span>}
             </div>
             
-            <button className="deal-card__add-btn">
+            <button 
+              className="deal-card__add-btn"
+              onClick={handleAddToCart}
+            >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
                 <circle cx="9" cy="21" r="1"></circle>
                 <circle cx="20" cy="21" r="1"></circle>

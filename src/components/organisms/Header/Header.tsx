@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SearchBar } from '../../molecules/SearchBar/SearchBar';
 import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
 import { useCart } from '../../../hooks/useCart';
@@ -11,6 +12,7 @@ import './Header.css';
 
 const Header: React.FC = () => {
   const { cartCount } = useCart();
+  const navigate = useNavigate();
 
   return (
     <header className="header">
@@ -74,6 +76,7 @@ const Header: React.FC = () => {
             icon={<img src={CartIcon} alt="Cart" />}
             text="Cart"
             badgeCount={cartCount}
+            onClick={() => navigate('/cart')}
           />
           <HeaderAction
             icon={<img src={AccountIcon} alt="Account" />}
