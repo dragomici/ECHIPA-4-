@@ -1,6 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useScrollDirection } from '../../../hooks/useScrollDirection';
 import { SearchBar } from '../../molecules/SearchBar/SearchBar';
 import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
+import { useWishlist } from '../../../hooks/useWishlist';
+import { useCart } from '../../../hooks/useCart';
 import NestLogo from '../../../assets/NestIcon.svg';
 import CompareIcon from '../../../assets/CompareIcon.svg';
 import WishlistIcon from '../../../assets/wishlistIcon.svg';
@@ -9,8 +13,13 @@ import AccountIcon from '../../../assets/acountIcon.svg';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const { wishlistCount } = useWishlist();
+  const { cartCount } = useCart();
+  const navigate = useNavigate();
+  const scrollDirection = useScrollDirection();
+
   return (
-    <header className="header">
+    <header className={`header ${scrollDirection === 'down' ? 'header--hidden' : ''}`}>
       <div className="header__top-bar">
         <div className="header__top-bar-container">
           <div className="header__top-bar-left">
@@ -66,10 +75,13 @@ const Header: React.FC = () => {
           <HeaderAction
             icon={<img src={WishlistIcon} alt="Wishlist" />}
             text="Wishlist"
+            badgeCount={wishlistCount}
           />
           <HeaderAction
             icon={<img src={CartIcon} alt="Cart" />}
             text="Cart"
+            badgeCount={cartCount}
+            onClick={() => navigate('/cart')}
           />
           <HeaderAction
             icon={<img src={AccountIcon} alt="Account" />}
