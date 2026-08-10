@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastProvider } from './context/ToastContext';
+import { ToastContainer } from './components/molecules/ToastContainer/ToastContainer';
 import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
 import Spinner from './components/atoms/Spinner/Spinner';
 
@@ -17,15 +19,18 @@ const DashboardPage = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <React.Suspense fallback={<Spinner />}>
-        <Routes>
-          <Route path="/" element={<Home2 />} />
-          
-          <Route path="/dashboard" element={<DashboardPage />} />
-        </Routes>
-      </React.Suspense>
-    </BrowserRouter>
+    <ToastProvider>
+      <BrowserRouter>
+        <React.Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/" element={<Home2 />} />
+            
+            <Route path="/dashboard" element={<DashboardPage />} />
+          </Routes>
+        </React.Suspense>
+      </BrowserRouter>
+      <ToastContainer />
+    </ToastProvider>
   );
 }
 

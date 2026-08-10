@@ -3,6 +3,7 @@ import Badge from '../../atoms/Badge/Badge';
 import Button from '../../atoms/Button/Button';
 import Star from '../../atoms/Star/Star';
 import ProductPrice from '../../molecules/ProductPrice/ProductPrice';
+import { useToast } from '../../../hooks/useToast';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -28,6 +29,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
   badgeText,
   badgeVariant,
 }) => {
+  const { addToast } = useToast();
+
+  const handleAddToCart = () => {
+    addToast(`${title} added to cart!`, 'success');
+  };
+
   return (
     <article className="product-card">
       <div className="product-card__image-wrapper">
@@ -53,7 +60,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
         <div className="product-card__footer">
           <ProductPrice currentPrice={currentPrice} oldPrice={oldPrice} />
-          <Button variant="primary" aria-label={`Add ${title} to cart`}>Add</Button>
+          <Button variant="primary" onClick={handleAddToCart} aria-label={`Add ${title} to cart`}>Add</Button>
         </div>
       </div>
     </article>
