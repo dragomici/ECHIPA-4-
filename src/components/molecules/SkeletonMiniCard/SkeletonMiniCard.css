@@ -1,0 +1,26 @@
+.skeleton-mini-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.skeleton-mini-card__image-container {
+  width: 5rem;
+  height: 5rem;
+  flex-shrink: 0;
+}
+
+.skeleton-mini-card__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.skeleton-mini-card__title {
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-mini-card__rating {
+  margin-bottom: 0.5rem;
+}
