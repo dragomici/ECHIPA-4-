@@ -1,0 +1,24 @@
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 12px; 
+}
+
+.checkbox__input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #3bb77e; 
+  border: 1px solid #ececec;
+  border-radius: 3px;
+}
+
+.checkbox__label {
+  font-size: 14px;
+  color: #687188;
+  font-weight: 400;
+  cursor: pointer;
+  line-height: 1;
+}

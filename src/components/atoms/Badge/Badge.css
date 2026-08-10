@@ -1,0 +1,24 @@
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px; 
+  border-radius: 15px 0px 20px 0px; 
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  min-width: 45px; 
+}
+.badge--hot {
+  background-color: #f74b81; 
+}
+.badge--sale {
+  background-color: #67BCEE;
+}
+.badge--new {
+  background-color: #3BB77E;
+}
+.badge--discount {
+  background-color: #f59758;
+}
