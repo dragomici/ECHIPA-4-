@@ -1,6 +1,5 @@
 import React from 'react';
 import Badge from '../../atoms/Badge/Badge';
-import Button from '../../atoms/Button/Button';
 import Star from '../../atoms/Star/Star';
 import ProductPrice from '../../molecules/ProductPrice/ProductPrice';
 import { useWishlist, type WishlistItem } from '../../../hooks/useWishlist';
@@ -54,13 +53,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <article className="product-card">
+      {badgeText && badgeVariant && (
+        <div className="product-card__badge-wrapper">
+          <Badge text={badgeText} variant={badgeVariant} />
+        </div>
+      )}
       <div className="product-card__image-wrapper">
         <img src={imageUrl} alt={title} className="product-card__image" loading="lazy" />
-        {badgeText && badgeVariant && (
-          <div className="product-card__badge">
-            <Badge text={badgeText} variant={badgeVariant} />
-          </div>
-        )}
         <button 
           className={`product-card__wishlist-btn ${inWishlist ? 'product-card__wishlist-btn--active' : ''}`}
           onClick={handleWishlistClick}
@@ -84,9 +83,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <span className="product-card__rating-count">({ratingCount.toFixed(1)})</span>
         </div>
 
+        <div className="product-card__brand">
+          By <span className="product-card__brand-name">NestFood</span>
+        </div>
+
         <div className="product-card__footer">
           <ProductPrice currentPrice={currentPrice} oldPrice={oldPrice} />
-          <Button variant="primary" onClick={handleAddToCart} aria-label={`Add ${title} to cart`}>Add</Button>
+          <button className="product-card__add-btn" onClick={handleAddToCart} aria-label={`Add ${title} to cart`}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            Add
+          </button>
         </div>
       </div>
     </article>

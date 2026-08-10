@@ -18,26 +18,15 @@ const CartPage: React.FC = () => {
       <Header />
       
       <main className="cart-page__main">
-        <aside className="cart-page__sidebar-placeholder">
-          <div className="placeholder-box">Categories Sidebar (WIP)</div>
-        </aside>
-        
         <div className="cart-page__content">
-          <div className="cart-page__table-section">
-            <CartTable 
-              items={items} 
-              onUpdateQuantity={updateQuantity} 
-              onRemove={removeFromCart} 
-            />
-          </div>
-          
-          <div className="cart-page__bottom">
-            <section className="cart-page__recommended">
-              <ProductGrid 
-                title="Recommended" 
-                products={mockProducts.slice(0, 4)} 
+          <div className="cart-page__top-section">
+            <div className="cart-page__table-section">
+              <CartTable 
+                items={items} 
+                onUpdateQuantity={updateQuantity} 
+                onRemove={removeFromCart} 
               />
-            </section>
+            </div>
             
             {items.length > 0 && (
               <div className="cart-page__summary-section">
@@ -49,6 +38,15 @@ const CartPage: React.FC = () => {
                 />
               </div>
             )}
+          </div>
+          
+          <div className="cart-page__bottom">
+            <section className="cart-page__recommended">
+              <ProductGrid 
+                title="Recommended" 
+                products={mockProducts.slice(0, 5)} 
+              />
+            </section>
           </div>
         </div>
       </main>
