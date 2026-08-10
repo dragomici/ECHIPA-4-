@@ -3,28 +3,30 @@ a {
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    text-decoration 0.2s ease-in-out;
   cursor: pointer;
-  color: var(--color-primary, #3BB77E);
+  color: var(--color-primary, #3bb77e);
 }
 
 a:hover {
-  color: var(--color-primary-dark, #29A56C);
+  color: var(--color-primary-dark, #29a56c);
   text-decoration: underline;
 }
 
 .link--secondary {
-  color: var(--color-text-main, #253D4E);
+  color: var(--color-text-main, #253d4e);
 }
 
 .link--secondary:hover {
-  color: var(--color-primary, #3BB77E);
+  color: var(--color-primary, #3bb77e);
 }
 
 .link--muted {
-  color: var(--color-text-muted, #7E7E7E);
+  color: var(--color-text-muted, #7e7e7e);
 }
 
 .link--muted:hover {
-  color: var(--color-text-main, #253D4E);
+  color: var(--color-text-main, #253d4e);
 }

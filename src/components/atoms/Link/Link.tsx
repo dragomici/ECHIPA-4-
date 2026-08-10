@@ -1,23 +1,23 @@
-import React from 'react';
-import './Link.css';
+import React from "react";
+import "./Link.css";
 
 interface LinkProps {
   href: string;
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'muted';
-  target?: '_blank' | '_self' | '_parent' | '_top';
+  variant?: "primary" | "secondary" | "muted";
+  target?: "_blank" | "_self" | "_parent" | "_top";
   className?: string;
 }
 
 export const Link: React.FC<LinkProps> = ({
   href,
   children,
-  variant = 'primary',
-  target = '_self',
-  className = '',
+  variant = "primary",
+  target = "_self",
+  className = "",
 }) => {
-  const rel = target === '_blank' ? 'noopener noreferrer' : undefined;
-  const variantClass = variant !== 'primary' ? `link--${variant}` : '';
+  const rel = target === "_blank" ? "noopener noreferrer" : undefined;
+  const variantClass = variant !== "primary" ? `link--${variant}` : "";
   const combinedClasses = `${variantClass} ${className}`.trim();
 
   return (

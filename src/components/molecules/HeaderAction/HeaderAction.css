@@ -3,7 +3,7 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  color: #7E7E7E;
+  color: #7e7e7e;
   background: transparent;
   border: none;
   padding: 0;
@@ -55,7 +55,7 @@
 }
 
 .header-action:focus-visible {
-  outline: 0.125rem solid #3BB77E;
+  outline: 0.125rem solid #3bb77e;
   outline-offset: 0.25rem;
 }
 
@@ -70,7 +70,7 @@
   position: absolute;
   top: -0.5rem;
   right: -0.625rem;
-  background-color: #3BB77E;
+  background-color: #3bb77e;
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 500;
@@ -85,7 +85,7 @@
 .header-action__text {
   font-size: 1rem;
   font-weight: 500;
-  color: #7E7E7E;
+  color: #7e7e7e;
 }
 
 @media (max-width: 48rem) {
