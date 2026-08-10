@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from '../ProductCard/ProductCard';
+import ResponsiveGrid from '../../atoms/ResponsiveGrid/ResponsiveGrid';
 import SkeletonProductCard from '../../molecules/SkeletonProductCard/SkeletonProductCard';
 import './ProductGrid.css';
 
@@ -28,7 +29,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ title, products, isLoading = 
   return (
     <section className="product-grid-section">
       {title && <h2 className="product-grid-section__title">{title}</h2>}
-      <div className="product-grid">
+      <ResponsiveGrid columns={{ mobile: 2, tablet: 3, desktop: 4, xl: 5 }} gap="1.25rem">
         {isLoading
           ? skeletons.map((_, index) => <SkeletonProductCard key={index} />)
           : products.map((product) => (
@@ -45,7 +46,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ title, products, isLoading = 
                 badgeVariant={product.badgeVariant}
               />
             ))}
-      </div>
+      </ResponsiveGrid>
     </section>
   );
 };

@@ -36,6 +36,15 @@ const Home2: React.FC = () => {
               <span>Hero Banner (WIP)</span>
             </div>
             
+            <section className="home2__deals">
+              <DealsOfTheDay 
+                title={t('sections.dealsOfTheDay')} 
+                products={mockDeals} 
+                isLoading={isLoading}
+                targetDate={new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toISOString()}
+              />
+            </section>
+            
             <section className="home2__popular-products">
               <ProductGrid title={t('sections.popularProducts')} products={mockProducts} isLoading={isLoading} />
             </section>
@@ -45,6 +54,7 @@ const Home2: React.FC = () => {
                 title={t('sections.dealsOfTheDay')} 
                 products={mockDeals} 
                 isLoading={isLoading}
+                targetDate={new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toISOString()}
               />
             </section>
           </div>
