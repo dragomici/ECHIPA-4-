@@ -1,6 +1,9 @@
 import React from 'react';
 import './DealCard.css';
 import { useCountdown } from '../../../hooks/useCountdown';
+import { useWishlist, type WishlistItem } from '../../../hooks/useWishlist';
+import { useCart } from '../../../hooks/useCart';
+import { useToast } from '../../../hooks/useToast';
 
 export interface DealCardProps {
   id: string;
@@ -23,14 +26,44 @@ const DealCard: React.FC<DealCardProps> = ({
   targetDate = new Date().toISOString(),
 }) => {
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
+  const { wishlistItems, toggleWishlist } = useWishlist();
+  const { addToCart } = useCart();
+  const { addToast } = useToast();
+  
+  const inWishlist = wishlistItems.some((item: WishlistItem) => item.id === title);
+  
+  const handleWishlistClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toggleWishlist({ id: title, title });
+  };
   
   const formatTwoDigits = (num: number) => String(num).padStart(2, '0');
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: title,
+      title,
+      price: currentPrice,
+      imageUrl,
+    });
+    addToast(`${title} added to cart!`, 'success');
+  };
 
   return (
     <div className="deal-card">
       <div className="deal-card__image-container">
         <img src={imageUrl} alt={title} className="deal-card__image" />
         
+        <button 
+          className={`deal-card__wishlist-btn ${inWishlist ? 'deal-card__wishlist-btn--active' : ''}`}
+          onClick={handleWishlistClick}
+          aria-label="Toggle wishlist"
+        >
+          <svg viewBox="0 0 24 24" fill={inWishlist ? "#3bb77e" : "none"} stroke="currentColor" strokeWidth="2" width="16" height="16">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </button>
+
         <div className="deal-card__countdown">
           <div className="deal-card__time-box">
             <span className="deal-card__time-value">{days}</span>
@@ -74,7 +107,7 @@ const DealCard: React.FC<DealCardProps> = ({
               {oldPrice && <span className="deal-card__price-old">${oldPrice.toFixed(2)}</span>}
             </div>
             
-            <button className="deal-card__add-btn">
+            <button className="deal-card__add-btn" onClick={handleAddToCart}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
                 <circle cx="9" cy="21" r="1"></circle>
                 <circle cx="20" cy="21" r="1"></circle>

@@ -1,10 +1,10 @@
 .hero-text-block {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
   width: 100%;
-  max-width: 640px;
-  padding: 32px;
+  max-width: 40rem;
+  padding: 2rem;
   box-sizing: border-box;
 }
 
@@ -26,13 +26,13 @@
 
 .hero-text-block__cta {
   display: flex;
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .hero-text-block {
-    gap: 16px;
-    padding: 16px;
+    gap: 1rem;
+    padding: 1rem;
     align-items: center;
     text-align: center;
   }
