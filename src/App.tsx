@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
 import Spinner from './components/atoms/Spinner/Spinner';
+import { CartProvider } from './hooks/useCart';
 
 const Home2 = React.lazy(() => import('./components/pages/Home2/Home2'));
 
@@ -17,15 +18,17 @@ const DashboardPage = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <React.Suspense fallback={<Spinner />}>
-        <Routes>
-          <Route path="/" element={<Home2 />} />
-          
-          <Route path="/dashboard" element={<DashboardPage />} />
-        </Routes>
-      </React.Suspense>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <React.Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/" element={<Home2 />} />
+            
+            <Route path="/dashboard" element={<DashboardPage />} />
+          </Routes>
+        </React.Suspense>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { SearchBar } from '../../molecules/SearchBar/SearchBar';
 import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
+import { useCart } from '../../../hooks/useCart';
 import NestLogo from '../../../assets/NestIcon.svg';
 import CompareIcon from '../../../assets/CompareIcon.svg';
 import WishlistIcon from '../../../assets/wishlistIcon.svg';
@@ -9,6 +10,8 @@ import AccountIcon from '../../../assets/acountIcon.svg';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const { cartCount } = useCart();
+
   return (
     <header className="header">
       <div className="header__top-bar">
@@ -70,6 +73,7 @@ const Header: React.FC = () => {
           <HeaderAction
             icon={<img src={CartIcon} alt="Cart" />}
             text="Cart"
+            badgeCount={cartCount}
           />
           <HeaderAction
             icon={<img src={AccountIcon} alt="Account" />}

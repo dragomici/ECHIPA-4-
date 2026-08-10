@@ -3,6 +3,7 @@ import Badge from '../../atoms/Badge/Badge';
 import Button from '../../atoms/Button/Button';
 import Star from '../../atoms/Star/Star';
 import ProductPrice from '../../molecules/ProductPrice/ProductPrice';
+import { useCart } from '../../../hooks/useCart';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -28,6 +29,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
   badgeText,
   badgeVariant,
 }) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: title,
+      title,
+      price: currentPrice,
+      imageUrl,
+    });
+  };
+
   return (
     <article className="product-card">
       <div className="product-card__image-wrapper">
@@ -53,7 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
         <div className="product-card__footer">
           <ProductPrice currentPrice={currentPrice} oldPrice={oldPrice} />
-          <Button variant="primary" aria-label={`Add ${title} to cart`}>Add</Button>
+          <Button variant="primary" onClick={handleAddToCart} aria-label={`Add ${title} to cart`}>Add</Button>
         </div>
       </div>
     </article>
