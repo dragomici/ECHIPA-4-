@@ -3,7 +3,9 @@ import Badge from '../../atoms/Badge/Badge';
 import Button from '../../atoms/Button/Button';
 import Star from '../../atoms/Star/Star';
 import ProductPrice from '../../molecules/ProductPrice/ProductPrice';
-import { useWishlist, WishlistItem } from '../../../hooks/useWishlist';
+import { useWishlist, type WishlistItem } from '../../../hooks/useWishlist';
+import { useCart } from '../../../hooks/useCart';
+import { useToast } from '../../../hooks/useToast';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -30,12 +32,24 @@ const ProductCard: React.FC<ProductCardProps> = ({
   badgeVariant,
 }) => {
   const { wishlistItems, toggleWishlist } = useWishlist();
+  const { addToCart } = useCart();
+  const { addToast } = useToast();
   
   const inWishlist = wishlistItems.some((item: WishlistItem) => item.id === title);
   
   const handleWishlistClick = (e: React.MouseEvent) => {
     e.preventDefault();
     toggleWishlist({ id: title, title });
+  };
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: title,
+      title,
+      price: currentPrice,
+      imageUrl,
+    });
+    addToast(`${title} added to cart!`, 'success');
   };
 
   return (
@@ -72,7 +86,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
         <div className="product-card__footer">
           <ProductPrice currentPrice={currentPrice} oldPrice={oldPrice} />
-          <Button variant="primary" aria-label={`Add ${title} to cart`}>Add</Button>
+          <Button variant="primary" onClick={handleAddToCart} aria-label={`Add ${title} to cart`}>Add</Button>
         </div>
       </div>
     </article>
