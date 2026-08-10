@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { WishlistProvider } from './hooks/useWishlist';
 import { ToastProvider } from './context/ToastContext';
 import { ToastContainer } from './components/molecules/ToastContainer/ToastContainer';
 import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
@@ -38,13 +39,15 @@ const AnimatedRoutes = () => {
 function App() {
   return (
     <ToastProvider>
-      <CartProvider>
-        <BrowserRouter>
-          <React.Suspense fallback={<Spinner />}>
-            <AnimatedRoutes />
-          </React.Suspense>
-        </BrowserRouter>
-      </CartProvider>
+      <WishlistProvider>
+        <CartProvider>
+          <BrowserRouter>
+            <React.Suspense fallback={<Spinner />}>
+              <AnimatedRoutes />
+            </React.Suspense>
+          </BrowserRouter>
+        </CartProvider>
+      </WishlistProvider>
       <ToastContainer />
     </ToastProvider>
   );

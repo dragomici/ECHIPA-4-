@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useScrollDirection } from '../../../hooks/useScrollDirection';
 import { SearchBar } from '../../molecules/SearchBar/SearchBar';
 import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
+import { useWishlist } from '../../../hooks/useWishlist';
 import { useCart } from '../../../hooks/useCart';
 import NestLogo from '../../../assets/NestIcon.svg';
 import CompareIcon from '../../../assets/CompareIcon.svg';
@@ -12,6 +13,7 @@ import AccountIcon from '../../../assets/acountIcon.svg';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const { wishlistCount } = useWishlist();
   const { cartCount } = useCart();
   const navigate = useNavigate();
   const scrollDirection = useScrollDirection();
@@ -73,6 +75,7 @@ const Header: React.FC = () => {
           <HeaderAction
             icon={<img src={WishlistIcon} alt="Wishlist" />}
             text="Wishlist"
+            badgeCount={wishlistCount}
           />
           <HeaderAction
             icon={<img src={CartIcon} alt="Cart" />}
