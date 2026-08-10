@@ -3,9 +3,11 @@ import Badge from '../../atoms/Badge/Badge';
 import Button from '../../atoms/Button/Button';
 import Star from '../../atoms/Star/Star';
 import ProductPrice from '../../molecules/ProductPrice/ProductPrice';
+import { useTracking } from '../../../hooks/useTracking';
 import './ProductCard.css';
 
 interface ProductCardProps {
+  id?: string | number;
   imageUrl: string;
   category: string;
   title: string;
@@ -18,6 +20,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  id,
   imageUrl,
   category,
   title,
@@ -28,6 +31,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
   badgeText,
   badgeVariant,
 }) => {
+  const { trackAddToCart } = useTracking();
+
+  const handleAddToCart = () => {
+    trackAddToCart(id || title, title, currentPrice);
+  };
+
   return (
     <article className="product-card">
       <div className="product-card__image-wrapper">
@@ -53,7 +62,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
         <div className="product-card__footer">
           <ProductPrice currentPrice={currentPrice} oldPrice={oldPrice} />
-          <Button variant="primary" aria-label={`Add ${title} to cart`}>Add</Button>
+          <Button 
+            variant="primary" 
+            aria-label={`Add ${title} to cart`}
+            onClick={handleAddToCart}
+          >
+            Add
+          </Button>
         </div>
       </div>
     </article>
