@@ -1,49 +1,80 @@
 .header {
-  width: 100%;
-  border-bottom: 1px solid #ececec;
-  padding: 0.9375rem 0;
-  background-color: #ffffff;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 .header__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 100rem;
-  margin: 0 auto;
-  padding: 0 0.9375rem;
-  gap: 1.25rem;
-}
-
-.header__logo h2 {
-  margin: 0;
-  color: #3bb77e;
-  font-size: 1.75rem;
-  font-weight: 700;
-}
-
-.header__search {
-  flex-grow: 1;
-  max-width: 43.75rem;
-  margin: 0 2.5rem;
-}
-
-.header__actions {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-@media (max-width: 62rem) {
-  .header__search {
-    display: none;
-  }
-}
-@media (max-width: 48rem) {
-  .header__container {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-  }
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-  .header__actions {
-    gap: 0.625rem;
-  }
+.header__hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+    .header__hamburger svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+.header__logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.header__nav-desktop {
+    display: none;
+}
+
+.header__actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.header__actions svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .header__hamburger {
+        display: none;
+    }
+
+    .header__nav-desktop {
+        display: flex;
+        gap: 2rem;
+    }
+
+        .header__nav-desktop a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+            .header__nav-desktop a:hover {
+                color: #111827;
+            }
 }

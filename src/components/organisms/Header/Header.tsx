@@ -1,49 +1,47 @@
-import React from "react";
-import SearchBar from "../../molecules/SearchBar/SearchBar";
-import HeaderAction from "../../molecules/HeaderAction/HeaderAction";
-import NestLogo from "../../../assets/NestIcon.svg";
-import CompareIcon from "../../../assets/CompareIcon.svg";
-import WishlistIcon from "../../../assets/wishlistIcon.svg";
-import CartIcon from "../../../assets/cartIcon.svg";
-import AccountIcon from "../../../assets/acountIcon.svg";
-import "./Header.css";
+import React, { useState } from 'react';
+import { MobileDrawer } from '../MobileDrawer/MobileDrawer';
+import './Header.css';
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
+  const closeDrawer = () => setIsDrawerOpen(false);
+
   return (
     <header className="header">
       <div className="header__container">
+        <button className="header__hamburger" onClick={toggleDrawer} aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
         <div className="header__logo">
-          <img src={NestLogo} alt="Nest Logo" />
+          <span>E-Commerce</span>
         </div>
 
-        <div className="header__search">
-          <SearchBar />
-        </div>
+        <nav className="header__nav-desktop">
+          <a href="/">Home</a>
+          <a href="/products">Products</a>
+          <a href="/categories">Categories</a>
+          <a href="/offers">Offers</a>
+        </nav>
 
         <div className="header__actions">
-          <HeaderAction
-            icon={<img src={CompareIcon} alt="Compare" />}
-            text="Compare"
-            badgeCount={3}
-          />
-          <HeaderAction
-            icon={<img src={WishlistIcon} alt="Wishlist" />}
-            text="Wishlist"
-            badgeCount={6}
-          />
-          <HeaderAction
-            icon={<img src={CartIcon} alt="Cart" />}
-            text="Cart"
-            badgeCount={2}
-          />
-          <HeaderAction
-            icon={<img src={AccountIcon} alt="Account" />}
-            text="Account"
-          />
+          <button aria-label="Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+          </button>
         </div>
       </div>
+
+      <MobileDrawer isOpen={isDrawerOpen} onClose={closeDrawer} />
     </header>
   );
 };
-
-export default Header;
