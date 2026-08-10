@@ -1,0 +1,21 @@
+.swiper-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.swiper-container::-webkit-scrollbar {
+  display: none;
+}
+
+.swiper-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.swiper-container > * {
+  flex: 0 0 auto;
+}
