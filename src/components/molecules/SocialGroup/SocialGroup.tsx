@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconWrapper } from '../../atoms/IconWrapper';
+import { IconWrapper } from '../../atoms/IconWrapper/IconWrapper';
 import './SocialGroup.css';
 
 export interface SocialItem {

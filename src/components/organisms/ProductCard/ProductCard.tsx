@@ -4,6 +4,7 @@ import Button from '../../atoms/Button/Button';
 import Star from '../../atoms/Star/Star';
 import ProductPrice from '../../molecules/ProductPrice/ProductPrice';
 import { useCart } from '../../../hooks/useCart';
+import { useToast } from '../../../hooks/useToast';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -30,6 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   badgeVariant,
 }) => {
   const { addToCart } = useCart();
+  const { addToast } = useToast();
 
   const handleAddToCart = () => {
     addToCart({
@@ -38,6 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       price: currentPrice,
       imageUrl,
     });
+    addToast(`${title} added to cart!`, 'success');
   };
 
   return (

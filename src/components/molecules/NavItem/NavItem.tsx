@@ -1,6 +1,6 @@
 import React from 'react';
-import { IconWrapper } from '../../atoms/IconWrapper';
-import { Link } from '../../atoms/Link';
+import { IconWrapper } from '../../atoms/IconWrapper/IconWrapper';
+import { Link } from '../../atoms/Link/Link';
 import './NavItem.css';
 
 interface NavItemProps {
