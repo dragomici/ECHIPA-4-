@@ -2,21 +2,21 @@
 .checkbox {
   display: flex;
   align-items: center;
-  gap: 10px; 
-  margin-bottom: 12px; 
+  gap: 0.625rem; 
+  margin-bottom: 0.75rem; 
 }
 
 .checkbox__input {
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   cursor: pointer;
   accent-color: #3bb77e; 
   border: 1px solid #ececec;
-  border-radius: 3px;
+  border-radius: 0.1875rem;
 }
 
 .checkbox__label {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #687188;
   font-weight: 400;
   cursor: pointer;
