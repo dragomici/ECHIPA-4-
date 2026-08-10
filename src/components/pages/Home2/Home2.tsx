@@ -4,6 +4,8 @@ import ProductGrid from '../../organisms/ProductGrid/ProductGrid';
 import { DealsOfTheDay } from '../../organisms/DealsOfTheDay/DealsOfTheDay';
 import { TopSellingMiniList } from '../../organisms/TopSellingMiniList/TopSellingMiniList';
 import Newsletter from '../../organisms/Newsletter/Newsletter';
+import Swiper from '../../atoms/Swiper/Swiper';
+import ProductCard from '../../organisms/ProductCard/ProductCard';
 import { useTranslation } from '../../../hooks/useTranslation';
 import { mockProducts, mockDeals } from '../../../utils/mockData';
 import './Home2.css';
@@ -70,6 +72,27 @@ const Home2: React.FC = () => {
           <TopSellingMiniList title={t('sections.trendingProducts')} products={mockProducts} isLoading={isLoading} />
           <TopSellingMiniList title={t('sections.recentlyAdded')} products={mockProducts} isLoading={isLoading} />
           <TopSellingMiniList title={t('sections.topRated')} products={mockProducts} isLoading={isLoading} />
+        </section>
+
+        <section className="home2__daily-best-sells" style={{ margin: '3rem 0', maxWidth: '100rem', padding: '0 0.9375rem', width: '100%', marginInline: 'auto' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#253D4E', marginBottom: '1.5rem' }}>Daily Best Sells</h2>
+          <Swiper>
+            {mockProducts.map((product) => (
+              <div key={`daily-${product.id}`} style={{ width: '15.625rem' }}>
+                <ProductCard
+                  imageUrl={product.imageUrl}
+                  category={product.category}
+                  title={product.title}
+                  rating={product.rating}
+                  ratingCount={product.ratingCount}
+                  currentPrice={product.currentPrice}
+                  oldPrice={product.oldPrice}
+                  badgeText={product.badgeText}
+                  badgeVariant={product.badgeVariant}
+                />
+              </div>
+            ))}
+          </Swiper>
         </section>
 
         <Newsletter />
