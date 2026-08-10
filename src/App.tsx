@@ -4,6 +4,7 @@ import { ToastProvider } from './context/ToastContext';
 import { ToastContainer } from './components/molecules/ToastContainer/ToastContainer';
 import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
 import Spinner from './components/atoms/Spinner/Spinner';
+import { CartProvider } from './hooks/useCart';
 import PageTransition from './components/atoms/PageTransition/PageTransition';
 
 const Home2 = React.lazy(() => import('./components/pages/Home2/Home2'));
@@ -35,11 +36,13 @@ const AnimatedRoutes = () => {
 function App() {
   return (
     <ToastProvider>
-      <BrowserRouter>
-        <React.Suspense fallback={<Spinner />}>
-          <AnimatedRoutes />
-        </React.Suspense>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <React.Suspense fallback={<Spinner />}>
+            <AnimatedRoutes />
+          </React.Suspense>
+        </BrowserRouter>
+      </CartProvider>
       <ToastContainer />
     </ToastProvider>
   );
