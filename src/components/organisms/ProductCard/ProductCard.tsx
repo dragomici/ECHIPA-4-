@@ -3,7 +3,7 @@ import Badge from '../../atoms/Badge/Badge';
 import Button from '../../atoms/Button/Button';
 import Star from '../../atoms/Star/Star';
 import ProductPrice from '../../molecules/ProductPrice/ProductPrice';
-import { useWishlist } from '../../../hooks/useWishlist';
+import { useWishlist, WishlistItem } from '../../../hooks/useWishlist';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -31,7 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const { wishlistItems, toggleWishlist } = useWishlist();
   
-  const inWishlist = wishlistItems.some(item => item.id === title);
+  const inWishlist = wishlistItems.some((item: WishlistItem) => item.id === title);
   
   const handleWishlistClick = (e: React.MouseEvent) => {
     e.preventDefault();

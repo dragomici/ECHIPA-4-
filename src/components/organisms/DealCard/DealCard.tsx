@@ -1,7 +1,7 @@
 import React from 'react';
 import './DealCard.css';
 import { useCountdown } from '../../../hooks/useCountdown';
-import { useWishlist } from '../../../hooks/useWishlist';
+import { useWishlist, WishlistItem } from '../../../hooks/useWishlist';
 
 export interface DealCardProps {
   id: string;
@@ -26,7 +26,7 @@ const DealCard: React.FC<DealCardProps> = ({
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
   const { wishlistItems, toggleWishlist } = useWishlist();
   
-  const inWishlist = wishlistItems.some(item => item.id === title);
+  const inWishlist = wishlistItems.some((item: WishlistItem) => item.id === title);
   
   const handleWishlistClick = (e: React.MouseEvent) => {
     e.preventDefault();
