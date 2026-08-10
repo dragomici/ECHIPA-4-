@@ -1,47 +1,22 @@
-import React from "react";
-import ProductCard from "../ProductCard/ProductCard";
-import "./ProductGrid.css";
+import React, { ReactNode } from 'react';
+import './Grid.css';
 
-export interface Product {
-  id: string | number;
-  imageUrl: string;
-  category: string;
-  title: string;
-  rating: number;
-  ratingCount: number;
-  currentPrice: number;
-  oldPrice?: number;
-  badgeText?: string;
-  badgeVariant?: "hot" | "sale" | "new" | "discount";
-}
-
-interface ProductGridProps {
+interface GridProps {
   title?: string;
-  products: Product[];
+  subtitle?: string;
+  children: ReactNode;
 }
 
-const ProductGrid: React.FC<ProductGridProps> = ({ title, products }) => {
+export const Grid: React.FC<GridProps> = ({ title, subtitle, children }) => {
   return (
-    <section className="product-grid-section">
-      {title && <h2 className="product-grid-section__title">{title}</h2>}
-      <div className="product-grid">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            imageUrl={product.imageUrl}
-            category={product.category}
-            title={product.title}
-            rating={product.rating}
-            ratingCount={product.ratingCount}
-            currentPrice={product.currentPrice}
-            oldPrice={product.oldPrice}
-            badgeText={product.badgeText}
-            badgeVariant={product.badgeVariant}
-          />
-        ))}
+    <section className="grid">
+      <div className="grid__header">
+        {title && <h2 className="grid__title">{title}</h2>}
+        {subtitle && <p className="grid__subtitle">{subtitle}</p>}
+      </div>
+      <div className="grid__content">
+        {children}
       </div>
     </section>
   );
 };
-
-export default ProductGrid;
