@@ -8,6 +8,9 @@ import Swiper from '../../atoms/Swiper/Swiper';
 import ProductCard from '../../organisms/ProductCard/ProductCard';
 import { useTranslation } from '../../../hooks/useTranslation';
 import { mockProducts, mockDeals } from '../../../utils/mockData';
+import { Hero } from '../../organisms/Hero/Hero';
+import { CategoriesSlider } from '../../organisms/CategoriesSlider/CategoriesSlider';
+import { Footer } from '../../organisms/Footer/Footer';
 import './Home2.css';
 
 const Home2: React.FC = () => {
@@ -32,11 +35,7 @@ const Home2: React.FC = () => {
           </aside>
           
           <div className="home2__hero">
-            <div className="home2__hero-placeholder placeholder-box">
-              <h2>{t('hero.title')}</h2>
-              <p>{t('hero.subtitle')}</p>
-              <span>Hero Banner (WIP)</span>
-            </div>
+            <Hero />
             
             <section className="home2__deals">
               <DealsOfTheDay 
@@ -62,10 +61,7 @@ const Home2: React.FC = () => {
           </div>
         </div>
 
-        <section className="home2__categories placeholder-box">
-          <h2>{t('sections.shopByCategories')}</h2>
-          <span>Categories Slider (WIP)</span>
-        </section>
+        <CategoriesSlider />
 
         <section className="home2__mini-lists">
           <TopSellingMiniList title={t('sections.topSelling')} products={mockProducts} isLoading={isLoading} />
@@ -98,16 +94,7 @@ const Home2: React.FC = () => {
         <Newsletter />
       </main>
 
-      <footer className="home2__footer-placeholder placeholder-box">
-        <div className="home2__footer-columns">
-          <span>{t('footer.company')}</span>
-          <span>{t('footer.account')}</span>
-          <span>{t('footer.corporate')}</span>
-          <span>{t('footer.popular')}</span>
-          <span>{t('footer.installApp')}</span>
-        </div>
-        <span>Footer (WIP)</span>
-      </footer>
+      <Footer />
     </div>
   );
 };

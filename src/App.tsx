@@ -7,6 +7,7 @@ import { DashboardLayout } from './components/templates/DashboardLayout/Dashboar
 import Spinner from './components/atoms/Spinner/Spinner';
 import { CartProvider } from './hooks/useCart';
 import PageTransition from './components/atoms/PageTransition/PageTransition';
+import { ScrollToTopFAB } from './components/molecules/ScrollToTopFAB/ScrollToTopFAB';
 
 const Home2 = React.lazy(() => import('./components/pages/Home2/Home2'));
 const CartPage = React.lazy(() => import('./components/pages/CartPage/CartPage'));
@@ -51,6 +52,7 @@ function App() {
         </CartProvider>
       </WishlistProvider>
       <ToastContainer />
+      <ScrollToTopFAB />
     </ToastProvider>
   );
 }
