@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MainLayout } from './components/templates/MainLayout/MainLayout';
 import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
 
+const Hero = lazy(() => import('./components/organisms/Hero/Hero'));
+const Footer = lazy(() => import('./components/organisms/Footer/Footer'));
+
 const LandingPage = () => {
   return (
     <MainLayout>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Hero />
+      </Suspense>
+      
       <h1>Bine ai venit pe E-Commerce Landing Page!</h1>
       <p>Acesta este conținutul public. Accesează <a href="/dashboard">Dashboard-ul aici</a>.</p>
+      
+      <Suspense fallback={<div>Loading...</div>}>
+        <Footer />
+      </Suspense>
     </MainLayout>
   );
 };
@@ -27,7 +38,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </BrowserRouter>
