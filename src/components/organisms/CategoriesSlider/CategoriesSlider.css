@@ -1,0 +1,25 @@
+.categories-slider {
+    width: 100%;
+    padding: 2rem 1rem;
+    background-color: #ffffff;
+}
+
+.categories-slider__track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+    .categories-slider__track::-webkit-scrollbar {
+        display: none;
+    }
+
+.categories-slider__item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
