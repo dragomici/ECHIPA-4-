@@ -1,6 +1,7 @@
 import React from 'react';
 import './DealCard.css';
 import { useCountdown } from '../../../hooks/useCountdown';
+import { useCart } from '../../../hooks/useCart';
 import { useToast } from '../../../hooks/useToast';
 
 export interface DealCardProps {
@@ -24,13 +25,20 @@ const DealCard: React.FC<DealCardProps> = ({
   targetDate = new Date().toISOString(),
 }) => {
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
+  const { addToCart } = useCart();
   const { addToast } = useToast();
   
+  const formatTwoDigits = (num: number) => String(num).padStart(2, '0');
+
   const handleAddToCart = () => {
+    addToCart({
+      id: title,
+      title,
+      price: currentPrice,
+      imageUrl,
+    });
     addToast(`${title} added to cart!`, 'success');
   };
-  
-  const formatTwoDigits = (num: number) => String(num).padStart(2, '0');
 
   return (
     <div className="deal-card">

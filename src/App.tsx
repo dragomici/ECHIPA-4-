@@ -8,6 +8,7 @@ import { CartProvider } from './hooks/useCart';
 import PageTransition from './components/atoms/PageTransition/PageTransition';
 
 const Home2 = React.lazy(() => import('./components/pages/Home2/Home2'));
+const CartPage = React.lazy(() => import('./components/pages/CartPage/CartPage'));
 
 const DashboardPage = () => {
   return (
@@ -27,6 +28,7 @@ const AnimatedRoutes = () => {
     <PageTransition key={location.pathname}>
       <Routes location={location}>
         <Route path="/" element={<Home2 />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </PageTransition>
