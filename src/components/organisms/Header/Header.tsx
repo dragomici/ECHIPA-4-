@@ -1,6 +1,7 @@
 import React from 'react';
 import { SearchBar } from '../../molecules/SearchBar/SearchBar';
 import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
+import { useWishlist } from '../../../hooks/useWishlist';
 import NestLogo from '../../../assets/NestIcon.svg';
 import CompareIcon from '../../../assets/CompareIcon.svg';
 import WishlistIcon from '../../../assets/wishlistIcon.svg';
@@ -9,6 +10,8 @@ import AccountIcon from '../../../assets/acountIcon.svg';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const { wishlistCount } = useWishlist();
+
   return (
     <header className="header">
       <div className="header__top-bar">
@@ -66,6 +69,7 @@ const Header: React.FC = () => {
           <HeaderAction
             icon={<img src={WishlistIcon} alt="Wishlist" />}
             text="Wishlist"
+            badgeCount={wishlistCount}
           />
           <HeaderAction
             icon={<img src={CartIcon} alt="Cart" />}
