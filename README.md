@@ -1,4 +1,5 @@
 Markdown
+
 # E-Commerce Project
 
 ## Installation
@@ -23,3 +24,4 @@ npm run dev
 Open your web browser and navigate to the local URL provided in the terminal output to view the application.
 
 
+```

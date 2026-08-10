@@ -42,7 +42,7 @@
   .header__container {
     justify-content: space-between;
   }
-  
+
   .header__actions {
     gap: 0.625rem;
   }

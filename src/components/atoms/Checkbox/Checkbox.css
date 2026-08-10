@@ -1,16 +1,15 @@
-
 .checkbox {
   display: flex;
   align-items: center;
-  gap: 10px; 
-  margin-bottom: 12px; 
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .checkbox__input {
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: #3bb77e; 
+  accent-color: #3bb77e;
   border: 1px solid #ececec;
   border-radius: 3px;
 }

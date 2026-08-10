@@ -1,6 +1,6 @@
-import React from 'react';
-import Checkbox from '../../atoms/Checkbox';
-import './CheckboxGroup.css';
+import React from "react";
+import Checkbox from "../../atoms/Checkbox";
+import "./CheckboxGroup.css";
 
 export interface CheckboxOption {
   id: string;
@@ -14,7 +14,11 @@ interface CheckboxGroupProps {
   onChange?: (id: string, e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const CheckboxGroup: React.FC<CheckboxGroupProps> = ({ title, options, onChange }) => {
+const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
+  title,
+  options,
+  onChange,
+}) => {
   return (
     <div className="checkbox-group">
       {title && <label className="checkbox-group__title">{title}</label>}

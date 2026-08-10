@@ -1,9 +1,9 @@
-import React from 'react';
-import Badge from '../../atoms/Badge';
-import Button from '../../atoms/Button';
-import Star from '../../atoms/Star';
-import ProductPrice from '../../molecules/ProductPrice/ProductPrice';
-import './ProductCard.css';
+import React from "react";
+import Badge from "../../atoms/Badge";
+import Button from "../../atoms/Button";
+import Star from "../../atoms/Star";
+import ProductPrice from "../../molecules/ProductPrice/ProductPrice";
+import "./ProductCard.css";
 
 interface ProductCardProps {
   imageUrl: string;
@@ -14,7 +14,7 @@ interface ProductCardProps {
   currentPrice: number;
   oldPrice?: number;
   badgeText?: string;
-  badgeVariant?: 'hot' | 'sale' | 'new' | 'discount';
+  badgeVariant?: "hot" | "sale" | "new" | "discount";
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -41,14 +41,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="product-card__content">
         <span className="product-card__category">{category}</span>
         <h3 className="product-card__title">{title}</h3>
-        
+
         <div className="product-card__rating">
           <div className="product-card__stars">
             {[...Array(5)].map((_, index) => (
               <Star key={index} filled={index < rating} />
             ))}
           </div>
-          <span className="product-card__rating-count">({ratingCount.toFixed(1)})</span>
+          <span className="product-card__rating-count">
+            ({ratingCount.toFixed(1)})
+          </span>
         </div>
 
         <div className="product-card__footer">

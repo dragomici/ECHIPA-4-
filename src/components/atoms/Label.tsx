@@ -1,5 +1,5 @@
-import React from 'react';
-import './Label.css';
+import React from "react";
+import "./Label.css";
 
 interface LabelProps {
   htmlFor: string;
@@ -12,7 +12,7 @@ export const Label: React.FC<LabelProps> = ({
   htmlFor,
   text,
   required = false,
-  className = '',
+  className = "",
 }) => {
   return (
     <label htmlFor={htmlFor} className={className.trim() || undefined}>

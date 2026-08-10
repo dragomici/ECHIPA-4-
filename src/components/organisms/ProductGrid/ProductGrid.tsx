@@ -1,6 +1,6 @@
-import React from 'react';
-import ProductCard from '../ProductCard/ProductCard';
-import './ProductGrid.css';
+import React from "react";
+import ProductCard from "../ProductCard/ProductCard";
+import "./ProductGrid.css";
 
 export interface Product {
   id: string | number;
@@ -12,7 +12,7 @@ export interface Product {
   currentPrice: number;
   oldPrice?: number;
   badgeText?: string;
-  badgeVariant?: 'hot' | 'sale' | 'new' | 'discount';
+  badgeVariant?: "hot" | "sale" | "new" | "discount";
 }
 
 interface ProductGridProps {

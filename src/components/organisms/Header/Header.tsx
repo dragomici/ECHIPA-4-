@@ -1,12 +1,12 @@
-import React from 'react';
-import SearchBar from '../../molecules/SearchBar/SearchBar';
-import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
-import NestLogo from '../../../assets/NestIcon.svg';
-import CompareIcon from '../../../assets/CompareIcon.svg';
-import WishlistIcon from '../../../assets/wishlistIcon.svg';
-import CartIcon from '../../../assets/cartIcon.svg';
-import AccountIcon from '../../../assets/acountIcon.svg';
-import './Header.css';
+import React from "react";
+import SearchBar from "../../molecules/SearchBar/SearchBar";
+import HeaderAction from "../../molecules/HeaderAction/HeaderAction";
+import NestLogo from "../../../assets/NestIcon.svg";
+import CompareIcon from "../../../assets/CompareIcon.svg";
+import WishlistIcon from "../../../assets/wishlistIcon.svg";
+import CartIcon from "../../../assets/cartIcon.svg";
+import AccountIcon from "../../../assets/acountIcon.svg";
+import "./Header.css";
 
 const Header: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const Header: React.FC = () => {
         <div className="header__logo">
           <img src={NestLogo} alt="Nest Logo" />
         </div>
-        
+
         <div className="header__search">
           <SearchBar />
         </div>
