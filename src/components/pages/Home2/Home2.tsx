@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../organisms/Header/Header';
 import ProductGrid from '../../organisms/ProductGrid/ProductGrid';
 import { DealsOfTheDay } from '../../organisms/DealsOfTheDay/DealsOfTheDay';
@@ -10,6 +10,14 @@ import './Home2.css';
 
 const Home2: React.FC = () => {
   const { t } = useTranslation();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="home2">
@@ -29,13 +37,14 @@ const Home2: React.FC = () => {
             </div>
             
             <section className="home2__popular-products">
-              <ProductGrid title={t('sections.popularProducts')} products={mockProducts} />
+              <ProductGrid title={t('sections.popularProducts')} products={mockProducts} isLoading={isLoading} />
             </section>
             
             <section className="home2__deals">
               <DealsOfTheDay 
                 title={t('sections.dealsOfTheDay')} 
                 products={mockDeals} 
+                isLoading={isLoading}
               />
             </section>
           </div>
@@ -47,10 +56,10 @@ const Home2: React.FC = () => {
         </section>
 
         <section className="home2__mini-lists">
-          <TopSellingMiniList title={t('sections.topSelling')} products={mockProducts} />
-          <TopSellingMiniList title={t('sections.trendingProducts')} products={mockProducts} />
-          <TopSellingMiniList title={t('sections.recentlyAdded')} products={mockProducts} />
-          <TopSellingMiniList title={t('sections.topRated')} products={mockProducts} />
+          <TopSellingMiniList title={t('sections.topSelling')} products={mockProducts} isLoading={isLoading} />
+          <TopSellingMiniList title={t('sections.trendingProducts')} products={mockProducts} isLoading={isLoading} />
+          <TopSellingMiniList title={t('sections.recentlyAdded')} products={mockProducts} isLoading={isLoading} />
+          <TopSellingMiniList title={t('sections.topRated')} products={mockProducts} isLoading={isLoading} />
         </section>
 
         <Newsletter />
