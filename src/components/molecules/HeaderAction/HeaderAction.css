@@ -7,6 +7,53 @@
   background: transparent;
   border: none;
   padding: 0;
+  position: relative;
+}
+
+/* Tooltip text */
+.header-action::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: #253D4E;
+  color: #ffffff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+/* Tooltip arrow */
+.header-action::before {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #253D4E transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.header-action:hover::after,
+.header-action:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .header-action:focus-visible {

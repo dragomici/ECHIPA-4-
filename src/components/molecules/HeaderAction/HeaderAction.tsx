@@ -9,7 +9,7 @@ interface HeaderActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement
 
 const HeaderAction: React.FC<HeaderActionProps> = ({ icon, text, badgeCount, ...props }) => {
   return (
-    <button type="button" className="header-action" {...props}>
+    <button type="button" className="header-action" data-tooltip={text} {...props}>
       <div className="header-action__icon-wrapper">
         {icon}
         {badgeCount !== undefined && badgeCount > 0 && (
