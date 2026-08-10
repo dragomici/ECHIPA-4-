@@ -18,15 +18,15 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
     };
 
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('drawer-open');
       drawerRef.current?.focus();
     } else {
-      document.body.style.overflow = '';
+      document.body.classList.remove('drawer-open');
     }
 
     document.addEventListener('keydown', handleKeyDown);
     return () => {
-      document.body.style.overflow = '';
+      document.body.classList.remove('drawer-open');
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);

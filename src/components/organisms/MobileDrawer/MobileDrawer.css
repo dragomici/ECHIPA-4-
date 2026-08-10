@@ -97,3 +97,7 @@
 .mobile-drawer__link:hover {
   color: #3bb77e;
 }
+
+body.drawer-open {
+  overflow: hidden;
+}
