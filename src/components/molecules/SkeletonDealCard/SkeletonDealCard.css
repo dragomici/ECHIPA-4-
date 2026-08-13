@@ -1,0 +1,47 @@
+.skeleton-deal-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.skeleton-deal-card__image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.skeleton-deal-card__content-wrapper {
+  padding: 0 1.25rem;
+  margin-top: -1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.skeleton-deal-card__content {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.skeleton-deal-card__title {
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-deal-card__rating {
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-deal-card__brand {
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-deal-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}

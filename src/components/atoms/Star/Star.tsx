@@ -1,12 +1,12 @@
-import React from 'react';
-import './Star.css';
+import React from "react";
+import "./Star.css";
 
 interface StarProps {
   filled?: boolean;
 }
 
 const Star: React.FC<StarProps> = ({ filled = true }) => {
-  const modifierClass = filled ? 'star--filled' : 'star--empty';
+  const modifierClass = filled ? "star--filled" : "star--empty";
 
   return (
     <svg

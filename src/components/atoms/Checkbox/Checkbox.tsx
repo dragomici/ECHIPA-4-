@@ -1,5 +1,5 @@
-import React from 'react';
-import './Checkbox.css';
+import React from "react";
+import "./Checkbox.css";
 interface CheckboxProps {
   id: string;
   label: string;
@@ -7,13 +7,18 @@ interface CheckboxProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ id, label, checked, onChange }) => {
+const Checkbox: React.FC<CheckboxProps> = ({
+  id,
+  label,
+  checked,
+  onChange,
+}) => {
   return (
     <div className="checkbox">
       <input
         type="checkbox"
         id={id}
-        className="checkbox__input" 
+        className="checkbox__input"
         checked={checked}
         onChange={onChange}
       />

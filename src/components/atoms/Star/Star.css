@@ -1,12 +1,11 @@
-
 .star {
-  width: 14px;
-  height: 14px;
+  width: 0.875rem;
+  height: 0.875rem;
   display: inline-block;
 }
 .star--filled {
-  fill: #fdc040; 
+  fill: #fdc040;
 }
 .star--empty {
-  fill: #d3d3d3; 
+  fill: #d3d3d3;
 }

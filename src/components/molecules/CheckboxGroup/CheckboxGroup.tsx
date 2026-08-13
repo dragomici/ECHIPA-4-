@@ -14,7 +14,11 @@ interface CheckboxGroupProps {
   onChange?: (id: string, e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const CheckboxGroup: React.FC<CheckboxGroupProps> = ({ title, options, onChange }) => {
+const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
+  title,
+  options,
+  onChange,
+}) => {
   return (
     <div className="checkbox-group">
       {title && <label className="checkbox-group__title">{title}</label>}

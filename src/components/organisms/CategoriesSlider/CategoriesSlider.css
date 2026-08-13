@@ -1,0 +1,116 @@
+.categories-slider {
+  max-width: 87.5rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.categories-slider__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.categories-slider__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #253D4E;
+  margin: 0;
+}
+
+.categories-slider__nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.categories-slider__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #F2F3F4;
+  border: none;
+  color: #7E7E7E;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.categories-slider__nav-btn:hover {
+  background-color: #3bb77e;
+  color: #ffffff;
+}
+
+.categories-slider__nav-btn svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.categories-slider__track-container {
+  position: relative;
+}
+
+.categories-slider__track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.categories-slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+.categories-slider__item {
+  flex: 0 0 auto;
+  width: 11.125rem;
+  height: 13.46rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #ececec;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.categories-slider__item:hover {
+  border-color: #BCE3C9;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.05);
+}
+
+.categories-slider__item-icon {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categories-slider__item-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.categories-slider__item-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #253D4E;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.2;
+}
+
+.categories-slider__item-count {
+  font-size: 0.85rem;
+  color: #7E7E7E;
+}

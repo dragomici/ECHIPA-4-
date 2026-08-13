@@ -1,5 +1,5 @@
-import React from 'react';
-import './HeaderAction.css';
+import React from "react";
+import "./HeaderAction.css";
 
 interface HeaderActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: React.ReactNode;
@@ -7,9 +7,14 @@ interface HeaderActionProps extends React.ButtonHTMLAttributes<HTMLButtonElement
   badgeCount?: number;
 }
 
-const HeaderAction: React.FC<HeaderActionProps> = ({ icon, text, badgeCount, ...props }) => {
+const HeaderAction: React.FC<HeaderActionProps> = ({
+  icon,
+  text,
+  badgeCount,
+  ...props
+}) => {
   return (
-    <button type="button" className="header-action" {...props}>
+    <button type="button" className="header-action" data-tooltip={text} {...props}>
       <div className="header-action__icon-wrapper">
         {icon}
         {badgeCount !== undefined && badgeCount > 0 && (

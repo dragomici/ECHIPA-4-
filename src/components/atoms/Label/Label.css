@@ -2,12 +2,12 @@ label {
   display: inline-block;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-text-main, #253D4E);
-  margin-bottom: 0.375rem; 
+  color: var(--color-text-main, #253d4e);
+  margin-bottom: 0.375rem;
   cursor: pointer;
 }
 
 .label__required {
-  color: #F85D5D; 
+  color: #f85d5d;
   margin-left: 0.25rem;
 }
