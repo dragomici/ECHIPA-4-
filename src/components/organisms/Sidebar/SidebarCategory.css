@@ -57,10 +57,23 @@
   transition: all 0.2s ease;
 }
 
-.sidebar-category__item:hover {
-  border-color: #bce3c9;
-  box-shadow: 0 0.3125rem 0.625rem rgba(59, 183, 126, 0.1);
+.sidebar-category__item:hover,
+.sidebar-category__item--active {
+  border-color: #3bb77e;
+  box-shadow: 0 0.3125rem 0.625rem rgba(59, 183, 126, 0.15);
+  background-color: #f5fdf9;
 }
+
+.sidebar-category__item--active .sidebar-category__name {
+  color: #3bb77e;
+  font-weight: 700;
+}
+
+.sidebar-category__item--active .sidebar-category__count {
+  background-color: #3bb77e;
+  color: #ffffff;
+}
+
 
 .sidebar-category__item-left {
   display: flex;
