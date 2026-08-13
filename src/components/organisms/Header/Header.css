@@ -243,4 +243,29 @@
   .header__actions {
     gap: 0.625rem;
   }
+
+  .header__actions > div:nth-child(1),
+  .header__actions > div:nth-child(4) {
+    display: none;
+  }
+}
+
+.header__mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #253D4E;
+  padding: 0;
+}
+
+.header__mobile-menu-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (max-width: 48rem) {
+  .header__mobile-menu-btn {
+    display: block;
+  }
 }
