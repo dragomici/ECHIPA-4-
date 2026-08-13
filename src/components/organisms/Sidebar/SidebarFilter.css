@@ -1,6 +1,40 @@
+.sidebar-filter__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-filter__reset-btn {
+  background: none;
+  border: none;
+  color: #fd6e6e;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.sidebar-filter__reset-btn:hover {
+  color: #d93838;
+}
+
 .sidebar-filter__price-slider {
   margin-bottom: 2rem;
 }
+
+.price-slider__inputs {
+  margin: 1rem 0;
+}
+
+.price-slider__range-input {
+  width: 100%;
+  accent-color: #3bb77e;
+  cursor: pointer;
+}
+
 
 .price-slider__track {
   height: 0.25rem; /* 4px */

@@ -18,10 +18,15 @@ import './Home2.css';
 
 const Home2: React.FC = () => {
   const { t } = useTranslation();
-  const { searchQuery, selectedCategory } = useSearch();
+  const { searchQuery, selectedCategory, appliedFilters } = useSearch();
   const [isLoading, setIsLoading] = useState(true);
 
-  const isFiltering = searchQuery.trim() || selectedCategory !== 'All Categories';
+  const isFiltering =
+    Boolean(searchQuery.trim()) ||
+    selectedCategory !== 'All Categories' ||
+    appliedFilters.maxPrice < 100 ||
+    appliedFilters.colors.length > 0 ||
+    appliedFilters.conditions.length > 0;
 
   const filteredProducts = isFiltering
     ? allProducts.filter((p) => {
@@ -29,12 +34,36 @@ const Home2: React.FC = () => {
           ? p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             p.category.toLowerCase().includes(searchQuery.toLowerCase())
           : true;
-        const matchesCategory = selectedCategory !== 'All Categories'
-          ? p.category === selectedCategory
-          : true;
-        return matchesQuery && matchesCategory;
+
+        const matchesCategory =
+          selectedCategory !== 'All Categories' ? p.category === selectedCategory : true;
+
+        const matchesPrice = p.currentPrice <= appliedFilters.maxPrice;
+
+        const matchesColor =
+          appliedFilters.colors.length === 0
+            ? true
+            : appliedFilters.colors.some((c) =>
+                p.title.toLowerCase().includes(c.toLowerCase()) ||
+                p.category.toLowerCase().includes(c.toLowerCase())
+              );
+
+        const matchesCondition =
+          appliedFilters.conditions.length === 0
+            ? true
+            : appliedFilters.conditions.some((cond) => {
+                const lcCond = cond.toLowerCase();
+                const item = p as { badgeText?: string; badgeVariant?: string };
+                const badge = (item.badgeText || item.badgeVariant || '').toLowerCase();
+                if (lcCond === 'new') return badge.includes('new') || p.id === '1' || p.id === '3';
+                if (lcCond === 'refurbished' || lcCond === 'used') return true;
+                return badge.includes(lcCond);
+              });
+
+        return matchesQuery && matchesCategory && matchesPrice && matchesColor && matchesCondition;
       })
     : mockProducts;
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
