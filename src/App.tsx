@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { WishlistProvider } from './hooks/useWishlist';
 import { ToastProvider } from './context/ToastContext';
+import { SearchProvider } from './context/SearchContext';
 import { ToastContainer } from './components/molecules/ToastContainer/ToastContainer';
 import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
 import Spinner from './components/atoms/Spinner/Spinner';
@@ -42,17 +43,19 @@ const AnimatedRoutes = () => {
 function App() {
   return (
     <ToastProvider>
-      <WishlistProvider>
-        <CartProvider>
-          <BrowserRouter>
-            <React.Suspense fallback={<Spinner />}>
-              <AnimatedRoutes />
-            </React.Suspense>
-          </BrowserRouter>
-        </CartProvider>
-      </WishlistProvider>
-      <ToastContainer />
-      <ScrollToTopFAB />
+      <SearchProvider>
+        <WishlistProvider>
+          <CartProvider>
+            <BrowserRouter>
+              <React.Suspense fallback={<Spinner />}>
+                <AnimatedRoutes />
+              </React.Suspense>
+            </BrowserRouter>
+          </CartProvider>
+        </WishlistProvider>
+        <ToastContainer />
+        <ScrollToTopFAB />
+      </SearchProvider>
     </ToastProvider>
   );
 }

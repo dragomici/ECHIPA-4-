@@ -189,26 +189,32 @@ export const topSellingProducts = [
   {
     id: 'ts1',
     title: 'Fresh Organic Carrots Bundle',
+    category: 'Vegetables',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: CarrotsImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   },
   {
     id: 'ts2',
     title: 'Bell Pepper Mix Red Green Yellow',
+    category: 'Vegetables',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: BellPeppersImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   },
   {
     id: 'ts3',
     title: 'Fresh Mango Basket Premium Quality',
+    category: 'Fresh Fruit',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: MangoImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   }
 ];
 
@@ -216,26 +222,32 @@ export const trendingProducts = [
   {
     id: 'tr1',
     title: 'Fresh Banana Bunch Organic',
+    category: 'Fresh Fruit',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: BananaImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   },
   {
     id: 'tr2',
     title: 'Dried Mango Slices Premium Fat Free',
+    category: 'Snack',
     currentPrice: 32.85,
     oldPrice: 55.8,
     imageUrl: DriedMangoImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   },
   {
     id: 'tr3',
     title: 'Durian Fresh King of Fruits',
+    category: 'Fresh Fruit',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: DurianImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   }
 ];
 
@@ -243,26 +255,32 @@ export const recentlyAddedProducts = [
   {
     id: 'ra1',
     title: 'Sweet Watermelon Slices Fresh Cut',
+    category: 'Fresh Fruit',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: WatermelonImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   },
   {
     id: 'ra2',
     title: 'Organic Quinoa Grain Premium',
+    category: 'Cereals',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: QuinoeImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   },
   {
     id: 'ra3',
     title: 'Sweet Corn Fresh Organic Cobs',
+    category: 'Vegetables',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: CornImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   }
 ];
 
@@ -270,25 +288,39 @@ export const topRatedProducts = [
   {
     id: 'trt1',
     title: 'Pomegranate Fresh Antioxidant Rich',
+    category: 'Fresh Fruit',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: PomegranateImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   },
   {
     id: 'trt2',
     title: 'Fresh Avocado Organic Ripe',
+    category: 'Vegetables',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: AvocadoImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   },
   {
     id: 'trt3',
     title: 'Orange Fresh Juicy with Vitamin C',
+    category: 'Fresh Fruit',
     currentPrice: 32.85,
     oldPrice: 33.8,
     imageUrl: OrangeFruitImage,
-    rating: 4.0
+    rating: 4.0,
+    ratingCount: 4.0
   }
+];
+
+export const allProducts = [
+  ...mockProducts,
+  ...topSellingProducts,
+  ...trendingProducts,
+  ...recentlyAddedProducts,
+  ...topRatedProducts,
 ];
