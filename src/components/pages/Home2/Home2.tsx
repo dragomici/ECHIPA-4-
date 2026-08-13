@@ -7,7 +7,8 @@ import Newsletter from '../../organisms/Newsletter/Newsletter';
 import Swiper from '../../atoms/Swiper/Swiper';
 import ProductCard from '../../organisms/ProductCard/ProductCard';
 import { useTranslation } from '../../../hooks/useTranslation';
-import { mockProducts, mockDeals, topSellingProducts, trendingProducts, recentlyAddedProducts, topRatedProducts } from '../../../utils/mockData';
+import { useSearch } from '../../../context/SearchContext';
+import { mockProducts, mockDeals, topSellingProducts, trendingProducts, recentlyAddedProducts, topRatedProducts, allProducts } from '../../../utils/mockData';
 import { Hero } from '../../organisms/Hero/Hero';
 import { CategoriesSlider } from '../../organisms/CategoriesSlider/CategoriesSlider';
 import { Footer } from '../../organisms/Footer/Footer';
@@ -17,7 +18,23 @@ import './Home2.css';
 
 const Home2: React.FC = () => {
   const { t } = useTranslation();
+  const { searchQuery, selectedCategory } = useSearch();
   const [isLoading, setIsLoading] = useState(true);
+
+  const isFiltering = searchQuery.trim() || selectedCategory !== 'All Categories';
+
+  const filteredProducts = isFiltering
+    ? allProducts.filter((p) => {
+        const matchesQuery = searchQuery.trim()
+          ? p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            p.category.toLowerCase().includes(searchQuery.toLowerCase())
+          : true;
+        const matchesCategory = selectedCategory !== 'All Categories'
+          ? p.category === selectedCategory
+          : true;
+        return matchesQuery && matchesCategory;
+      })
+    : mockProducts;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -38,10 +55,19 @@ const Home2: React.FC = () => {
             <Hero />
             
             <section className="home2__popular-products">
+              {isFiltering && (
+                <p className="home2__search-info">
+                  {filteredProducts.length > 0
+                    ? `${filteredProducts.length} result${filteredProducts.length !== 1 ? 's' : ''} found`
+                    : `No results found`}
+                  {searchQuery.trim() ? ` for "${searchQuery}"` : ''}
+                  {selectedCategory !== 'All Categories' ? ` in ${selectedCategory}` : ''}
+                </p>
+              )}
               <ProductGrid 
-                title={t('sections.popularProducts')} 
-                categories={['All', 'Milks & Dairies', 'Coffees & Teas', 'Pet Foods', 'Meats', 'Vegetables', 'Fruits']}
-                products={mockProducts} 
+                title={isFiltering ? 'Search Results' : t('sections.popularProducts')}
+                categories={isFiltering ? undefined : ['All', 'Milks & Dairies', 'Coffees & Teas', 'Pet Foods', 'Meats', 'Vegetables', 'Fruits']}
+                products={filteredProducts} 
                 isLoading={isLoading} 
               />
             </section>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useScrollDirection } from '../../../hooks/useScrollDirection';
 import { SearchBar } from '../../molecules/SearchBar/SearchBar';
@@ -6,6 +6,7 @@ import MobileDrawer from '../MobileDrawer/MobileDrawer';
 import HeaderAction from '../../molecules/HeaderAction/HeaderAction';
 import { useWishlist } from '../../../hooks/useWishlist';
 import { useCart } from '../../../hooks/useCart';
+import { useSearch, CATEGORIES } from '../../../context/SearchContext';
 import NestLogo from '../../../assets/NestIcon.svg';
 import CompareIcon from '../../../assets/CompareIcon.svg';
 import WishlistIcon from '../../../assets/wishlistIcon.svg';
@@ -15,10 +16,23 @@ import './Header.css';
 
 const Header: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isBrowseOpen, setIsBrowseOpen] = useState(false);
+  const { selectedCategory, setSelectedCategory } = useSearch();
+  const browseRef = useRef<HTMLDivElement>(null);
   const { wishlistCount } = useWishlist();
   const { cartCount } = useCart();
   const navigate = useNavigate();
   const scrollDirection = useScrollDirection();
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (browseRef.current && !browseRef.current.contains(e.target as Node)) {
+        setIsBrowseOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -110,18 +124,44 @@ const Header: React.FC = () => {
       
       <div className="header__bottom">
         <div className="header__container">
-          <button className="header__browse-categories">
+        <div className="header__browse-categories-wrapper" ref={browseRef}>
+          <button 
+            className="header__browse-categories"
+            onClick={() => setIsBrowseOpen((prev) => !prev)}
+            aria-haspopup="listbox"
+            aria-expanded={isBrowseOpen}
+          >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="browse-icon">
               <rect x="3" y="3" width="7" height="7"></rect>
               <rect x="14" y="3" width="7" height="7"></rect>
               <rect x="14" y="14" width="7" height="7"></rect>
               <rect x="3" y="14" width="7" height="7"></rect>
             </svg>
-            Browse All Categories
+            <span>{selectedCategory === 'All Categories' ? 'Browse All Categories' : selectedCategory}</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="chevron-icon">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
+
+          {isBrowseOpen && (
+            <ul className="header__browse-dropdown" role="listbox">
+              {CATEGORIES.map((cat) => (
+                <li
+                  key={cat}
+                  role="option"
+                  aria-selected={selectedCategory === cat}
+                  className={`header__browse-dropdown-item ${selectedCategory === cat ? 'header__browse-dropdown-item--active' : ''}`}
+                  onClick={() => {
+                    setSelectedCategory(cat);
+                    setIsBrowseOpen(false);
+                  }}
+                >
+                  {cat}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
 
           <nav className="header__nav">
             <a href="#" className="header__nav-item">

@@ -4,6 +4,16 @@
   min-height: 100vh;
 }
 
+.home2__search-info {
+  font-size: 0.95rem;
+  color: #7e7e7e;
+  margin-bottom: 1rem;
+}
+
+.home2__search-info strong {
+  color: #253D4E;
+}
+
 .home2__main {
   max-width: 100rem; /* 1600px */
   margin: 0 auto;
