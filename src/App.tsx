@@ -14,6 +14,7 @@ const Home2 = React.lazy(() => import('./components/pages/Home2/Home2'));
 const CartPage = React.lazy(() => import('./components/pages/CartPage/CartPage'));
 const WishlistPage = React.lazy(() => import('./components/pages/WishlistPage/WishlistPage'));
 const AboutPage = React.lazy(() => import('./components/pages/AboutPage/AboutPage'));
+const CheckoutPage = React.lazy(() => import('./components/pages/CheckoutPage/CheckoutPage'));
 
 const DashboardPage = () => {
   return (
@@ -38,6 +39,7 @@ const AnimatedRoutes = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </PageTransition>
