@@ -12,6 +12,7 @@ import { ScrollToTopFAB } from './components/molecules/ScrollToTopFAB/ScrollToTo
 
 const Home2 = React.lazy(() => import('./components/pages/Home2/Home2'));
 const CartPage = React.lazy(() => import('./components/pages/CartPage/CartPage'));
+const WishlistPage = React.lazy(() => import('./components/pages/WishlistPage/WishlistPage'));
 
 const DashboardPage = () => {
   return (
@@ -34,6 +35,7 @@ const AnimatedRoutes = () => {
       <Routes location={location}>
         <Route path="/" element={<Home2 />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </PageTransition>

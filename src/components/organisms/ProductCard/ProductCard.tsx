@@ -46,7 +46,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   const handleWishlistClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    toggleWishlist({ id: title, title });
+    toggleWishlist({
+      id: title,
+      title,
+      price: currentPrice,
+      imageUrl,
+      stock: totalStock,
+      category,
+    });
   };
 
   const handleAddToCart = () => {

@@ -107,6 +107,7 @@ const Header: React.FC = () => {
               icon={<img src={WishlistIcon} alt="Wishlist" />}
               text="Wishlist"
               badgeCount={wishlistCount}
+              onClick={() => navigate('/wishlist')}
             />
             <HeaderAction
               icon={<img src={CartIcon} alt="Cart" />}

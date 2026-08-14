@@ -3,11 +3,17 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 export interface WishlistItem {
   id: string;
   title: string;
+  price?: number;
+  imageUrl?: string;
+  stock?: number;
+  category?: string;
 }
 
 interface WishlistContextType {
   wishlistItems: WishlistItem[];
   toggleWishlist: (item: WishlistItem) => void;
+  removeFromWishlist: (id: string) => void;
+  clearWishlist: () => void;
   wishlistCount: number;
 }
 
@@ -38,10 +44,20 @@ export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     });
   };
 
+  const removeFromWishlist = (id: string) => {
+    setWishlistItems((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const clearWishlist = () => {
+    setWishlistItems([]);
+  };
+
   const wishlistCount = wishlistItems.length;
 
   return (
-    <WishlistContext.Provider value={{ wishlistItems, toggleWishlist, wishlistCount }}>
+    <WishlistContext.Provider
+      value={{ wishlistItems, toggleWishlist, removeFromWishlist, clearWishlist, wishlistCount }}
+    >
       {children}
     </WishlistContext.Provider>
   );
