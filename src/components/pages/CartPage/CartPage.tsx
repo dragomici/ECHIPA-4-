@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../organisms/Header/Header';
 import CartTable from '../../organisms/CartTable/CartTable';
 import OrderSummary from '../../molecules/OrderSummary/OrderSummary';
@@ -8,6 +9,7 @@ import { mockProducts } from '../../../utils/mockData';
 import './CartPage.css';
 
 const CartPage: React.FC = () => {
+  const navigate = useNavigate();
   const { items, updateQuantity, removeFromCart, clearCart } = useCart();
   
   const subtotal = items.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -34,7 +36,7 @@ const CartPage: React.FC = () => {
                   subtotal={subtotal} 
                   shipping={shipping} 
                   onClearCart={clearCart} 
-                  onCheckout={() => alert('Checkout flow not implemented yet!')} 
+                  onCheckout={() => navigate('/checkout')} 
                 />
               </div>
             )}
