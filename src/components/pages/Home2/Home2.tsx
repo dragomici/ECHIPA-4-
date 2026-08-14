@@ -20,6 +20,17 @@ const Home2: React.FC = () => {
   const { t } = useTranslation();
   const { searchQuery, selectedCategory, appliedFilters } = useSearch();
   const [isLoading, setIsLoading] = useState(true);
+  const [rotationStep, setRotationStep] = useState(0);
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    const interval = setInterval(() => {
+      setRotationStep((prev) => prev + 1);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isLoading]);
 
   const isFiltering =
     Boolean(searchQuery.trim()) ||
@@ -116,10 +127,10 @@ const Home2: React.FC = () => {
         <CategoriesSlider />
 
         <section className="home2__mini-lists">
-          <TopSellingMiniList title={t('sections.topSelling')} products={topSellingProducts} isLoading={isLoading} />
-          <TopSellingMiniList title={t('sections.trendingProducts')} products={trendingProducts} isLoading={isLoading} />
-          <TopSellingMiniList title={t('sections.recentlyAdded')} products={recentlyAddedProducts} isLoading={isLoading} />
-          <TopSellingMiniList title={t('sections.topRated')} products={topRatedProducts} isLoading={isLoading} />
+          <TopSellingMiniList title={t('sections.topSelling')} products={topSellingProducts} isLoading={isLoading} rotationStep={rotationStep} />
+          <TopSellingMiniList title={t('sections.trendingProducts')} products={trendingProducts} isLoading={isLoading} rotationStep={rotationStep} />
+          <TopSellingMiniList title={t('sections.recentlyAdded')} products={recentlyAddedProducts} isLoading={isLoading} rotationStep={rotationStep} />
+          <TopSellingMiniList title={t('sections.topRated')} products={topRatedProducts} isLoading={isLoading} rotationStep={rotationStep} />
         </section>
 
         <section className="home2__daily-top-products" style={{ margin: '3rem 0', maxWidth: '100rem', padding: '0 0.9375rem', width: '100%', marginInline: 'auto' }}>

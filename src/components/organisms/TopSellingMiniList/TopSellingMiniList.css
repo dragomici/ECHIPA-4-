@@ -25,21 +25,57 @@
   background-color: #3bb77e;
 }
 
-.mini-list__items {
+.mini-list__viewport {
+  overflow: hidden;
+  height: 21.75rem; /* Exactly fits 3 cards + gaps */
+  position: relative;
+}
+
+.mini-list__track {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.mini-list__track--sliding {
+  transform: translateY(-7.75rem); /* Shift up by exactly 1 card + 1 gap (100px + 24px) */
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mini-list-card {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  height: 6.25rem; /* 100px */
+  flex-shrink: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.mini-list-card--exiting {
+  opacity: 0;
+  transform: scale(0.95) translateY(-10px);
+}
+
+.mini-list-card--entering {
+  animation: slideInFromBottom 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0.2;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mini-list-card__image-container {
-  width: 100px;
-  height: 100px;
+  width: 6.25rem; /* 100px */
+  height: 6.25rem;
   background-color: #f3f4f6;
   border-radius: 10px;
   display: flex;

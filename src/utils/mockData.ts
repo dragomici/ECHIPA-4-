@@ -190,13 +190,11 @@ import CarrotsImage from '../assets/Carrots.svg';
 import BananaImage from '../assets/banana.svg';
 import AvocadoImage from '../assets/Avocado.svg';
 import CornImage from '../assets/corn.svg';
-import QuinoeImage from '../assets/OrganicQuinoeIcon.svg';
 import BellPeppersImage from '../assets/bell-peppers.jpg';
 import PomegranateImage from '../assets/pomegranate.jpg';
 import MangoImage from '../assets/mango.jpg';
 import OrangeFruitImage from '../assets/orange-fruit.jpg';
 import DurianImage from '../assets/durian.jpg';
-import DriedMangoImage from '../assets/dried-mango.jpg';
 import WatermelonImage from '../assets/watermelon.jpg';
 
 export const topSellingProducts = [
@@ -232,6 +230,28 @@ export const topSellingProducts = [
     rating: 4.0,
     ratingCount: 4.0,
     stock: 19
+  },
+  {
+    id: 'ts4',
+    title: 'Sweet Watermelon Slices Fresh Cut',
+    category: 'Fresh Fruit',
+    currentPrice: 28.50,
+    oldPrice: 31.0,
+    imageUrl: WatermelonImage,
+    rating: 4.5,
+    ratingCount: 4.5,
+    stock: 15
+  },
+  {
+    id: 'ts5',
+    title: 'Pomegranate Fresh Antioxidant Rich',
+    category: 'Fresh Fruit',
+    currentPrice: 35.00,
+    oldPrice: 38.0,
+    imageUrl: PomegranateImage,
+    rating: 4.8,
+    ratingCount: 4.8,
+    stock: 22
   }
 ];
 
@@ -253,7 +273,7 @@ export const trendingProducts = [
     category: 'Snack',
     currentPrice: 32.85,
     oldPrice: 55.8,
-    imageUrl: DriedMangoImage,
+    imageUrl: MangoImage,
     rating: 4.0,
     ratingCount: 4.0,
     stock: 8
@@ -268,6 +288,28 @@ export const trendingProducts = [
     rating: 4.0,
     ratingCount: 4.0,
     stock: 4
+  },
+  {
+    id: 'tr4',
+    title: 'Fresh Avocado Organic Ripe',
+    category: 'Vegetables',
+    currentPrice: 24.50,
+    oldPrice: 27.0,
+    imageUrl: AvocadoImage,
+    rating: 4.7,
+    ratingCount: 4.7,
+    stock: 18
+  },
+  {
+    id: 'tr5',
+    title: 'Orange Fresh Juicy with Vitamin C',
+    category: 'Fresh Fruit',
+    currentPrice: 19.90,
+    oldPrice: 22.0,
+    imageUrl: OrangeFruitImage,
+    rating: 4.6,
+    ratingCount: 4.6,
+    stock: 20
   }
 ];
 
@@ -289,7 +331,7 @@ export const recentlyAddedProducts = [
     category: 'Cereals',
     currentPrice: 32.85,
     oldPrice: 33.8,
-    imageUrl: QuinoeImage,
+    imageUrl: VeggiePopsImage,
     rating: 4.0,
     ratingCount: 4.0,
     stock: 17
@@ -304,6 +346,28 @@ export const recentlyAddedProducts = [
     rating: 4.0,
     ratingCount: 4.0,
     stock: 21
+  },
+  {
+    id: 'ra4',
+    title: 'Fresh Organic Carrots Bundle',
+    category: 'Vegetables',
+    currentPrice: 32.85,
+    oldPrice: 35.0,
+    imageUrl: CarrotsImage,
+    rating: 4.3,
+    ratingCount: 4.3,
+    stock: 14
+  },
+  {
+    id: 'ra5',
+    title: 'Bell Pepper Mix Red Green Yellow',
+    category: 'Vegetables',
+    currentPrice: 29.90,
+    oldPrice: 32.0,
+    imageUrl: BellPeppersImage,
+    rating: 4.2,
+    ratingCount: 4.2,
+    stock: 11
   }
 ];
 
@@ -340,6 +404,28 @@ export const topRatedProducts = [
     rating: 4.0,
     ratingCount: 4.0,
     stock: 28
+  },
+  {
+    id: 'trt4',
+    title: 'Fresh Banana Bunch Organic',
+    category: 'Fresh Fruit',
+    currentPrice: 18.50,
+    oldPrice: 21.0,
+    imageUrl: BananaImage,
+    rating: 4.9,
+    ratingCount: 4.9,
+    stock: 24
+  },
+  {
+    id: 'trt5',
+    title: 'Fresh Mango Basket Premium Quality',
+    category: 'Fresh Fruit',
+    currentPrice: 34.00,
+    oldPrice: 36.5,
+    imageUrl: MangoImage,
+    rating: 4.8,
+    ratingCount: 4.8,
+    stock: 16
   }
 ];
 
