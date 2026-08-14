@@ -1,4 +1,5 @@
 import React from 'react';
+import { useToast } from '../../../hooks/useToast';
 import './CartItem.css';
 
 interface CartItemProps {
@@ -7,6 +8,7 @@ interface CartItemProps {
   imageUrl: string;
   price: number;
   quantity: number;
+  stock?: number;
   onUpdateQuantity: (id: string, quantity: number) => void;
   onRemove: (id: string) => void;
 }
@@ -17,10 +19,20 @@ const CartItem: React.FC<CartItemProps> = ({
   imageUrl,
   price,
   quantity,
+  stock,
   onUpdateQuantity,
   onRemove,
 }) => {
+  const { addToast } = useToast();
   const subtotal = price * quantity;
+
+  const handleIncrement = () => {
+    if (stock !== undefined && quantity >= stock) {
+      addToast(`Maximum stock limit reached for "${title}". Only ${stock} pieces available!`, 'error');
+      return;
+    }
+    onUpdateQuantity(id, quantity + 1);
+  };
 
   return (
     <tr className="cart-item">
@@ -29,10 +41,15 @@ const CartItem: React.FC<CartItemProps> = ({
       </td>
       <td className="cart-item__details">
         <h4 className="cart-item__title">{title}</h4>
-        <span className="cart-item__subtitle">Price: {price.toFixed(2)} USD</span>
+        <span className="cart-item__subtitle">Price: ${price.toFixed(2)} USD</span>
+        {stock !== undefined && (
+          <span className="cart-item__stock-tag">
+            {quantity >= stock ? 'Max stock reached' : `${stock - quantity} left in stock`}
+          </span>
+        )}
       </td>
       <td className="cart-item__price">
-        {price.toFixed(2)} USD
+        ${price.toFixed(2)} USD
       </td>
       <td className="cart-item__quantity">
         <div className="cart-item__quantity-controls">
@@ -46,15 +63,15 @@ const CartItem: React.FC<CartItemProps> = ({
           <span className="cart-item__quantity-value">{quantity}</span>
           <button 
             type="button" 
-            className="cart-item__quantity-btn"
-            onClick={() => onUpdateQuantity(id, quantity + 1)}
+            className={`cart-item__quantity-btn ${stock !== undefined && quantity >= stock ? 'cart-item__quantity-btn--disabled' : ''}`}
+            onClick={handleIncrement}
           >
             +
           </button>
         </div>
       </td>
       <td className="cart-item__subtotal">
-        {subtotal.toFixed(2)} USD
+        ${subtotal.toFixed(2)} USD
       </td>
       <td className="cart-item__actions">
         <button 
