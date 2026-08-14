@@ -171,8 +171,8 @@ const Header: React.FC = () => {
               </svg>
               Deals
             </a>
-            <a href="#" className="header__nav-item">Home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <a href="#" className="header__nav-item">About</a>
+            <a href="/" className="header__nav-item">Home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <a href="/about" className="header__nav-item">About</a>
             <a href="#" className="header__nav-item">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
             <a href="#" className="header__nav-item">Vendors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
             <a href="#" className="header__nav-item">Mega menu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg></a>

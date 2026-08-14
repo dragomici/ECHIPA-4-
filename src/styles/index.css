@@ -6,8 +6,13 @@
     --color-text-muted: #777777;
 
     --color-brand-green: #3bb77e;
+    --color-brand-green-hover: #29a56c;
     --color-brand-light-green: #d8f1e5;
+    --color-brand-mint: #def9ec;
     --color-brand-dark: #253D4E;
+    --color-brand-gray: #7E7E7E;
+    --color-brand-light-gray: #adadad;
+    --color-brand-border: #ececec;
     --color-error: #ff4d4f;
     
     --font-family-base: 'Inter', system-ui, sans-serif;
