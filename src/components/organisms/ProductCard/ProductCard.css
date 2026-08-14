@@ -128,6 +128,17 @@
   color: #3bb77e;
 }
 
+.product-card__stock-info {
+  font-size: 0.8rem;
+  color: #7E7E7E;
+  margin-top: 0.25rem;
+}
+
+.product-card__stock-count {
+  color: #3bb77e;
+  font-weight: 700;
+}
+
 .product-card__footer {
   margin-top: auto;
   display: flex;

@@ -9,12 +9,13 @@ interface Product {
   name: string;
   price: number;
   image: string;
+  stock?: number;
 }
 
 const newProducts: Product[] = [
-  { id: '1', name: 'Chen Cardigan', price: 99.50, image: prod1 },
-  { id: '2', name: 'Chen Sweater', price: 89.50, image: prod2 },
-  { id: '3', name: 'Colorful Jacket', price: 25.00, image: prod3 },
+  { id: '1', name: 'Chen Cardigan', price: 99.50, image: prod1, stock: 10 },
+  { id: '2', name: 'Chen Sweater', price: 89.50, image: prod2, stock: 8 },
+  { id: '3', name: 'Colorful Jacket', price: 25.00, image: prod3, stock: 15 },
 ];
 
 export const SidebarNewProducts: React.FC = () => {

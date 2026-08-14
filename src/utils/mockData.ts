@@ -12,6 +12,7 @@ export const mockDeals = [
     oldPrice: 33.8,
     imageUrl: Deal1Image,
     rating: 4.0,
+    stock: 12,
     targetDate: new Date(Date.now() + 426 * 24 * 60 * 60 * 1000).toISOString()
   },
   {
@@ -22,6 +23,7 @@ export const mockDeals = [
     oldPrice: 26.8,
     imageUrl: Deal2Image,
     rating: 4.0,
+    stock: 8,
     targetDate: new Date(Date.now() + 822 * 24 * 60 * 60 * 1000).toISOString()
   },
   {
@@ -32,6 +34,7 @@ export const mockDeals = [
     oldPrice: 13.8,
     imageUrl: Deal3Image,
     rating: 3.0,
+    stock: 5,
     targetDate: new Date(Date.now() + 1156 * 24 * 60 * 60 * 1000).toISOString()
   },
   {
@@ -42,6 +45,7 @@ export const mockDeals = [
     oldPrice: 16.8,
     imageUrl: Deal4Image,
     rating: 3.0,
+    stock: 20,
     targetDate: new Date(Date.now() + 398 * 24 * 60 * 60 * 1000).toISOString()
   }
 ];
@@ -67,6 +71,7 @@ export const mockProducts = [
     imageUrl: DandyBlendImage,
     rating: 4.0,
     ratingCount: 4.0,
+    stock: 15,
     badgeText: 'Hot',
     badgeVariant: 'hot' as const
   },
@@ -79,6 +84,7 @@ export const mockProducts = [
     imageUrl: SahaleRaspberryImage,
     rating: 3.5,
     ratingCount: 3.5,
+    stock: 7,
     badgeText: 'Sale',
     badgeVariant: 'sale' as const
   },
@@ -91,6 +97,7 @@ export const mockProducts = [
     imageUrl: VeggiePopsImage,
     rating: 4.0,
     ratingCount: 4.0,
+    stock: 22,
     badgeText: 'New',
     badgeVariant: 'new' as const
   },
@@ -102,7 +109,8 @@ export const mockProducts = [
     oldPrice: 19.80,
     imageUrl: SahaleBeanImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 10
   },
   {
     id: '5',
@@ -113,6 +121,7 @@ export const mockProducts = [
     imageUrl: CoconutFlakesImage,
     rating: 4.0,
     ratingCount: 4.0,
+    stock: 14,
     badgeText: '-14%',
     badgeVariant: 'discount' as const
   },
@@ -124,7 +133,8 @@ export const mockProducts = [
     oldPrice: 55.80,
     imageUrl: MightyMuffinImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 18
   },
   {
     id: '7',
@@ -134,7 +144,8 @@ export const mockProducts = [
     oldPrice: 33.80,
     imageUrl: PistachioButterImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 9
   },
   {
     id: '8',
@@ -145,6 +156,7 @@ export const mockProducts = [
     imageUrl: YujaNiacinImage,
     rating: 4.0,
     ratingCount: 4.0,
+    stock: 11,
     badgeText: 'Sale',
     badgeVariant: 'sale' as const
   },
@@ -157,6 +169,7 @@ export const mockProducts = [
     imageUrl: CafeAlturaImage,
     rating: 4.0,
     ratingCount: 4.0,
+    stock: 16,
     badgeText: 'Hot',
     badgeVariant: 'hot' as const
   },
@@ -168,7 +181,8 @@ export const mockProducts = [
     oldPrice: 24.80,
     imageUrl: PukkaLatteImage,
     rating: 2.0,
-    ratingCount: 2.0
+    ratingCount: 2.0,
+    stock: 6
   }
 ];
 
@@ -194,7 +208,8 @@ export const topSellingProducts = [
     oldPrice: 33.8,
     imageUrl: CarrotsImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 25
   },
   {
     id: 'ts2',
@@ -204,7 +219,8 @@ export const topSellingProducts = [
     oldPrice: 33.8,
     imageUrl: BellPeppersImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 13
   },
   {
     id: 'ts3',
@@ -214,7 +230,8 @@ export const topSellingProducts = [
     oldPrice: 33.8,
     imageUrl: MangoImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 19
   }
 ];
 
@@ -227,7 +244,8 @@ export const trendingProducts = [
     oldPrice: 33.8,
     imageUrl: BananaImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 30
   },
   {
     id: 'tr2',
@@ -237,7 +255,8 @@ export const trendingProducts = [
     oldPrice: 55.8,
     imageUrl: DriedMangoImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 8
   },
   {
     id: 'tr3',
@@ -247,7 +266,8 @@ export const trendingProducts = [
     oldPrice: 33.8,
     imageUrl: DurianImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 4
   }
 ];
 
@@ -260,7 +280,8 @@ export const recentlyAddedProducts = [
     oldPrice: 33.8,
     imageUrl: WatermelonImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 12
   },
   {
     id: 'ra2',
@@ -270,7 +291,8 @@ export const recentlyAddedProducts = [
     oldPrice: 33.8,
     imageUrl: QuinoeImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 17
   },
   {
     id: 'ra3',
@@ -280,7 +302,8 @@ export const recentlyAddedProducts = [
     oldPrice: 33.8,
     imageUrl: CornImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 21
   }
 ];
 
@@ -293,7 +316,8 @@ export const topRatedProducts = [
     oldPrice: 33.8,
     imageUrl: PomegranateImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 15
   },
   {
     id: 'trt2',
@@ -303,7 +327,8 @@ export const topRatedProducts = [
     oldPrice: 33.8,
     imageUrl: AvocadoImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 9
   },
   {
     id: 'trt3',
@@ -313,7 +338,8 @@ export const topRatedProducts = [
     oldPrice: 33.8,
     imageUrl: OrangeFruitImage,
     rating: 4.0,
-    ratingCount: 4.0
+    ratingCount: 4.0,
+    stock: 28
   }
 ];
 

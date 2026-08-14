@@ -13,6 +13,7 @@ export interface Product {
   ratingCount: number;
   currentPrice: number;
   oldPrice?: number;
+  stock?: number;
   badgeText?: string;
   badgeVariant?: 'hot' | 'sale' | 'new' | 'discount';
 }
@@ -59,6 +60,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ title, categories, products, 
                 ratingCount={product.ratingCount}
                 currentPrice={product.currentPrice}
                 oldPrice={product.oldPrice}
+                stock={product.stock}
                 badgeText={product.badgeText}
                 badgeVariant={product.badgeVariant}
               />

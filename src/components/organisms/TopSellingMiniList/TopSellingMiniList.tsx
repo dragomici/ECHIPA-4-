@@ -9,6 +9,7 @@ export interface MiniListProduct {
   oldPrice?: number;
   imageUrl: string;
   rating: number;
+  stock?: number;
 }
 
 interface TopSellingMiniListProps {
