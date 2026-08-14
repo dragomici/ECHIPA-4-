@@ -42,6 +42,7 @@ const CartTable: React.FC<CartTableProps> = ({ items, onUpdateQuantity, onRemove
                 imageUrl={item.imageUrl}
                 price={item.price}
                 quantity={item.quantity}
+                stock={item.stock}
                 onUpdateQuantity={onUpdateQuantity}
                 onRemove={onRemove}
               />

@@ -6,6 +6,7 @@ export interface CartItem {
   price: number;
   imageUrl: string;
   quantity: number;
+  stock?: number;
 }
 
 interface CartContextType {
@@ -31,10 +32,15 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const addToCart = (newItem: Omit<CartItem, 'quantity'>) => {
     setItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.title === newItem.title);
+      const existingItem = prevItems.find((item) => item.title === newItem.title || item.id === newItem.id);
       if (existingItem) {
+        if (newItem.stock !== undefined && existingItem.quantity >= newItem.stock) {
+          return prevItems;
+        }
         return prevItems.map((item) =>
-          item.title === newItem.title ? { ...item, quantity: item.quantity + 1 } : item
+          (item.title === newItem.title || item.id === newItem.id)
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
         );
       }
       return [...prevItems, { ...newItem, quantity: 1 }];
@@ -46,9 +52,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (quantity <= 0) {
         return prevItems.filter((item) => item.id !== id);
       }
-      return prevItems.map((item) =>
-        item.id === id ? { ...item, quantity } : item
-      );
+      return prevItems.map((item) => {
+        if (item.id === id) {
+          const targetQuantity = item.stock !== undefined ? Math.min(quantity, item.stock) : quantity;
+          return { ...item, quantity: targetQuantity };
+        }
+        return item;
+      });
     });
   };
 

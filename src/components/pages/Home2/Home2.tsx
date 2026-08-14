@@ -135,6 +135,7 @@ const Home2: React.FC = () => {
                   ratingCount={product.ratingCount}
                   currentPrice={product.currentPrice}
                   oldPrice={product.oldPrice}
+                  stock={product.stock}
                   badgeText={product.badgeText}
                   badgeVariant={product.badgeVariant}
                 />
