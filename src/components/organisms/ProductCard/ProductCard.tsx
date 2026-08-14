@@ -15,6 +15,7 @@ interface ProductCardProps {
   ratingCount: number;
   currentPrice: number;
   oldPrice?: number;
+  stock?: number;
   badgeText?: string;
   badgeVariant?: 'hot' | 'sale' | 'new' | 'discount';
 }
@@ -27,6 +28,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   ratingCount,
   currentPrice,
   oldPrice,
+  stock,
   badgeText,
   badgeVariant,
 }) => {
@@ -86,6 +88,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className="product-card__brand">
           By <span className="product-card__brand-name">NestFood</span>
         </div>
+        {stock !== undefined && (
+          <div className="product-card__stock-info">
+            Stock: <span className="product-card__stock-count">{stock}</span>
+          </div>
+        )}
 
         <div className="product-card__footer">
           <ProductPrice currentPrice={currentPrice} oldPrice={oldPrice} />
