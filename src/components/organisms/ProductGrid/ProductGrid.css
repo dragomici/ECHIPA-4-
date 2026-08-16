@@ -1,11 +1,16 @@
-.product-grid-section {
-  width: 100%;
-  margin-bottom: 2.5rem;
+.product-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
 }
 
-.product-grid-section__title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #253D4E;
-  margin-bottom: 1.5rem;
+.product-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 75rem;
+    padding: 0 1.25rem;
 }

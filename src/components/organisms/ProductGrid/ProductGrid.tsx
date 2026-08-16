@@ -1,54 +1,40 @@
-import React from 'react';
-import ProductCard from '../ProductCard/ProductCard';
-import ResponsiveGrid from '../../atoms/ResponsiveGrid/ResponsiveGrid';
-import SkeletonProductCard from '../../molecules/SkeletonProductCard/SkeletonProductCard';
+import React, { useState } from 'react';
+import { Pagination } from '../../molecules/Pagination/Pagination';
+import { useProducts } from '../../../hooks/useProducts';
+import { ProductCard } from '../ProductCard/ProductCard';
 import './ProductGrid.css';
 
-export interface Product {
-  id: string | number;
-  imageUrl: string;
-  category: string;
-  title: string;
-  rating: number;
-  ratingCount: number;
-  currentPrice: number;
-  oldPrice?: number;
-  badgeText?: string;
-  badgeVariant?: 'hot' | 'sale' | 'new' | 'discount';
-}
+export const ProductGrid = () => {
+    const { products } = useProducts();
+    const [currentPage, setCurrentPage] = useState(1);
+    
+    const itemsPerPage = 10;
+    const safeProducts = products || [];
+    const totalPages = Math.ceil(safeProducts.length / itemsPerPage);
+    
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentProducts = safeProducts.slice(startIndex, startIndex + itemsPerPage);
 
-interface ProductGridProps {
-  title?: string;
-  products: Product[];
-  isLoading?: boolean;
-}
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
-const ProductGrid: React.FC<ProductGridProps> = ({ title, products, isLoading = false }) => {
-  const skeletons = Array.from({ length: 10 });
-
-  return (
-    <section className="product-grid-section">
-      {title && <h2 className="product-grid-section__title">{title}</h2>}
-      <ResponsiveGrid columns={{ mobile: 2, tablet: 3, desktop: 4, xl: 5 }} gap="1.25rem">
-        {isLoading
-          ? skeletons.map((_, index) => <SkeletonProductCard key={index} />)
-          : products.map((product) => (
-              <ProductCard
-                key={product.id}
-                imageUrl={product.imageUrl}
-                category={product.category}
-                title={product.title}
-                rating={product.rating}
-                ratingCount={product.ratingCount}
-                currentPrice={product.currentPrice}
-                oldPrice={product.oldPrice}
-                badgeText={product.badgeText}
-                badgeVariant={product.badgeVariant}
-              />
-            ))}
-      </ResponsiveGrid>
-    </section>
-  );
+    return (
+        <div className="product-grid-wrapper">
+            <div className="product-grid-container">
+                {currentProducts.map((product: any, index: number) => (
+                    <ProductCard key={product.id || index} product={product} />
+                ))}
+            </div>
+            
+            {totalPages > 1 && (
+                <Pagination 
+                    currentPage={currentPage} 
+                    totalPages={totalPages} 
+                    onPageChange={handlePageChange} 
+                />
+            )}
+        </div>
+    );
 };
-
-export default ProductGrid;
