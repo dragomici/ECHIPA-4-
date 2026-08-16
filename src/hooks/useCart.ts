@@ -20,6 +20,11 @@ export const useCart = () => {
         saveCart(updatedCart);
     };
 
+    const removeFromCart = (indexToRemove: number) => {
+        const updatedCart = cartItems.filter((_, index) => index !== indexToRemove);
+        saveCart(updatedCart);
+    };
+
     const clearCart = () => {
         saveCart([]);
     };
@@ -27,6 +32,7 @@ export const useCart = () => {
     return {
         cartItems,
         addToCart,
+        removeFromCart,
         clearCart
     };
 };

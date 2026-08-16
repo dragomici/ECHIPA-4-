@@ -1,59 +1,53 @@
 import React from 'react';
-import Header from '../../organisms/Header/Header';
-import CartTable from '../../organisms/CartTable/CartTable';
-import OrderSummary from '../../molecules/OrderSummary/OrderSummary';
-import ProductGrid from '../../organisms/ProductGrid/ProductGrid';
-import { useCart } from '../../../hooks/useCart';
-import { mockProducts } from '../../../utils/mockData';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
+import Button from '../../components/atoms/Button/Button';
+import { OrderSummary } from '../../components/molecules/OrderSummary/OrderSummary';
 import './CartPage.css';
 
-const CartPage: React.FC = () => {
-  const { items, updateQuantity, removeFromCart, clearCart } = useCart();
-  
-  const subtotal = items.reduce((total, item) => total + (item.price * item.quantity), 0);
-  const shipping = items.length > 0 ? 5.00 : 0;
+export const CartPage = () => {
+    const { cartItems, removeFromCart } = useCart();
+    const navigate = useNavigate();
 
-  return (
-    <div className="cart-page">
-      <Header />
-      
-      <main className="cart-page__main">
-        <aside className="cart-page__sidebar-placeholder">
-          <div className="placeholder-box">Categories Sidebar (WIP)</div>
-        </aside>
-        
-        <div className="cart-page__content">
-          <div className="cart-page__table-section">
-            <CartTable 
-              items={items} 
-              onUpdateQuantity={updateQuantity} 
-              onRemove={removeFromCart} 
-            />
-          </div>
-          
-          <div className="cart-page__bottom">
-            <section className="cart-page__recommended">
-              <ProductGrid 
-                title="Recommended" 
-                products={mockProducts.slice(0, 4)} 
-              />
-            </section>
-            
-            {items.length > 0 && (
-              <div className="cart-page__summary-section">
-                <OrderSummary 
-                  subtotal={subtotal} 
-                  shipping={shipping} 
-                  onClearCart={clearCart} 
-                  onCheckout={() => alert('Checkout flow not implemented yet!')} 
-                />
-              </div>
-            )}
-          </div>
+    const handleContinueShopping = () => {
+        navigate('/');
+    };
+
+    if (cartItems.length === 0) {
+        return (
+            <div className="cart-page-empty">
+                <h2>Your cart is currently empty.</h2>
+                <Button onClick={handleContinueShopping} className="continue-shopping-btn">
+                    Continue Shopping
+                </Button>
+            </div>
+        );
+    }
+
+    return (
+        <div className="cart-page-container">
+            <div className="cart-items-section">
+                <h2>Your Cart</h2>
+                <div className="cart-items-list">
+                    {cartItems.map((item: any, index: number) => (
+                        <div key={index} className="cart-item">
+                            <div className="cart-item-info">
+                                <span className="cart-item-name">{item.name}</span>
+                                <span className="cart-item-price">${(item.price || 0).toFixed(2)}</span>
+                            </div>
+                            <Button 
+                                onClick={() => removeFromCart(index)} 
+                                className="remove-item-btn"
+                            >
+                                Remove
+                            </Button>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className="cart-summary-section">
+                <OrderSummary />
+            </div>
         </div>
-      </main>
-    </div>
-  );
+    );
 };
-
-export default CartPage;
