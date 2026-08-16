@@ -5,6 +5,8 @@
     max-width: 18.75rem;
     background-color: #ffffff;
     box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+    position: sticky;
+    top: 2rem;
 }
 
     .order-summary-container h2 {
