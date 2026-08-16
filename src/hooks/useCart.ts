@@ -1,28 +1,32 @@
-import { useState } from "react";
-
-export interface CartItem {
-  id: string;
-  title: string;
-  price: number;
-}
+import { useState, useEffect } from 'react';
 
 export const useCart = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    const [cartItems, setCartItems] = useState<any[]>([]);
 
-  const addItem = (item: CartItem) => {
-    setCartItems((prevItems) => [...prevItems, item]);
-  };
+    useEffect(() => {
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart) {
+            setCartItems(JSON.parse(storedCart));
+        }
+    }, []);
 
-  const removeItem = (id: string) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-  };
+    const saveCart = (items: any[]) => {
+        setCartItems(items);
+        localStorage.setItem('cart', JSON.stringify(items));
+    };
 
-  const totalCount = cartItems.length;
+    const addToCart = (product: any) => {
+        const updatedCart = [...cartItems, product];
+        saveCart(updatedCart);
+    };
 
-  return {
-    cartItems,
-    addItem,
-    removeItem,
-    totalCount,
-  };
+    const clearCart = () => {
+        saveCart([]);
+    };
+
+    return {
+        cartItems,
+        addToCart,
+        clearCart
+    };
 };
