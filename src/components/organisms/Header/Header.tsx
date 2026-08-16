@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useScrollDirection } from '../../../hooks/useScrollDirection';
 import { SearchBar } from '../../molecules/SearchBar/SearchBar';
@@ -17,6 +17,17 @@ const Header: React.FC = () => {
   const { cartCount } = useCart();
   const navigate = useNavigate();
   const scrollDirection = useScrollDirection();
+  
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleCartClick = () => {
+    navigate('/cart');
+    setIsMobileMenuOpen(false); 
+  };
 
   return (
     <header className={`header ${scrollDirection === 'down' ? 'header--hidden' : ''}`}>
@@ -48,49 +59,81 @@ const Header: React.FC = () => {
       
       <div className="header__main">
         <div className="header__container">
-        <div className="header__logo">
-          <img src={NestLogo} alt="Nest Logo" />
-        </div>
-        
-        <div className="header__search-area">
-          <SearchBar />
+          <div className="header__logo">
+            <img src={NestLogo} alt="Nest Logo" />
+          </div>
           
-          <button className="header__location-btn" aria-label="Your Location">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <span className="location-text">Your Location</span>
-            <svg className="location-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
+          <div className="header__search-area">
+            <SearchBar />
+            
+            <button className="header__location-btn" aria-label="Your Location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span className="location-text">Your Location</span>
+              <svg className="location-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <nav className="header__actions" aria-label="Primary Actions">
+            <HeaderAction
+              icon={<img src={CompareIcon} alt="Compare" />}
+              text="Compare"
+            />
+            <HeaderAction
+              icon={<img src={WishlistIcon} alt="Wishlist" />}
+              text="Wishlist"
+              badgeCount={wishlistCount}
+            />
+            <HeaderAction
+              icon={<img src={CartIcon} alt="Cart" />}
+              text="Cart"
+              badgeCount={cartCount}
+              onClick={handleCartClick}
+            />
+            <HeaderAction
+              icon={<img src={AccountIcon} alt="Account" />}
+              text="Account"
+            />
+          </nav>
+
+          <button 
+            className="header__hamburger-btn" 
+            onClick={toggleMobileMenu}
+            aria-label="Toggle navigation"
+          >
+            {isMobileMenuOpen ? '✖' : '☰'}
           </button>
         </div>
+      </div>
 
-        <nav className="header__actions" aria-label="Primary Actions">
-          <HeaderAction
-            icon={<img src={CompareIcon} alt="Compare" />}
-            text="Compare"
-          />
-          <HeaderAction
-            icon={<img src={WishlistIcon} alt="Wishlist" />}
-            text="Wishlist"
-            badgeCount={wishlistCount}
-          />
-          <HeaderAction
-            icon={<img src={CartIcon} alt="Cart" />}
-            text="Cart"
-            badgeCount={cartCount}
-            onClick={() => navigate('/cart')}
-          />
-          <HeaderAction
-            icon={<img src={AccountIcon} alt="Account" />}
-            text="Account"
-          />
+      <div className={`header__mobile-dropdown ${isMobileMenuOpen ? 'header__mobile-dropdown--open' : ''}`}>
+        <nav className="header__mobile-actions" aria-label="Mobile Actions">
+            <HeaderAction
+              icon={<img src={CompareIcon} alt="Compare" />}
+              text="Compare"
+            />
+            <HeaderAction
+              icon={<img src={WishlistIcon} alt="Wishlist" />}
+              text="Wishlist"
+              badgeCount={wishlistCount}
+            />
+            <HeaderAction
+              icon={<img src={CartIcon} alt="Cart" />}
+              text="Cart"
+              badgeCount={cartCount}
+              onClick={handleCartClick}
+            />
+            <HeaderAction
+              icon={<img src={AccountIcon} alt="Account" />}
+              text="Account"
+            />
         </nav>
       </div>
-    </div>
-  </header>
+    </header>
   );
 };
 
