@@ -1,0 +1,119 @@
+/* Organism Container */
+.deals-of-the-day {
+  width: 100%;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.deals-of-the-day__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.deals-of-the-day__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #253d4e;
+  margin: 0;
+}
+
+.deals-of-the-day__link {
+  display: flex;
+  align-items: center;
+  color: #B6B6B6;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.deals-of-the-day__link svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-left: 0.25rem;
+}
+
+.deals-countdown {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--color-bg-subtle, #f3f4f6);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.deals-countdown__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-subtle, #4b5563);
+}
+
+.deals-countdown__timer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.deals-countdown__unit {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  background: var(--color-primary, #ef4444);
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.deals-countdown__value {
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.deals-countdown__text {
+  font-size: 0.75rem;
+}
+
+.deals-countdown__separator {
+  font-weight: 700;
+  color: var(--color-primary, #ef4444);
+}
+
+.deals-of-the-day__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .deals-of-the-day__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .deals-of-the-day__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .deals-of-the-day__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .deals-of-the-day__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deals-countdown {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

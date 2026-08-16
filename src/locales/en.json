@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "title": "Don't miss amazing grocery deals",
+    "subtitle": "Sign up for the daily newsletter"
+  },
+  "sections": {
+    "popularProducts": "Popular Products",
+    "dealsOfTheDay": "Deals Of The Day",
+    "shopByCategories": "Shop by Categories",
+    "topSelling": "Top Selling",
+    "trendingProducts": "Trending Products",
+    "recentlyAdded": "Recently Added",
+    "topRated": "Top Rated"
+  },
+  "footer": {
+    "company": "Company",
+    "account": "Account",
+    "corporate": "Corporate",
+    "popular": "Popular",
+    "installApp": "Install App"
+  },
+  "newsletter": {
+    "title": "Stay home & get your daily needs from our shop",
+    "subtitle": "Start Your Daily Shopping with",
+    "highlight": "Nest Mart",
+    "placeholder": "Your email address",
+    "subscribe": "Subscribe",
+    "invalid": "Invalid email address"
+  }
+}

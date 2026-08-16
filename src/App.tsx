@@ -1,30 +1,15 @@
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MainLayout } from "./components/templates/MainLayout/MainLayout";
-import { DashboardLayout } from "./components/templates/DashboardLayout/DashboardLayout";
+import React from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { WishlistProvider } from './hooks/useWishlist';
+import { ToastProvider } from './context/ToastContext';
+import { ToastContainer } from './components/molecules/ToastContainer/ToastContainer';
+import { DashboardLayout } from './components/templates/DashboardLayout/DashboardLayout';
+import Spinner from './components/atoms/Spinner/Spinner';
+import { CartProvider } from './hooks/useCart';
+import PageTransition from './components/atoms/PageTransition/PageTransition';
 
-const Hero = lazy(() => import("./components/organisms/Hero/Hero"));
-const Footer = lazy(() => import("./components/organisms/Footer/Footer"));
-
-const LandingPage = () => {
-  return (
-    <MainLayout>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Hero />
-      </Suspense>
-
-      <h1>Bine ai venit pe E-Commerce Landing Page!</h1>
-      <p>
-        Acesta este conținutul public. Accesează{" "}
-        <a href="/dashboard">Dashboard-ul aici</a>.
-      </p>
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <Footer />
-      </Suspense>
-    </MainLayout>
-  );
-};
+const Home2 = React.lazy(() => import('./components/pages/Home2/Home2'));
+const CartPage = React.lazy(() => import('./components/pages/CartPage/CartPage'));
 
 const DashboardPage = () => {
   return (
@@ -38,14 +23,35 @@ const DashboardPage = () => {
   );
 };
 
-function App() {
+// Componentă internă pentru declanșarea animației la schimbarea rutei
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
+    <PageTransition key={location.pathname}>
+      <Routes location={location}>
+        <Route path="/" element={<Home2 />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
-    </BrowserRouter>
+    </PageTransition>
+  );
+};
+
+function App() {
+  return (
+    <ToastProvider>
+      <WishlistProvider>
+        <CartProvider>
+          <BrowserRouter>
+            <React.Suspense fallback={<Spinner />}>
+              <AnimatedRoutes />
+            </React.Suspense>
+          </BrowserRouter>
+        </CartProvider>
+      </WishlistProvider>
+      <ToastContainer />
+    </ToastProvider>
   );
 }
 

@@ -1,6 +1,6 @@
-import React from "react";
-import { Button } from "../../atoms/Button/Button";
-import "./Pagination.css";
+import React from 'react';
+import Button from '../../atoms/Button/Button';
+import './Pagination.css';
 
 interface PaginationProps {
   currentPage?: number;

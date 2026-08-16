@@ -1,22 +1,23 @@
+
 .badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 16px;
-  border-radius: 15px 0px 20px 0px;
-  font-size: 12px;
+  padding: 0.375rem 1rem; 
+  border-radius: 15px 0px 20px 0px; 
+  font-size: 0.75rem;
   font-weight: 500;
   color: #ffffff;
-  min-width: 45px;
+  min-width: 2.8125rem; 
 }
 .badge--hot {
-  background-color: #f74b81;
+  background-color: #f74b81; 
 }
 .badge--sale {
-  background-color: #67bcee;
+  background-color: #67BCEE;
 }
 .badge--new {
-  background-color: #3bb77e;
+  background-color: #3BB77E;
 }
 .badge--discount {
   background-color: #f59758;
