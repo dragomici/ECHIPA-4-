@@ -2,12 +2,18 @@ import { useState, useEffect } from 'react';
 
 export const useCart = () => {
     const [cartItems, setCartItems] = useState<any[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const storedCart = localStorage.getItem('cart');
-        if (storedCart) {
-            setCartItems(JSON.parse(storedCart));
-        }
+        const timer = setTimeout(() => {
+            const storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                setCartItems(JSON.parse(storedCart));
+            }
+            setIsLoading(false);
+        }, 800); 
+
+        return () => clearTimeout(timer);
     }, []);
 
     const saveCart = (items: any[]) => {
@@ -31,6 +37,7 @@ export const useCart = () => {
 
     return {
         cartItems,
+        isLoading,
         addToCart,
         removeFromCart,
         clearCart
