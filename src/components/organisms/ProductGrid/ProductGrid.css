@@ -8,9 +8,21 @@
 
 .product-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     width: 100%;
     max-width: 75rem;
     padding: 0 1.25rem;
+}
+
+@media (min-width: 48rem) {
+    .product-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 64rem) {
+    .product-grid-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
