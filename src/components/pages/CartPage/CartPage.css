@@ -61,7 +61,15 @@
     border: 0.0625rem solid #ececec;
     border-radius: 0.5rem;
     background-color: #ffffff;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
 }
+
+    .cart-item.fade-out {
+        opacity: 0;
+        transform: scale(0.95);
+    }
 
 .cart-item-info {
     display: flex;
@@ -92,9 +100,14 @@
     transition: all 0.3s;
 }
 
-    .remove-item-btn:hover {
+    .remove-item-btn:not(:disabled):hover {
         background-color: #ff4d4f;
         color: #ffffff;
+    }
+
+    .remove-item-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
 
 /* Skeleton Loading Styles */

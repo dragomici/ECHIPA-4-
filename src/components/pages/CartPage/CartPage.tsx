@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
 import Button from '../../components/atoms/Button/Button';
@@ -8,9 +8,21 @@ import './CartPage.css';
 export const CartPage = () => {
     const { cartItems, isLoading, removeFromCart } = useCart();
     const navigate = useNavigate();
+    const [removingIndex, setRemovingIndex] = useState<number | null>(null);
 
     const handleContinueShopping = () => {
         navigate('/');
+    };
+
+    const handleRemoveItem = (index: number) => {
+        if (removingIndex !== null) return; 
+        
+        setRemovingIndex(index);
+        
+        setTimeout(() => {
+            removeFromCart(index);
+            setRemovingIndex(null);
+        }, 300);
     };
 
     if (isLoading) {
@@ -19,7 +31,6 @@ export const CartPage = () => {
                 <div className="cart-items-section">
                     <h2>Your Cart</h2>
                     <div className="cart-items-list">
-                        {/* Generăm 3 rânduri de tip Skeleton */}
                         {[1, 2, 3].map((n) => (
                             <div key={n} className="cart-item skeleton-row">
                                 <div className="skeleton-info">
@@ -55,14 +66,18 @@ export const CartPage = () => {
                 <h2>Your Cart</h2>
                 <div className="cart-items-list">
                     {cartItems.map((item: any, index: number) => (
-                        <div key={index} className="cart-item">
+                        <div 
+                            key={index} 
+                            className={`cart-item ${removingIndex === index ? 'fade-out' : ''}`}
+                        >
                             <div className="cart-item-info">
                                 <span className="cart-item-name">{item.name}</span>
                                 <span className="cart-item-price">${(item.price || 0).toFixed(2)}</span>
                             </div>
                             <Button 
-                                onClick={() => removeFromCart(index)} 
+                                onClick={() => handleRemoveItem(index)} 
                                 className="remove-item-btn"
+                                disabled={removingIndex !== null}
                             >
                                 Remove
                             </Button>
