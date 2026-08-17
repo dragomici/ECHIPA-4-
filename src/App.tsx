@@ -21,7 +21,7 @@ const DashboardPage = () => {
     <DashboardLayout>
       <h1>Dashboard Overview</h1>
       <p>Bine ai revenit, Admin! Aici este zona ta securizată.</p>
-      <a href="/" style={{ color: "#3b82f6", textDecoration: "underline" }}>
+      <a href="/" className="dashboard-layout__back-link">
         Înapoi la pagina principală
       </a>
     </DashboardLayout>

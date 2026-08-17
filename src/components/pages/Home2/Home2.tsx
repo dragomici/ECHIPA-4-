@@ -133,11 +133,11 @@ const Home2: React.FC = () => {
           <TopSellingMiniList title={t('sections.topRated')} products={topRatedProducts} isLoading={isLoading} rotationStep={rotationStep} />
         </section>
 
-        <section className="home2__daily-top-products" style={{ margin: '3rem 0', maxWidth: '100rem', padding: '0 0.9375rem', width: '100%', marginInline: 'auto' }}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#253D4E', marginBottom: '1.5rem' }}>Daily Best Sells</h2>
+        <section className="home2__daily-top-products">
+          <h2 className="home2__daily-top-products-title">Daily Best Sells</h2>
           <Swiper>
             {mockProducts.map((product) => (
-              <div key={`daily-${product.id}`} style={{ width: '15.625rem' }}>
+              <div key={`daily-${product.id}`} className="home2__daily-product-slide">
                 <ProductCard
                   imageUrl={product.imageUrl}
                   category={product.category}
