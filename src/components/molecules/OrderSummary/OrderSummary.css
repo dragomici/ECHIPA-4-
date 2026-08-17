@@ -1,5 +1,5 @@
 .order-summary {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 0.3125rem 1.25rem rgba(0, 0, 0, 0.05);
@@ -12,7 +12,7 @@
   margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 
 .order-summary__row {
@@ -23,17 +23,17 @@
 }
 
 .order-summary__label {
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
 }
 
 .order-summary__value {
   font-weight: 600;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 
 .order-summary__divider {
   height: 0.0625rem;
-  background-color: #ececec;
+  background-color: var(--color-brand-border);
   margin: 0.5rem 0;
 }
 
@@ -42,12 +42,12 @@
 }
 
 .order-summary__row--total .order-summary__label {
-  color: #253D4E;
+  color: var(--color-brand-dark);
   font-weight: 700;
 }
 
 .order-summary__row--total .order-summary__value {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-weight: 700;
 }
 
@@ -62,8 +62,8 @@
   width: 100%;
   padding: 0.875rem 1.5rem;
   background-color: transparent;
-  color: #fd6e6e;
-  border: 0.0625rem solid #fd6e6e;
+  color: var(--color-danger-light);
+  border: 0.0625rem solid var(--color-danger-light);
   border-radius: 2rem;
   font-weight: 600;
   font-size: 1rem;
@@ -72,7 +72,7 @@
 }
 
 .order-summary__clear-btn:hover {
-  background-color: #fff1f1;
+  background-color: var(--color-danger-bg);
 }
 
 .order-summary__checkout-btn {
@@ -80,17 +80,17 @@
   padding: 1rem 1.5rem;
   justify-content: center;
   border-radius: 2rem;
-  background-color: #ffffff;
-  color: #3bb77e;
-  border: 0.0625rem solid #3bb77e;
+  background-color: var(--color-white);
+  color: var(--color-brand-green);
+  border: 0.0625rem solid var(--color-brand-green);
   font-size: 1.1rem;
   font-weight: 700;
   transition: all 0.2s ease;
 }
 
 .order-summary__checkout-btn:hover {
-  background-color: #3bb77e;
-  color: #ffffff;
+  background-color: var(--color-brand-green);
+  color: var(--color-white);
   transform: translateY(-0.125rem);
   box-shadow: 0 0.25rem 0.9375rem rgba(59, 183, 126, 0.3);
 }

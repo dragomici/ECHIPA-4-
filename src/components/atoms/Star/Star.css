@@ -4,8 +4,8 @@
   display: inline-block;
 }
 .star--filled {
-  fill: #fdc040;
+  fill: var(--color-star-active);
 }
 .star--empty {
-  fill: #d3d3d3;
+  fill: var(--color-star-inactive);
 }

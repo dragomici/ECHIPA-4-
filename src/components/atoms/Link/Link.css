@@ -7,26 +7,26 @@ a {
     color 0.2s ease-in-out,
     text-decoration 0.2s ease-in-out;
   cursor: pointer;
-  color: var(--color-primary, #3bb77e);
+  color: var(--color-brand-green);
 }
 
 a:hover {
-  color: var(--color-primary-dark, #29a56c);
+  color: var(--color-brand-green-hover);
   text-decoration: underline;
 }
 
 .link--secondary {
-  color: var(--color-text-main, #253d4e);
+  color: var(--color-brand-dark);
 }
 
 .link--secondary:hover {
-  color: var(--color-primary, #3bb77e);
+  color: var(--color-brand-green);
 }
 
 .link--muted {
-  color: var(--color-text-muted, #7e7e7e);
+  color: var(--color-brand-gray);
 }
 
 .link--muted:hover {
-  color: var(--color-text-main, #253d4e);
+  color: var(--color-brand-dark);
 }

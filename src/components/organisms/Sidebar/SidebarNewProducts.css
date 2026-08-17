@@ -16,7 +16,7 @@
   flex-shrink: 0;
   border-radius: 0.3125rem;
   overflow: hidden;
-  background-color: #f4f6fa;
+  background-color: var(--color-bg-soft);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +36,7 @@
 
 .sidebar-new-product__name {
   font-size: 1.05rem;
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-weight: 700;
   margin: 0;
   line-height: 1.2;
@@ -44,7 +44,7 @@
 
 .sidebar-new-product__price {
   font-size: 1rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   font-weight: 600;
 }
 

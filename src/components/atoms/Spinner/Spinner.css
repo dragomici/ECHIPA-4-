@@ -8,8 +8,8 @@
 .spinner__circle {
   width: 2.5rem;
   height: 2.5rem;
-  border: 0.25rem solid #ececec; 
-  border-top: 0.25rem solid #3bb77e; 
+  border: 0.25rem solid var(--color-brand-border); 
+  border-top: 0.25rem solid var(--color-brand-green); 
   border-radius: 50%;
   animation: spin 1s linear infinite; 
 }

@@ -3,7 +3,7 @@
   grid-template-columns: 16.25rem 1fr;
   height: 100vh;
   overflow: hidden;
-  background-color: #f3f4f6;
+  background-color: var(--color-bg-subtle);
 }
 
 .dashboard-layout__mobile-header,
@@ -12,8 +12,8 @@
 }
 
 .dashboard-layout__sidebar {
-  background-color: #ffffff;
-  border-right: 0.0625rem solid #e5e7eb;
+  background-color: var(--color-white);
+  border-right: 0.0625rem solid var(--color-gray-200);
   overflow-y: auto;
   z-index: 50;
 }
@@ -24,7 +24,7 @@
 
 .dashboard-layout__main {
   overflow-y: auto;
-  background-color: #f9fafb;
+  background-color: var(--color-gray-100);
 }
 
 .dashboard-layout__main-inner {
@@ -43,15 +43,15 @@
     display: flex;
     align-items: center;
     padding: 1rem;
-    background-color: #ffffff;
-    border-bottom: 0.0625rem solid #e5e7eb;
+    background-color: var(--color-white);
+    border-bottom: 0.0625rem solid var(--color-gray-200);
     z-index: 40;
   }
 
   .dashboard-layout__hamburger {
     background: transparent;
     border: none;
-    color: #374151;
+    color: var(--color-gray-700);
     padding: 0.25rem;
     cursor: pointer;
     display: flex;
@@ -68,7 +68,7 @@
     margin-left: 1rem;
     font-size: 1.125rem;
     font-weight: 600;
-    color: #111827;
+    color: var(--color-gray-900);
   }
 
   .dashboard-layout__sidebar {

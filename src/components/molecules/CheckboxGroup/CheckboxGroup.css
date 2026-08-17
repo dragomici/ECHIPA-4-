@@ -8,7 +8,7 @@
 .checkbox-group__title {
   font-size: 1rem;
   font-weight: 600;
-  color: #253d4e;
+  color: var(--color-brand-dark);
   margin: 0;
 }
 

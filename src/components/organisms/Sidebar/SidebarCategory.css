@@ -1,15 +1,15 @@
 .sidebar-widget {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-radius: 0.9375rem;
   padding: 2.1875rem;
   box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.05);
-  border: 0.0625rem solid #ececec;
+  border: 0.0625rem solid var(--color-brand-border);
   font-family: 'Quicksand', sans-serif;
 }
 
 .sidebar-widget__title {
   font-size: 1.625rem;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   font-weight: 700;
   margin: 0 0 1.25rem 0;
   position: relative;
@@ -23,7 +23,7 @@
   left: 0;
   width: 100%;
   height: 0.0625rem;
-  background-color: #ececec;
+  background-color: var(--color-brand-border);
 }
 
 .sidebar-widget__title::before {
@@ -33,7 +33,7 @@
   left: 0;
   width: 3.75rem;
   height: 0.125rem;
-  background-color: #3bb77e;
+  background-color: var(--color-brand-green);
   z-index: 1;
 }
 
@@ -51,7 +51,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0.875rem;
-  border: 0.0625rem solid #ececec;
+  border: 0.0625rem solid var(--color-brand-border);
   border-radius: 0.3125rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -59,19 +59,19 @@
 
 .sidebar-category__item:hover,
 .sidebar-category__item--active {
-  border-color: #3bb77e;
+  border-color: var(--color-brand-green);
   box-shadow: 0 0.3125rem 0.625rem rgba(59, 183, 126, 0.15);
-  background-color: #f5fdf9;
+  background-color: var(--color-bg-green-soft);
 }
 
 .sidebar-category__item--active .sidebar-category__name {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-weight: 700;
 }
 
 .sidebar-category__item--active .sidebar-category__count {
-  background-color: #3bb77e;
-  color: #ffffff;
+  background-color: var(--color-brand-green);
+  color: var(--color-white);
 }
 
 .sidebar-category__item-left {
@@ -88,13 +88,13 @@
 
 .sidebar-category__name {
   font-size: 1.05rem;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
 .sidebar-category__item:hover .sidebar-category__name {
-  color: #3bb77e;
+  color: var(--color-brand-green);
 }
 
 .sidebar-category__count {
@@ -103,8 +103,8 @@
   justify-content: center;
   width: 1.5rem;
   height: 1.5rem;
-  background-color: #bce3c9;
-  color: #253D4E;
+  background-color: var(--color-brand-border-green);
+  color: var(--color-brand-dark);
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: 50%;

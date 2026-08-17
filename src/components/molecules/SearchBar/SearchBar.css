@@ -5,8 +5,8 @@
   width: 100%;
   max-width: 43.75rem;
   height: 3.375rem;
-  background-color: #ffffff;
-  border: 0.125rem solid #bce3c9;
+  background-color: var(--color-white);
+  border: 0.125rem solid var(--color-brand-border-green);
   border-radius: 0.25rem;
   padding: 0;
   overflow: hidden;
@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   padding: 0 1.25rem;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
@@ -35,15 +35,15 @@
 .search-bar__category svg {
   width: 1rem;
   height: 1rem;
-  color: #7e7e7e;
+  color: var(--color-brand-gray);
 }
 
 .search-bar__dropdown {
   position: absolute;
   top: calc(100% + 0.25rem);
   left: 0;
-  background: #ffffff;
-  border: 0.0625rem solid #e0e0e0;
+  background: var(--color-white);
+  border: 0.0625rem solid var(--color-border-dark);
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
   list-style: none;
@@ -56,25 +56,25 @@
 .search-bar__dropdown-item {
   padding: 0.625rem 1.25rem;
   font-size: 0.9rem;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   cursor: pointer;
   transition: background 0.15s ease;
 }
 
 .search-bar__dropdown-item:hover {
-  background: #f5fdf9;
-  color: #3bb77e;
+  background: var(--color-bg-green-soft);
+  color: var(--color-brand-green);
 }
 
 .search-bar__dropdown-item--active {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-weight: 700;
 }
 
 .search-bar__divider {
   width: 0.0625rem;
   height: 1.5rem;
-  background-color: #ececec;
+  background-color: var(--color-brand-border);
 }
 
 .search-bar__input-wrapper {
@@ -90,17 +90,17 @@
   outline: none;
   padding: 0 1rem;
   font-size: 0.95rem;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 
 .search-bar__input::placeholder {
-  color: #838383;
+  color: var(--color-brand-gray);
 }
 
 .search-bar__btn {
   background: transparent;
   border: none;
-  color: #7e7e7e;
+  color: var(--color-brand-gray);
   padding: 0 1.25rem;
   height: 100%;
   display: flex;
@@ -115,7 +115,7 @@
 }
 
 .search-bar__btn:hover svg {
-  color: #3bb77e;
+  color: var(--color-brand-green);
 }
 
 @media (max-width: 48rem) {

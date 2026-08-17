@@ -15,7 +15,7 @@
 .product-grid-section__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   margin: 0;
 }
 
@@ -31,17 +31,17 @@
   border: none;
   font-size: 1rem;
   font-weight: 600;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   cursor: pointer;
   padding: 0;
   transition: color 0.2s ease;
 }
 
 .product-grid-section__tab:hover {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   transform: translateY(-0.125rem);
 }
 
 .product-grid-section__tab--active {
-  color: #3bb77e;
+  color: var(--color-brand-green);
 }

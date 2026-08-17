@@ -15,7 +15,7 @@
 .categories-slider__title {
   font-size: 2rem;
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   margin: 0;
 }
 
@@ -31,16 +31,16 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: #F2F3F4;
+  background-color: var(--color-bg-disabled);
   border: none;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .categories-slider__nav-btn:hover {
-  background-color: #3bb77e;
-  color: #ffffff;
+  background-color: var(--color-brand-green);
+  color: var(--color-white);
 }
 
 .categories-slider__nav-btn svg {
@@ -77,13 +77,13 @@
   text-align: center;
   padding: 1rem;
   border-radius: 0.625rem;
-  border: 0.0625rem solid #ececec;
+  border: 0.0625rem solid var(--color-brand-border);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .categories-slider__item:hover {
-  border-color: #BCE3C9;
+  border-color: var(--color-brand-border-green);
   box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.05);
 }
 
@@ -105,12 +105,12 @@
 .categories-slider__item-title {
   font-size: 1rem;
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   margin: 0 0 0.25rem 0;
   line-height: 1.2;
 }
 
 .categories-slider__item-count {
   font-size: 0.85rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
 }
