@@ -1,6 +1,6 @@
 :root {
-  --landing-page-section-gap: 80px;
-  --landing-page-section-gap-mobile: 40px;
+  --landing-page-section-gap: 5rem;
+  --landing-page-section-gap-mobile: 2.5rem;
 }
 
 .landing-page-template {
@@ -20,23 +20,24 @@
   width: 100%;
   margin-bottom: var(--landing-page-section-gap);
   display: grid;
-  gap: 24px;
+  gap: 1.5rem;
   grid-template-columns: repeat(4, 1fr);
 }
-@media (max-width: 1200px) {
+
+@media (max-width: 75rem) {
   .landing-page-template__features {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 62rem) {
   .landing-page-template__features {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 1.25rem;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 36rem) {
   .landing-page-template__hero,
   .landing-page-template__features {
     margin-bottom: var(--landing-page-section-gap-mobile);
@@ -44,6 +45,6 @@
 
   .landing-page-template__features {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 1rem;
   }
 }

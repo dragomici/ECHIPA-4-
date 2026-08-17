@@ -35,9 +35,8 @@
   cursor: pointer;
 }
 
-
 .price-slider__track {
-  height: 0.25rem; /* 4px */
+  height: 0.25rem;
   background-color: #ececec;
   border-radius: 0.25rem;
   position: relative;
@@ -66,7 +65,7 @@
 .price-slider__values {
   display: flex;
   justify-content: space-between;
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
   color: #7E7E7E;
   font-weight: 500;
 }
@@ -81,7 +80,7 @@
 }
 
 .sidebar-filter__group-title {
-  font-size: 1.05rem; /* 16.8px */
+  font-size: 1.05rem;
   color: #253D4E;
   font-weight: 600;
   margin: 0 0 1rem 0;
@@ -111,11 +110,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 1.125rem; /* 18px */
+  height: 1.125rem;
   width: 1.125rem;
   background-color: #fff;
   border: 0.0625rem solid #ececec;
-  border-radius: 0.1875rem; /* 3px */
+  border-radius: 0.1875rem;
   transition: all 0.2s ease;
 }
 
@@ -185,7 +184,7 @@
   position: absolute;
   right: -1.875rem;
   bottom: -1.875rem;
-  width: 7.5rem; /* 120px */
+  width: 7.5rem;
   opacity: 0.9;
   z-index: 1;
   pointer-events: none;
