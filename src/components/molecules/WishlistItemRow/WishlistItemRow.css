@@ -12,6 +12,12 @@
   vertical-align: middle;
 }
 
+.wishlist-row td:nth-child(3),
+.wishlist-row td:nth-child(4),
+.wishlist-row td:nth-child(5) {
+  text-align: center;
+}
+
 .wishlist-row__product {
   width: 5rem;
 }
@@ -86,6 +92,7 @@
 .wishlist-row__btn-group {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
 }
 
@@ -123,7 +130,7 @@
   align-items: center;
   gap: 0.4rem;
   background-color: transparent;
-  border: 0.0625rem solid transparent;
+  border: 0.0625rem solid var(--color-brand-border);
   color: var(--color-danger-light);
   padding: 0.55rem 0.85rem;
   border-radius: 0.5rem;
@@ -136,6 +143,7 @@
 
 .wishlist-row__remove-btn:hover {
   background-color: var(--color-danger-bg);
+  color: var(--color-danger);
   border-color: var(--color-danger-border);
 }
 
@@ -153,6 +161,7 @@
   .wishlist-row td {
     padding: 0;
     border: none;
+    text-align: left !important;
   }
 
   .wishlist-row__product {

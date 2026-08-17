@@ -77,6 +77,12 @@
   white-space: nowrap;
 }
 
+.wishlist-table th:nth-child(3),
+.wishlist-table th:nth-child(4),
+.wishlist-table th:nth-child(5) {
+  text-align: center;
+}
+
 .wishlist-table th:first-child {
   border-top-left-radius: 0.5rem;
 }
