@@ -10,7 +10,6 @@ import './WishlistPage.css';
 const WishlistPage: React.FC = () => {
   const { wishlistItems, removeFromWishlist, clearWishlist } = useWishlist();
 
-  // Populate wishlist items with full product data from allProducts if available
   const populatedItems = wishlistItems.map((item) => {
     const foundProduct = allProducts.find(
       (p) => p.title === item.title || p.id === item.id || p.title === item.id

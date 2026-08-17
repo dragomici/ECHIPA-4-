@@ -11,6 +11,8 @@
   margin: 2.5rem 0;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .newsletter-banner__content {
@@ -44,11 +46,14 @@
   padding: 0.3125rem;
   align-items: center;
   max-width: 28.125rem;
+  box-sizing: border-box;
 }
 
 .newsletter-banner__form-container {
   position: relative;
   max-width: 28.125rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .newsletter-banner__error-text {
@@ -127,17 +132,46 @@
 @media (max-width: 48rem) {
   .newsletter-banner {
     flex-direction: column;
-    padding: 1.875rem;
+    padding: 1.5rem 1rem;
     text-align: center;
+    overflow: hidden;
   }
 
   .newsletter-banner__content {
     max-width: 100%;
-    margin-bottom: 1.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .newsletter-banner__title {
+    font-size: 1.75rem;
+  }
+
+  .newsletter-banner__subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .newsletter-banner__form-container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .newsletter-banner__form {
+    max-width: 100%;
+    width: 100%;
   }
 
   .newsletter-banner__image-wrapper {
-    position: static;
+    position: relative;
+    max-height: 12rem;
+    margin-top: 1rem;
     justify-content: center;
+  }
+
+  .newsletter-banner__image {
+    height: 10rem;
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 0;
   }
 }

@@ -16,7 +16,6 @@ export const Hero: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle subscription
   };
 
   return (

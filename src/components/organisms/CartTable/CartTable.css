@@ -44,3 +44,18 @@
   color: var(--color-brand-gray);
   margin: 0 0 1.5rem 0;
 }
+
+@media (max-width: 48rem) {
+  .cart-table-wrapper {
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .cart-table {
+    min-width: 100% !important;
+  }
+
+  .cart-table thead {
+    display: none;
+  }
+}

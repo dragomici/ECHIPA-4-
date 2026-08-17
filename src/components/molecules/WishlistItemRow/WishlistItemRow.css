@@ -12,6 +12,12 @@
   vertical-align: middle;
 }
 
+.wishlist-row td:nth-child(3),
+.wishlist-row td:nth-child(4),
+.wishlist-row td:nth-child(5) {
+  text-align: center;
+}
+
 .wishlist-row__product {
   width: 5rem;
 }
@@ -86,6 +92,7 @@
 .wishlist-row__btn-group {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
 }
 
@@ -123,7 +130,7 @@
   align-items: center;
   gap: 0.4rem;
   background-color: transparent;
-  border: 0.0625rem solid transparent;
+  border: 0.0625rem solid var(--color-brand-border);
   color: var(--color-danger-light);
   padding: 0.55rem 0.85rem;
   border-radius: 0.5rem;
@@ -136,13 +143,79 @@
 
 .wishlist-row__remove-btn:hover {
   background-color: var(--color-danger-bg);
+  color: var(--color-danger);
   border-color: var(--color-danger-border);
 }
 
 @media (max-width: 48rem) {
+  .wishlist-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1rem 0;
+    position: relative;
+  }
+
+  .wishlist-row td {
+    padding: 0;
+    border: none;
+    text-align: left !important;
+  }
+
+  .wishlist-row__product {
+    width: auto;
+  }
+
+  .wishlist-row__image,
+  .wishlist-row__placeholder-img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .wishlist-row__details {
+    min-width: 0;
+    flex: 1 1 10rem;
+  }
+
+  .wishlist-row__title {
+    font-size: 0.95rem;
+  }
+
+  .wishlist-row__price {
+    font-size: 1rem;
+  }
+
+  .wishlist-row__stock {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+
+  .wishlist-row__actions {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
   .wishlist-row__btn-group {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .wishlist-row__add-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .wishlist-row__remove-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    background-color: var(--color-danger-bg);
+    border-color: var(--color-danger-border);
   }
 }

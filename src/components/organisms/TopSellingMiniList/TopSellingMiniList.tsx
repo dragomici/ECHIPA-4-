@@ -36,7 +36,6 @@ export const TopSellingMiniList: React.FC<TopSellingMiniListProps> = ({
   useEffect(() => {
     if (products.length <= 3 || rotationStep === 0) return;
 
-    // Trigger sliding transition when rotationStep changes
     setIsSliding(true);
 
     const timer = setTimeout(() => {
@@ -47,7 +46,6 @@ export const TopSellingMiniList: React.FC<TopSellingMiniListProps> = ({
     return () => clearTimeout(timer);
   }, [rotationStep, products.length]);
 
-  // Compute 4 items when sliding (0: sliding out, 1..3: visible/entering)
   const displayedProducts = React.useMemo(() => {
     if (products.length <= 3) return products;
 
