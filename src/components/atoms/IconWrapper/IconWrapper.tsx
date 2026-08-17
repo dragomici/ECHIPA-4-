@@ -20,5 +20,3 @@ export const IconWrapper: React.FC<IconWrapperProps> = ({
   );
 };
 
-/*git commit -m "refactor: remove Typography component and add global typography CSS resets",   
-  git push origin atom/typography */

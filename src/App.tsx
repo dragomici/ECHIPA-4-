@@ -28,7 +28,6 @@ const DashboardPage = () => {
   );
 };
 
-// Componentă internă pentru declanșarea animației la schimbarea rutei
 const AnimatedRoutes = () => {
   const location = useLocation();
 
