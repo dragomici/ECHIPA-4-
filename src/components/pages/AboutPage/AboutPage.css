@@ -4,21 +4,30 @@
   flex-direction: column;
   background-color: var(--color-background);
   color: var(--color-brand-dark);
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .about-page__main {
   flex: 1;
   padding: 1.5rem 0 4rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-container {
   max-width: 100rem;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-section {
   padding: 3rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-breadcrumb {
@@ -28,6 +37,7 @@
   font-size: 0.875rem;
   color: var(--color-brand-gray);
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .about-breadcrumb a {
@@ -66,6 +76,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-welcome__img {
@@ -89,6 +101,7 @@
   line-height: 1.7;
   color: var(--color-brand-gray);
   margin-bottom: 1.25rem;
+  word-wrap: break-word;
 }
 
 .about-welcome__gallery-wrapper {
@@ -97,6 +110,8 @@
   gap: 0.75rem;
   margin-top: 2rem;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-welcome__gallery {
@@ -153,6 +168,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-provide__card {
@@ -162,6 +179,7 @@
   padding: 2.25rem 1.75rem;
   text-align: center;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .about-provide__card:hover {
@@ -219,12 +237,15 @@
   gap: 3.5rem;
   align-items: center;
   margin-bottom: 3rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-performance__images {
   display: flex;
   gap: 1.25rem;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .about-perf__img {
@@ -263,6 +284,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
   margin-bottom: 3.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-perf__subcol-title {
@@ -288,6 +311,8 @@
   text-align: center;
   color: var(--color-background);
   box-shadow: 0 0.625rem 1.875rem rgba(27, 77, 62, 0.2);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-stats__number {
@@ -310,6 +335,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-team__intro-card {
@@ -361,6 +388,7 @@
   position: relative;
   border-radius: 1.25rem;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .about-team__img-wrapper {
@@ -439,6 +467,8 @@
 
 .about-banner-section {
   padding: 2rem 0 3rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-promo-banner {
@@ -453,6 +483,8 @@
   position: relative;
   overflow: hidden;
   min-height: 18rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-promo-banner__content {
@@ -487,6 +519,7 @@
   padding: 0.35rem 0.35rem 0.35rem 1.25rem;
   max-width: 28rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .about-promo-banner__input-wrapper {
@@ -560,8 +593,11 @@
   .about-welcome__grid,
   .about-performance__top-grid {
     grid-template-columns: 1fr;
-    text-align: center;
     gap: 2rem;
+  }
+
+  .about-welcome__img {
+    height: 20rem;
   }
 
   .about-welcome__gallery-wrapper {
@@ -613,18 +649,71 @@
 }
 
 @media (max-width: 48rem) {
+  .about-container {
+    padding: 0 1rem;
+  }
+
+  .about-welcome__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-welcome__img {
+    height: 14rem;
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  .about-welcome__title {
+    font-size: 1.625rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .about-welcome__text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 1rem;
+    word-break: break-word;
+  }
+
+  .about-welcome__gallery-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .about-welcome__gallery {
+    gap: 0.5rem;
+    max-width: calc(100% - 4.5rem);
+    overflow-x: auto;
+  }
+
+  .about-gallery__item {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+  }
+
   .about-stats__banner {
     grid-template-columns: 1fr;
   }
 
-  .about-welcome__img {
-    height: 18rem;
-  }
-
-  .about-welcome__title,
   .about-performance__title,
   .about-section__title,
   .about-promo-banner__title {
-    font-size: 1.75rem;
+    font-size: 1.625rem;
+  }
+
+  .about-team__intro-card {
+    padding: 1rem 0;
+  }
+
+  .about-team__img-wrapper {
+    height: 20rem;
   }
 }
