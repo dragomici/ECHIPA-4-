@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import NestLogo from '../../../assets/NestIcon.svg';
 import './MobileDrawer.css';
 
@@ -7,8 +8,18 @@ interface MobileDrawerProps {
   onClose: () => void;
 }
 
+const navItems = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Cart', path: '/cart' },
+  { label: 'Wishlist', path: '/wishlist' },
+  { label: 'Checkout', path: '/checkout' },
+];
+
 const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
   const drawerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -31,6 +42,11 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
     };
   }, [isOpen, onClose]);
 
+  const handleNavClick = (path: string) => {
+    onClose();
+    navigate(path);
+  };
+
   return (
     <>
       <div 
@@ -48,7 +64,13 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
         aria-label="Mobile Navigation"
       >
         <div className="mobile-drawer__header">
-          <img src={NestLogo} alt="Nest Logo" className="mobile-drawer__logo" />
+          <img 
+            src={NestLogo} 
+            alt="Nest Logo" 
+            className="mobile-drawer__logo" 
+            onClick={() => handleNavClick('/')}
+            style={{ cursor: 'pointer' }}
+          />
           <button 
             className="mobile-drawer__close" 
             onClick={onClose}
@@ -63,14 +85,19 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
         
         <div className="mobile-drawer__content">
           <nav className="mobile-drawer__nav">
-            <a href="#" className="mobile-drawer__link">Home</a>
-            <a href="#" className="mobile-drawer__link">About</a>
-            <a href="#" className="mobile-drawer__link">Shop</a>
-            <a href="#" className="mobile-drawer__link">Vendors</a>
-            <a href="#" className="mobile-drawer__link">Mega menu</a>
-            <a href="#" className="mobile-drawer__link">Blog</a>
-            <a href="#" className="mobile-drawer__link">Pages</a>
-            <a href="#" className="mobile-drawer__link">Contact</a>
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <button
+                  key={item.label}
+                  type="button"
+                  className={`mobile-drawer__link ${isActive ? 'mobile-drawer__link--active' : ''}`}
+                  onClick={() => handleNavClick(item.path)}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </nav>
         </div>
       </div>

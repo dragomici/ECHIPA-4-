@@ -11,7 +11,7 @@ export const OrderSummary: React.FC = () => {
     const [discount, setDiscount] = useState(0);
     const [couponMessage, setCouponMessage] = useState('');
 
-    const subtotal = cartItems.reduce((acc, item) => acc + (item.price || item.currentPrice || 0) * (item.quantity || 1), 0);
+    const subtotal = cartItems.reduce((acc, item) => acc + (item.price || 0) * (item.quantity || 1), 0);
     const discountAmount = subtotal * discount;
     const finalTotal = subtotal - discountAmount;
 

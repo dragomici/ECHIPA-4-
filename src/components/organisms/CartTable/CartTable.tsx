@@ -8,7 +8,7 @@ export interface CartItemType {
   imageUrl: string;
   price: number;
   quantity: number;
-  stock?: boolean;
+  stock?: number;
 }
 
 export interface CartTableProps {
