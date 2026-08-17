@@ -10,6 +10,19 @@ A modern, highly responsive, and feature-rich E-Commerce frontend web applicatio
 
 ---
 
+## 📌 Organization & Tasks (Trello)
+You can track the team's progress, Epic breakdowns, and Story Points directly on our Trello board:
+🔗 **[Click here to view the Trello board](https://trello.com/b/0zm7ZoVj/ibm-echipa-4)**
+
+---
+
+## 👥 Team
+* **David** - Team Lead / Architecture & Core Components
+* **Delia** - Frontend Landing Page
+* **Alexandra** - Frontend Dashboard
+
+---
+
 ## 🎨 Figma Design Reference
 
 This project was built to faithfully recreate the following Figma design:
