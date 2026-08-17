@@ -1,9 +1,10 @@
 .pagination {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
   width: 100%;
-  padding: 1rem 0;
 }
 
 .pagination__list {
@@ -19,7 +20,7 @@
   display: inline-block;
 }
 
-.pagination .pagination__button {
+.pagination__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,15 +35,14 @@
   color: var(--color-gray-700);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: none;
 }
 
-.pagination .pagination__button:hover:not(:disabled) {
+.pagination__button:hover:not(:disabled) {
   background-color: var(--color-gray-100);
   border-color: var(--color-gray-400);
 }
 
-.pagination .pagination__button:disabled {
+.pagination__button:disabled {
   background-color: var(--color-gray-100);
   color: var(--color-gray-400);
   border-color: var(--color-gray-200);
@@ -50,16 +50,15 @@
   opacity: 0.7;
 }
 
-.pagination .pagination__button.pagination__button--active {
-  background-color: var(--color-primary);
+.pagination__button--active {
+  background-color: var(--color-brand-green);
   color: var(--color-white);
-  border-color: var(--color-primary);
+  border-color: var(--color-brand-green);
 }
 
-.pagination
-  .pagination__button.pagination__button--active:hover:not(:disabled) {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+.pagination__button--active:hover:not(:disabled) {
+  background-color: var(--color-brand-green-hover);
+  border-color: var(--color-brand-green-hover);
 }
 
 @media (max-width: 30rem) {
@@ -67,7 +66,7 @@
     justify-content: flex-start;
   }
 
-  .pagination .pagination__button {
+  .pagination__button {
     min-width: 2rem;
     height: 2rem;
     padding: 0 0.5rem;

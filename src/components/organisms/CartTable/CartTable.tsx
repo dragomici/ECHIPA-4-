@@ -1,15 +1,27 @@
 import React from 'react';
-import './CartTable.css';
 import CartItemComponent from '../../molecules/CartItem/CartItem';
-import type { CartItem } from '../../../hooks/useCart';
+import './CartTable.css';
 
-interface CartTableProps {
-  items: CartItem[];
-  onUpdateQuantity: (id: string, quantity: number) => void;
+export interface CartItemType {
+  id: string;
+  title: string;
+  imageUrl: string;
+  price: number;
+  quantity: number;
+  stock?: boolean;
+}
+
+export interface CartTableProps {
+  items: CartItemType[];
+  onUpdateQuantity: (id: string, newQuantity: number) => void;
   onRemove: (id: string) => void;
 }
 
-const CartTable: React.FC<CartTableProps> = ({ items, onUpdateQuantity, onRemove }) => {
+export const CartTable: React.FC<CartTableProps> = ({
+  items,
+  onUpdateQuantity,
+  onRemove,
+}) => {
   if (items.length === 0) {
     return (
       <div className="cart-table__empty">

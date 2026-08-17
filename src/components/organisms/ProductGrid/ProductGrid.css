@@ -1,6 +1,8 @@
 .product-grid-section {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  margin-bottom: 2.5rem;
+  padding: 1rem 0;
 }
 
 .product-grid-section__header {
@@ -34,7 +36,7 @@
   color: var(--color-brand-dark);
   cursor: pointer;
   padding: 0;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .product-grid-section__tab:hover {
@@ -44,4 +46,23 @@
 
 .product-grid-section__tab--active {
   color: var(--color-brand-green);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .product-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

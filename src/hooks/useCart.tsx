@@ -11,9 +11,11 @@ export interface CartItem {
 
 interface CartContextType {
   items: CartItem[];
+  cartItems: CartItem[];
+  isLoading: boolean;
   addToCart: (item: Omit<CartItem, 'quantity'>) => void;
   updateQuantity: (id: string, quantity: number) => void;
-  removeFromCart: (id: string) => void;
+  removeFromCart: (id: string | number) => void;
   clearCart: () => void;
   cartCount: number;
 }
@@ -62,8 +64,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
   };
 
-  const removeFromCart = (id: string) => {
-    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  const removeFromCart = (idOrIndex: string | number) => {
+    setItems((prevItems) => {
+      if (typeof idOrIndex === 'number') {
+        return prevItems.filter((_, idx) => idx !== idOrIndex);
+      }
+      return prevItems.filter((item) => item.id !== idOrIndex);
+    });
   };
 
   const clearCart = () => {
@@ -73,7 +80,16 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const cartCount = items.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ items, addToCart, updateQuantity, removeFromCart, clearCart, cartCount }}>
+    <CartContext.Provider value={{ 
+      items, 
+      cartItems: items, 
+      isLoading: false, 
+      addToCart, 
+      updateQuantity, 
+      removeFromCart, 
+      clearCart, 
+      cartCount 
+    }}>
       {children}
     </CartContext.Provider>
   );

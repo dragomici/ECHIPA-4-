@@ -127,6 +127,7 @@
   align-items: center;
   gap: 1.25rem;
 }
+
 .header__bottom {
   border-bottom: 0.0625rem solid var(--color-brand-border);
   padding: 0;

@@ -42,5 +42,5 @@
 .cart-table__empty p {
   font-size: 1.25rem;
   color: var(--color-brand-gray);
-  margin: 0;
+  margin: 0 0 1.5rem 0;
 }

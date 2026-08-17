@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
-import ResponsiveGrid from '../../atoms/ResponsiveGrid/ResponsiveGrid';
 import SkeletonProductCard from '../../molecules/SkeletonProductCard/SkeletonProductCard';
+import { Pagination } from '../../molecules/Pagination/Pagination';
 import './ProductGrid.css';
 
 export interface Product {
@@ -23,34 +23,64 @@ interface ProductGridProps {
   categories?: string[];
   products: Product[];
   isLoading?: boolean;
+  enablePagination?: boolean;
 }
 
-const ProductGrid: React.FC<ProductGridProps> = ({ title, categories, products, isLoading = false }) => {
+const ProductGrid: React.FC<ProductGridProps> = ({ 
+  title, 
+  categories, 
+  products, 
+  isLoading = false,
+  enablePagination = true
+}) => {
   const skeletons = Array.from({ length: 10 });
-  const [activeCategory, setActiveCategory] = React.useState<string>(categories ? categories[0] : '');
+  const [activeCategory, setActiveCategory] = useState<string>(categories ? categories[0] : 'All');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const filteredProducts = (activeCategory === 'All' || !categories) 
+    ? products 
+    : products.filter(p => p.category === activeCategory);
+
+  const itemsPerPage = 10;
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentProducts = enablePagination 
+    ? filteredProducts.slice(startIndex, startIndex + itemsPerPage) 
+    : filteredProducts;
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   return (
     <section className="product-grid-section">
-      <div className="product-grid-section__header">
-        {title && <h2 className="product-grid-section__title">{title}</h2>}
-        {categories && (
-          <div className="product-grid-section__tabs">
-            {categories.map(cat => (
-              <button 
-                key={cat} 
-                className={`product-grid-section__tab ${activeCategory === cat ? 'product-grid-section__tab--active' : ''}`}
-                onClick={() => setActiveCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-      <ResponsiveGrid columns={{ mobile: 2, tablet: 3, desktop: 4, xl: 5 }} gap="1.25rem">
+      {(title || categories) && (
+        <div className="product-grid-section__header">
+          {title && <h2 className="product-grid-section__title">{title}</h2>}
+          {categories && (
+            <div className="product-grid-section__tabs">
+              {categories.map(cat => (
+                <button 
+                  key={cat} 
+                  className={`product-grid-section__tab ${activeCategory === cat ? 'product-grid-section__tab--active' : ''}`}
+                  onClick={() => {
+                    setActiveCategory(cat);
+                    setCurrentPage(1);
+                  }}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+      
+      <div className="product-grid">
         {isLoading
           ? skeletons.map((_, index) => <SkeletonProductCard key={index} />)
-          : products.map((product) => (
+          : currentProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 imageUrl={product.imageUrl}
@@ -65,7 +95,15 @@ const ProductGrid: React.FC<ProductGridProps> = ({ title, categories, products, 
                 badgeVariant={product.badgeVariant}
               />
             ))}
-      </ResponsiveGrid>
+      </div>
+
+      {enablePagination && totalPages > 1 && !isLoading && (
+        <Pagination 
+          currentPage={currentPage} 
+          totalPages={totalPages} 
+          onPageChange={handlePageChange} 
+        />
+      )}
     </section>
   );
 };
