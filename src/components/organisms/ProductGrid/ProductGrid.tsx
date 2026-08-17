@@ -1,40 +1,111 @@
 import React, { useState } from 'react';
+import ProductCard from '../ProductCard/ProductCard';
+import SkeletonProductCard from '../../molecules/SkeletonProductCard/SkeletonProductCard';
 import { Pagination } from '../../molecules/Pagination/Pagination';
-import { useProducts } from '../../../hooks/useProducts';
-import { ProductCard } from '../ProductCard/ProductCard';
 import './ProductGrid.css';
 
-export const ProductGrid = () => {
-    const { products } = useProducts();
-    const [currentPage, setCurrentPage] = useState(1);
-    
-    const itemsPerPage = 10;
-    const safeProducts = products || [];
-    const totalPages = Math.ceil(safeProducts.length / itemsPerPage);
-    
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const currentProducts = safeProducts.slice(startIndex, startIndex + itemsPerPage);
+export interface Product {
+  id: string | number;
+  imageUrl: string;
+  category: string;
+  title: string;
+  rating: number;
+  ratingCount: number;
+  currentPrice: number;
+  oldPrice?: number;
+  stock?: number;
+  badgeText?: string;
+  badgeVariant?: 'hot' | 'sale' | 'new' | 'discount';
+}
 
-    const handlePageChange = (page: number) => {
-        setCurrentPage(page);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+interface ProductGridProps {
+  title?: string;
+  categories?: string[];
+  products: Product[];
+  isLoading?: boolean;
+  enablePagination?: boolean;
+}
 
-    return (
-        <div className="product-grid-wrapper">
-            <div className="product-grid-container">
-                {currentProducts.map((product: any, index: number) => (
-                    <ProductCard key={product.id || index} product={product} />
-                ))}
+const ProductGrid: React.FC<ProductGridProps> = ({ 
+  title, 
+  categories, 
+  products, 
+  isLoading = false,
+  enablePagination = true
+}) => {
+  const skeletons = Array.from({ length: 10 });
+  const [activeCategory, setActiveCategory] = useState<string>(categories ? categories[0] : 'All');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const filteredProducts = (activeCategory === 'All' || !categories) 
+    ? products 
+    : products.filter(p => p.category === activeCategory);
+
+  const itemsPerPage = 10;
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentProducts = enablePagination 
+    ? filteredProducts.slice(startIndex, startIndex + itemsPerPage) 
+    : filteredProducts;
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  return (
+    <section className="product-grid-section">
+      {(title || categories) && (
+        <div className="product-grid-section__header">
+          {title && <h2 className="product-grid-section__title">{title}</h2>}
+          {categories && (
+            <div className="product-grid-section__tabs">
+              {categories.map(cat => (
+                <button 
+                  key={cat} 
+                  className={`product-grid-section__tab ${activeCategory === cat ? 'product-grid-section__tab--active' : ''}`}
+                  onClick={() => {
+                    setActiveCategory(cat);
+                    setCurrentPage(1);
+                  }}
+                >
+                  {cat}
+                </button>
+              ))}
             </div>
-            
-            {totalPages > 1 && (
-                <Pagination 
-                    currentPage={currentPage} 
-                    totalPages={totalPages} 
-                    onPageChange={handlePageChange} 
-                />
-            )}
+          )}
         </div>
-    );
+      )}
+      
+      <div className="product-grid">
+        {isLoading
+          ? skeletons.map((_, index) => <SkeletonProductCard key={index} />)
+          : currentProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                imageUrl={product.imageUrl}
+                category={product.category}
+                title={product.title}
+                rating={product.rating}
+                ratingCount={product.ratingCount}
+                currentPrice={product.currentPrice}
+                oldPrice={product.oldPrice}
+                stock={product.stock}
+                badgeText={product.badgeText}
+                badgeVariant={product.badgeVariant}
+              />
+            ))}
+      </div>
+
+      {enablePagination && totalPages > 1 && !isLoading && (
+        <Pagination 
+          currentPage={currentPage} 
+          totalPages={totalPages} 
+          onPageChange={handlePageChange} 
+        />
+      )}
+    </section>
+  );
 };
+
+export default ProductGrid;

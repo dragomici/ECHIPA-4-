@@ -1,5 +1,5 @@
 .cart-item {
-  border-bottom: 0.0625rem solid #ececec;
+  border-bottom: 0.0625rem solid var(--color-brand-border);
 }
 
 .cart-item td {
@@ -15,7 +15,7 @@
   width: 4rem;
   height: 4rem;
   object-fit: contain;
-  background-color: #f7f8fa;
+  background-color: var(--color-bg-alt);
   border-radius: 0.5rem;
   padding: 0.25rem;
 }
@@ -28,23 +28,32 @@
   margin: 0 0 0.25rem 0;
   font-size: 1rem;
   font-weight: 600;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 
 .cart-item__subtitle {
   font-size: 0.875rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
+  display: block;
+}
+
+.cart-item__stock-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--color-brand-green);
+  font-weight: 600;
+  margin-top: 0.25rem;
 }
 
 .cart-item__price, .cart-item__subtotal {
   font-weight: 600;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 
 .cart-item__quantity-controls {
   display: inline-flex;
   align-items: center;
-  background-color: #f7f8fa;
+  background-color: var(--color-bg-alt);
   border-radius: 0.3125rem;
   padding: 0.25rem;
 }
@@ -58,21 +67,21 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-size: 1.25rem;
   transition: all 0.2s ease;
   border-radius: 0.25rem;
 }
 
 .cart-item__quantity-btn:hover {
-  background-color: #e8f6ea;
+  background-color: var(--color-brand-light-green);
 }
 
 .cart-item__quantity-value {
   width: 2.5rem;
   text-align: center;
   font-weight: 600;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 
 .cart-item__remove-btn {
@@ -80,8 +89,8 @@
   align-items: center;
   gap: 0.5rem;
   background-color: transparent;
-  border: 1px solid transparent;
-  color: #fd6e6e;
+  border: 0.0625rem solid transparent;
+  color: var(--color-danger-light);
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -96,8 +105,8 @@
 }
 
 .cart-item__remove-btn:hover {
-  background-color: #fff1f1;
-  border-color: #fbd5d5;
+  background-color: var(--color-danger-bg);
+  border-color: var(--color-danger-border);
 }
 
 @media (max-width: 48rem) {

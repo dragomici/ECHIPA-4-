@@ -1,43 +1,69 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useCart } from '../../hooks/useCart';
-import Button from '../../components/atoms/Button/Button';
-import { OrderSummary } from '../../components/molecules/OrderSummary/OrderSummary';
-import './CartPage.css';
+import CartItemComponent from '../../molecules/CartItem/CartItem';
+import './CartTable.css';
 
-export const CartPage = () => {
-    const { cartItems } = useCart();
-    const navigate = useNavigate();
+export interface CartItemType {
+  id: string;
+  title: string;
+  imageUrl: string;
+  price: number;
+  quantity: number;
+  stock?: boolean;
+}
 
-    const handleContinueShopping = () => {
-        navigate('/');
-    };
+export interface CartTableProps {
+  items: CartItemType[];
+  onUpdateQuantity: (id: string, newQuantity: number) => void;
+  onRemove: (id: string) => void;
+}
 
-    if (cartItems.length === 0) {
-        return (
-            <div className="cart-page-empty">
-                <h2>Your cart is currently empty.</h2>
-                <Button onClick={handleContinueShopping} className="continue-shopping-btn">
-                    Continue Shopping
-                </Button>
-            </div>
-        );
-    }
-
+export const CartTable: React.FC<CartTableProps> = ({
+  items,
+  onUpdateQuantity,
+  onRemove,
+}) => {
+  if (items.length === 0) {
     return (
-        <div className="cart-page-container">
-            <div className="cart-items-section">
-                <h2>Your Cart</h2>
-                {cartItems.map((item: any, index: number) => (
-                    <div key={index} className="cart-item">
-                        <span>{item.name}</span>
-                        <span>${item.price}</span>
-                    </div>
-                ))}
-            </div>
-            <div className="cart-summary-section">
-                <OrderSummary />
-            </div>
-        </div>
+      <div className="cart-table__empty">
+        <p>Your shopping cart is empty.</p>
+      </div>
     );
+  }
+
+  return (
+    <div className="cart-table-wrapper">
+      <h2 className="cart-table__title">Your Shopping Cart</h2>
+      <div className="cart-table__container">
+        <table className="cart-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Details</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((item) => (
+              <CartItemComponent
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                imageUrl={item.imageUrl}
+                price={item.price}
+                quantity={item.quantity}
+                stock={item.stock}
+                onUpdateQuantity={onUpdateQuantity}
+                onRemove={onRemove}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
+
+export default CartTable;

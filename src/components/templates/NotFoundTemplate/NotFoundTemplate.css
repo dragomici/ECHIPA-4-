@@ -1,13 +1,12 @@
-/* Block - Fullscreen viewport centering */
 .not-found-template {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  padding: 24px;
+  padding: 1.5rem;
   box-sizing: border-box;
-  background-color: var(--color-bg-page, #ffffff);
+  background-color: var(--color-background);
 }
 
 .not-found-template__content {
@@ -15,22 +14,22 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 480px;
+  max-width: 30rem;
   width: 100%;
 }
 
 .not-found-template__title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-text-title, #111827);
-  margin: 0 0 16px 0;
+  color: var(--color-gray-900);
+  margin: 0 0 1rem 0;
   line-height: 1.2;
 }
 
 .not-found-template__description {
   font-size: 1.125rem;
-  color: var(--color-text-subtle, #4b5563);
-  margin: 0 0 24px 0;
+  color: var(--color-gray-600);
+  margin: 0 0 1.5rem 0;
   line-height: 1.5;
 }
 
@@ -39,7 +38,7 @@
   justify-content: center;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 36rem) {
   .not-found-template__title {
     font-size: 1.875rem;
   }

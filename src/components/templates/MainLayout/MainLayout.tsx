@@ -14,7 +14,6 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <div className="main-layout">
-      
       <header className="main-layout__header">
         <button 
           className="main-layout__mobile-menu-btn" 
@@ -23,14 +22,14 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         >
           ☰
         </button>
-        <h2>Navbar Placeholder</h2>
+        <h2>Main Layout Header</h2>
       </header>
 
       <div className="main-layout__body">
         <aside className={`main-layout__sidebar ${isSidebarOpen ? 'main-layout__sidebar--open' : ''}`}>
           <div className="sidebar-content">
-            <h3>Sidebar / Filters</h3>
-            <p>Aici vor veni filtrele sau navigația.</p>
+            <h3>Filters & Sidebar</h3>
+            <p>Category filters and quick navigation.</p>
           </div>
         </aside>
 
@@ -40,8 +39,10 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       </div>
 
       <footer className="main-layout__footer">
-        <p>Footer Placeholder © 2026</p>
+        <p>Main Layout Footer © 2026</p>
       </footer>
     </div>
   );
 };
+
+export default MainLayout;

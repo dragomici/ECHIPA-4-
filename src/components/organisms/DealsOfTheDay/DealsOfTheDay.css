@@ -1,10 +1,9 @@
-/* Organism Container */
 .deals-of-the-day {
   width: 100%;
-  padding: 32px 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .deals-of-the-day__header {
@@ -17,14 +16,14 @@
 .deals-of-the-day__title {
   font-size: 2rem;
   font-weight: 700;
-  color: #253d4e;
+  color: var(--color-brand-dark);
   margin: 0;
 }
 
 .deals-of-the-day__link {
   display: flex;
   align-items: center;
-  color: #B6B6B6;
+  color: var(--color-brand-lighter-gray);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
@@ -39,32 +38,32 @@
 .deals-countdown {
   display: flex;
   align-items: center;
-  gap: 12px;
-  background-color: var(--color-bg-subtle, #f3f4f6);
-  padding: 8px 16px;
-  border-radius: 8px;
+  gap: 0.75rem;
+  background-color: var(--color-bg-subtle);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .deals-countdown__label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-text-subtle, #4b5563);
+  color: var(--color-gray-600);
 }
 
 .deals-countdown__timer {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
 }
 
 .deals-countdown__unit {
   display: flex;
   align-items: baseline;
-  gap: 2px;
-  background: var(--color-primary, #ef4444);
-  color: #ffffff;
-  padding: 4px 8px;
-  border-radius: 4px;
+  gap: 0.125rem;
+  background: var(--color-error);
+  color: var(--color-white);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
 }
 
 .deals-countdown__value {
@@ -79,7 +78,7 @@
 
 .deals-countdown__separator {
   font-weight: 700;
-  color: var(--color-primary, #ef4444);
+  color: var(--color-error);
 }
 
 .deals-of-the-day__grid {
@@ -88,25 +87,25 @@
   gap: 1.5rem;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 75rem) {
   .deals-of-the-day__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
   .deals-of-the-day__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5rem) {
   .deals-of-the-day__grid {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 36rem) {
   .deals-of-the-day__header {
     flex-direction: column;
     align-items: flex-start;

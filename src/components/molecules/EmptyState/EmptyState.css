@@ -5,11 +5,11 @@
   justify-content: center;
   text-align: center;
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.03);
   margin: 2rem auto;
-  max-width: 600px;
+  max-width: 37.5rem;
 }
 
 .empty-state__icon-wrapper {
@@ -20,15 +20,15 @@
 .empty-state__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   margin-bottom: 0.5rem;
 }
 
 .empty-state__description {
   font-size: 1rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   margin-bottom: 2rem;
-  max-width: 400px;
+  max-width: 25rem;
   line-height: 1.6;
 }
 
@@ -38,12 +38,12 @@
 
 @keyframes float {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-0.625rem);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }

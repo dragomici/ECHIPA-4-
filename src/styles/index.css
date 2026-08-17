@@ -1,45 +1,96 @@
 :root {
-    --color-primary: #007bff; 
-    --color-secondary: #6c757d; 
-    --color-background: #ffffff;
-    --color-text-main: #333333;
-    --color-text-muted: #777777;
+  --color-primary: #007bff; 
+  --color-secondary: #6c757d; 
+  --color-background: #ffffff;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-text-main: #333333;
+  --color-text-muted: #777777;
 
-    --color-brand-green: #3bb77e;
-    --color-brand-light-green: #d8f1e5;
-    --color-brand-dark: #253D4E;
-    --color-error: #ff4d4f;
-    
-    --font-family-base: 'Inter', system-ui, sans-serif;
-    --font-size-sm: 0.875rem;
-    --font-size-md: 1rem; 
-    --font-size-lg: 1.5rem;
-    --font-size-xl: 2rem; 
-    
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 3rem;
+  --color-brand-green: #3bb77e;
+  --color-brand-green-hover: #29a56c;
+  --color-brand-green-dark: #29a066;
+  --color-brand-light-green: #d8f1e5;
+  --color-brand-mint: #def9ec;
+  --color-brand-dark: #253d4e;
+  --color-brand-gray: #7e7e7e;
+  --color-brand-light-gray: #adadad;
+  --color-brand-lighter-gray: #b6b6b6;
+  --color-brand-border: #ececec;
+  --color-brand-border-green: #bce3c9;
+
+  --color-error: #ff4d4f;
+  --color-danger: #d93838;
+  --color-danger-light: #fd6e6e;
+  --color-danger-bg: #fff1f1;
+  --color-danger-border: #fbd5d5;
+  --color-danger-alert-bg: #fde8e8;
+  --color-danger-alert-border: #f8b4b4;
+
+  --color-warning: #d97706;
+  --color-warning-bg: #fffbe6;
+  --color-warning-border: #fef3c7;
+
+  --color-badge-hot: #f74b81;
+  --color-badge-sale: #67bcee;
+  --color-badge-orange: #f59758;
+
+  --color-star-active: #fdc040;
+  --color-star-inactive: #d3d3d3;
+
+  --color-bg-subtle: #f3f4f6;
+  --color-bg-alt: #f7f8fa;
+  --color-bg-hover: #fafbfc;
+  --color-bg-light: #f9fafb;
+  --color-bg-soft: #f4f6fa;
+  --color-bg-disabled: #f2f3f4;
+  --color-bg-green-soft: #f5fdf9;
+
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-border-dark: #e0e0e0;
+  --color-border-light: #f0f0f0;
+
+  --color-gradient-dark-start: #1b4d3e;
+  --color-gradient-dark-end: #2f6b57;
+  
+  --font-family-base: 'Inter', system-ui, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem; 
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem; 
+  
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 3rem;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family-base);
-    background-color: var(--color-background);
-    color: var(--color-text-main);
-    font-size: var(--font-size-md);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  font-size: var(--font-size-md);
 }
 
 .app-container {
-    padding: var(--spacing-xl);
+  padding: var(--spacing-xl);
 }
 
 .button-group {
-    display: flex;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
 }
 
 h1, h2, h3, h4, h5, h6, p, span {

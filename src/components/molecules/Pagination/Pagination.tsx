@@ -7,31 +7,34 @@ interface PaginationProps {
     onPageChange: (page: number) => void;
 }
 
-export const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) => {
+export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
     return (
-        <div className="pagination-container">
+        <div className="pagination">
             <button
-                className="pagination-button"
+                className="pagination__button"
                 disabled={currentPage === 1}
                 onClick={() => onPageChange(currentPage - 1)}
             >
                 Prev
             </button>
             
-            {pages.map(page => (
-                <button
-                    key={page}
-                    className={`pagination-button ${currentPage === page ? 'active' : ''}`}
-                    onClick={() => onPageChange(page)}
-                >
-                    {page}
-                </button>
-            ))}
+            <ul className="pagination__list">
+                {pages.map(page => (
+                    <li key={page} className="pagination__item">
+                        <button
+                            className={`pagination__button ${currentPage === page ? 'pagination__button--active' : ''}`}
+                            onClick={() => onPageChange(page)}
+                        >
+                            {page}
+                        </button>
+                    </li>
+                ))}
+            </ul>
             
             <button
-                className="pagination-button"
+                className="pagination__button"
                 disabled={currentPage === totalPages || totalPages === 0}
                 onClick={() => onPageChange(currentPage + 1)}
             >

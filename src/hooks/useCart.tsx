@@ -6,13 +6,16 @@ export interface CartItem {
   price: number;
   imageUrl: string;
   quantity: number;
+  stock?: number;
 }
 
 interface CartContextType {
   items: CartItem[];
+  cartItems: CartItem[];
+  isLoading: boolean;
   addToCart: (item: Omit<CartItem, 'quantity'>) => void;
   updateQuantity: (id: string, quantity: number) => void;
-  removeFromCart: (id: string) => void;
+  removeFromCart: (id: string | number) => void;
   clearCart: () => void;
   cartCount: number;
 }
@@ -31,10 +34,15 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const addToCart = (newItem: Omit<CartItem, 'quantity'>) => {
     setItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.title === newItem.title);
+      const existingItem = prevItems.find((item) => item.title === newItem.title || item.id === newItem.id);
       if (existingItem) {
+        if (newItem.stock !== undefined && existingItem.quantity >= newItem.stock) {
+          return prevItems;
+        }
         return prevItems.map((item) =>
-          item.title === newItem.title ? { ...item, quantity: item.quantity + 1 } : item
+          (item.title === newItem.title || item.id === newItem.id)
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
         );
       }
       return [...prevItems, { ...newItem, quantity: 1 }];
@@ -46,14 +54,23 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (quantity <= 0) {
         return prevItems.filter((item) => item.id !== id);
       }
-      return prevItems.map((item) =>
-        item.id === id ? { ...item, quantity } : item
-      );
+      return prevItems.map((item) => {
+        if (item.id === id) {
+          const targetQuantity = item.stock !== undefined ? Math.min(quantity, item.stock) : quantity;
+          return { ...item, quantity: targetQuantity };
+        }
+        return item;
+      });
     });
   };
 
-  const removeFromCart = (id: string) => {
-    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  const removeFromCart = (idOrIndex: string | number) => {
+    setItems((prevItems) => {
+      if (typeof idOrIndex === 'number') {
+        return prevItems.filter((_, idx) => idx !== idOrIndex);
+      }
+      return prevItems.filter((item) => item.id !== idOrIndex);
+    });
   };
 
   const clearCart = () => {
@@ -63,7 +80,16 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const cartCount = items.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ items, addToCart, updateQuantity, removeFromCart, clearCart, cartCount }}>
+    <CartContext.Provider value={{ 
+      items, 
+      cartItems: items, 
+      isLoading: false, 
+      addToCart, 
+      updateQuantity, 
+      removeFromCart, 
+      clearCart, 
+      cartCount 
+    }}>
       {children}
     </CartContext.Provider>
   );

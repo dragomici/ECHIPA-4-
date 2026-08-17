@@ -26,5 +26,90 @@
     "placeholder": "Your email address",
     "subscribe": "Subscribe",
     "invalid": "Invalid email address"
+  },
+  "about": {
+    "breadcrumb": {
+      "home": "Home",
+      "pages": "Pages",
+      "current": "About Us"
+    },
+    "welcome": {
+      "title": "Welcome to Nest",
+      "text1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      "text2": "Ius ferri velit sanctus cu, sed at soleat accusata. Dictas prompta et Ut placerat meandri. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante Etiam sit amet orci eget. Quis commodo odio aenean sed adipiscing. Turpis massa tincidunt dui ut ornare lectus."
+    },
+    "provide": {
+      "title": "What We Provide?",
+      "bestPrices": "Best Prices & Offers",
+      "wideAssortment": "Wide Assortment",
+      "freeDelivery": "Free Delivery",
+      "easyReturns": "Easy Returns",
+      "satisfaction": "100% Satisfaction",
+      "greatDeal": "Great Daily Deal",
+      "cardDescription": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.",
+      "readMore": "Read more"
+    },
+    "performance": {
+      "subtitle": "Our performance",
+      "title": "Your Partner for e-commerce grocery solution",
+      "text1": "Ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.",
+      "text2": "Pitatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.",
+      "whoWeAre": "Who we are",
+      "whoWeAreText": "Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in. tellus eros donec ac odio orci ultrices in.",
+      "ourHistory": "Our history",
+      "ourHistoryText": "Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in. tellus eros donec ac odio orci ultrices in.",
+      "ourMission": "Our mission",
+      "ourMissionText": "Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in. tellus eros donec ac odio orci ultrices in.",
+      "stats": {
+        "gloriousYears": "Glorious years",
+        "happyClients": "Happy clients",
+        "projectsComplete": "Projects complete",
+        "teamAdvisor": "Team advisor",
+        "productsSale": "Products Sale"
+      }
+    },
+    "team": {
+      "subtitle": "Our Team",
+      "title": "Meet Our Expert Team",
+      "introText": "Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.",
+      "viewAllBtn": "View All Members",
+      "merindaTitle": "CEO & Co-Founder",
+      "dilanTitle": "Head Engineer"
+    }
+  },
+  "checkout": {
+    "breadcrumb": "Checkout",
+    "title": "Checkout",
+    "billingTitle": "Billing Details",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "company": "Company Name (Optional)",
+    "country": "Country / Region",
+    "address": "Street Address",
+    "apartment": "Apartment, suite, unit (Optional)",
+    "city": "Town / City",
+    "state": "State / County",
+    "zip": "Postcode / ZIP",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "notes": "Order Notes (Optional)",
+    "orderTitle": "Your Order",
+    "product": "Product",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "total": "Total",
+    "couponTitle": "Apply Coupon",
+    "couponPlaceholder": "Enter promo code (e.g. NEST10)",
+    "applyCoupon": "Apply",
+    "paymentTitle": "Payment Method",
+    "cardPayment": "Credit Card / Online Payment",
+    "cashDelivery": "Cash on Delivery (Ramburs)",
+    "bankTransfer": "Direct Bank Transfer",
+    "terms": "I have read and agree to the website terms and conditions",
+    "placeOrder": "Place Order",
+    "orderSuccessTitle": "Order Placed Successfully!",
+    "orderRef": "Order Reference",
+    "backHome": "Back to Home"
   }
 }

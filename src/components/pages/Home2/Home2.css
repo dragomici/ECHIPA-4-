@@ -4,10 +4,20 @@
   min-height: 100vh;
 }
 
+.home2__search-info {
+  font-size: 0.95rem;
+  color: var(--color-brand-gray);
+  margin-bottom: 1rem;
+}
+
+.home2__search-info strong {
+  color: var(--color-brand-dark);
+}
+
 .home2__main {
-  max-width: 75rem;
+  max-width: 100rem;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem;
   width: 100%;
 }
 
@@ -15,10 +25,7 @@
   display: flex;
   gap: 2rem;
   margin-bottom: 3rem;
-}
-
-.home2__sidebar-placeholder {
-  flex: 0 0 15.625rem;
+  align-items: flex-start;
 }
 
 .home2__hero {
@@ -26,26 +33,8 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-}
-
-.placeholder-box {
-  background-color: #f3f4f6;
-  border: 2px dashed #d1d5db;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #6b7280;
-  padding: 2rem;
-  text-align: center;
-}
-
-.home2__hero-placeholder {
-  min-height: 25rem;
-  background-color: #e5f6eb;
-  border-color: #3bb77e;
-  color: #253D4E;
+  min-width: 0;
+  margin-right: 2rem;
 }
 
 .home2__deals {
@@ -64,10 +53,28 @@
   margin-bottom: 3rem;
 }
 
+.home2__daily-top-products {
+  margin: 3rem auto;
+  max-width: 100rem;
+  padding: 0 0.9375rem;
+  width: 100%;
+}
+
+.home2__daily-top-products-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  margin-bottom: 1.5rem;
+}
+
+.home2__daily-product-slide {
+  width: 15.625rem;
+}
+
 .home2__footer-placeholder {
   min-height: 18.75rem;
   margin-top: auto;
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 .home2__footer-columns {
@@ -86,11 +93,6 @@
 @media (max-width: 48rem) {
   .home2__top {
     flex-direction: column;
-  }
-  
-  .home2__sidebar-placeholder {
-    flex: auto;
-    min-height: 12.5rem;
   }
   
   .home2__mini-lists {

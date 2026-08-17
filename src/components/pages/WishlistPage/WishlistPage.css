@@ -1,0 +1,42 @@
+.wishlist-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-alt);
+}
+
+.wishlist-page__main {
+  flex: 1;
+  padding: 2.5rem 0 4rem 0;
+}
+
+.wishlist-page__content {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.wishlist-page__table-section {
+  margin-bottom: 3.5rem;
+}
+
+.wishlist-page__bottom {
+  margin-top: 2rem;
+}
+
+.wishlist-page__recommended {
+  background-color: var(--color-white);
+  border-radius: 0.9375rem;
+  box-shadow: 0 0.3125rem 1.25rem rgba(0, 0, 0, 0.05);
+  padding: 2rem 1.5rem;
+}
+
+@media (max-width: 48rem) {
+  .wishlist-page__main {
+    padding: 1.5rem 0 3rem 0;
+  }
+  
+  .wishlist-page__content {
+    padding: 0 1rem;
+  }
+}

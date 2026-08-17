@@ -27,21 +27,21 @@
 
 .btn--primary {
     background-color: var(--color-brand-green);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn--primary:hover {
-    background-color: #29a066; /* Slightly darker green */
+    background-color: var(--color-brand-green-dark);
 }
 
 .btn--secondary {
-    background-color: #ffffff;
-    color: #374151;
-    border: 1px solid #d1d5db;
+    background-color: var(--color-white);
+    color: var(--color-gray-700);
+    border: 0.0625rem solid var(--color-gray-300);
 }
 
 .btn--secondary:hover {
-    background-color: #f3f4f6;
+    background-color: var(--color-gray-100);
 }
 
 .btn:disabled {

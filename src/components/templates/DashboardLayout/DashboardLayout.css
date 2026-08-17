@@ -1,9 +1,9 @@
 .dashboard-layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 16.25rem 1fr;
   height: 100vh;
   overflow: hidden;
-  background-color: #f3f4f6;
+  background-color: var(--color-bg-subtle);
 }
 
 .dashboard-layout__mobile-header,
@@ -12,28 +12,35 @@
 }
 
 .dashboard-layout__sidebar {
-  background-color: #ffffff;
-  border-right: 1px solid #e5e7eb;
+  background-color: var(--color-white);
+  border-right: 0.0625rem solid var(--color-gray-200);
   overflow-y: auto;
   z-index: 50;
 }
 
 .dashboard-layout__sidebar-content {
-  padding: 24px;
+  padding: 1.5rem;
 }
 
 .dashboard-layout__main {
   overflow-y: auto;
-  background-color: #f9fafb;
+  background-color: var(--color-gray-100);
 }
 
 .dashboard-layout__main-inner {
-  padding: 24px;
-  max-width: 1440px;
+  padding: 1.5rem;
+  max-width: 90rem;
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
+.dashboard-layout__back-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+@media (max-width: 48rem) {
   .dashboard-layout {
     display: flex;
     flex-direction: column;
@@ -42,17 +49,17 @@
   .dashboard-layout__mobile-header {
     display: flex;
     align-items: center;
-    padding: 16px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem;
+    background-color: var(--color-white);
+    border-bottom: 0.0625rem solid var(--color-gray-200);
     z-index: 40;
   }
 
   .dashboard-layout__hamburger {
     background: transparent;
     border: none;
-    color: #374151;
-    padding: 4px;
+    color: var(--color-gray-700);
+    padding: 0.25rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -60,25 +67,25 @@
   }
 
   .dashboard-layout__hamburger svg {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .dashboard-layout__logo-mobile {
-    margin-left: 16px;
-    font-size: 18px;
+    margin-left: 1rem;
+    font-size: 1.125rem;
     font-weight: 600;
-    color: #111827;
+    color: var(--color-gray-900);
   }
 
   .dashboard-layout__sidebar {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: -260px;
-    width: 260px;
+    left: -16.25rem;
+    width: 16.25rem;
     transition: left 0.3s ease-in-out;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0.25rem 0 0.625rem rgba(0, 0, 0, 0.1);
   }
 
   .dashboard-layout__sidebar--open {
