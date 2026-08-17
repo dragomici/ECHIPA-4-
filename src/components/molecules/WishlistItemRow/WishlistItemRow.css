@@ -23,7 +23,7 @@
   background-color: #f7f8fa;
   border-radius: 0.5rem;
   padding: 0.25rem;
-  border: 1px solid #f0f0f0;
+  border: 0.0625rem solid #f0f0f0;
 }
 
 .wishlist-row__placeholder-img {
@@ -80,7 +80,7 @@
 .wishlist-row__stock-badge--out {
   color: #d93838;
   background-color: #fde8e8;
-  border: 1px solid #f8b4b4;
+  border: 0.0625rem solid #f8b4b4;
 }
 
 .wishlist-row__btn-group {
@@ -95,7 +95,7 @@
   gap: 0.5rem;
   background-color: #3bb77e;
   color: #ffffff;
-  border: 1px solid #3bb77e;
+  border: 0.0625rem solid #3bb77e;
   padding: 0.55rem 1.1rem;
   border-radius: 0.5rem;
   font-size: 0.875rem;
@@ -103,14 +103,12 @@
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s ease;
-
 }
 
 .wishlist-row__add-btn:hover:not(:disabled) {
   background-color: #29a56c;
   border-color: #29a56c;
-  transform: translateY(-1px);
-
+  transform: translateY(-0.0625rem);
 }
 
 .wishlist-row__add-btn--disabled {
@@ -125,7 +123,7 @@
   align-items: center;
   gap: 0.4rem;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 0.0625rem solid transparent;
   color: #fd6e6e;
   padding: 0.55rem 0.85rem;
   border-radius: 0.5rem;

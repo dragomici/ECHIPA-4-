@@ -1,7 +1,7 @@
 .social-group {
   display: flex;
   align-items: center;
-  gap: 16px; /* Flexbox gap pentru spațiere */
+  gap: 1rem;
 }
 
 .social-group__link {
@@ -15,7 +15,7 @@
 
 .social-group__link:hover {
   color: var(--color-primary, #007bff);
-  transform: translateY(-2px);
+  transform: translateY(-0.125rem);
 }
 
 .social-group__icon {
@@ -24,10 +24,9 @@
   justify-content: center;
 }
 
-/* Responsiveness pentru Mobile: centrare automată */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .social-group {
     justify-content: center;
-    gap: 12px;
+    gap: 0.75rem;
   }
 }

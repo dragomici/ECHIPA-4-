@@ -39,7 +39,7 @@
 
 .product-grid-section__tab:hover {
   color: #3bb77e;
-  transform: translateY(-2px);
+  transform: translateY(-0.125rem);
 }
 
 .product-grid-section__tab--active {

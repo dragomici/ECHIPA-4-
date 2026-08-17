@@ -111,7 +111,7 @@
   border-radius: 1rem;
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid transparent;
+  border: 0.125rem solid transparent;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -157,7 +157,7 @@
 
 .about-provide__card {
   background: var(--color-background);
-  border: 1px solid var(--color-brand-border);
+  border: 0.0625rem solid var(--color-brand-border);
   border-radius: 1rem;
   padding: 2.25rem 1.75rem;
   text-align: center;
@@ -166,7 +166,7 @@
 
 .about-provide__card:hover {
   border-color: var(--color-brand-green);
-  transform: translateY(-5px);
+  transform: translateY(-0.3125rem);
   box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.05);
 }
 
@@ -232,7 +232,7 @@
   height: 24rem;
   object-fit: cover;
   border-radius: 1.25rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.05);
 }
 
 .about-performance__subtitle {
@@ -354,7 +354,7 @@
 
 .about-team__btn:hover {
   background-color: var(--color-brand-green-hover);
-  transform: translateY(-2px);
+  transform: translateY(-0.125rem);
 }
 
 .about-team__member-card {
@@ -394,7 +394,7 @@
 }
 
 .about-team__member-card:hover .about-team__overlay {
-  transform: translateX(-50%) translateY(-5px);
+  transform: translateX(-50%) translateY(-0.3125rem);
 }
 
 .about-team__name {
@@ -486,7 +486,7 @@
   border-radius: 2rem;
   padding: 0.35rem 0.35rem 0.35rem 1.25rem;
   max-width: 28rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
 .about-promo-banner__input-wrapper {

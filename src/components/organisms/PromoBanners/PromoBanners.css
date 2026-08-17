@@ -8,7 +8,7 @@
 
 .promo-banner {
   position: relative;
-  border-radius: 0.625rem; /* 10px */
+  border-radius: 0.625rem;
   padding: 2.5rem 1.875rem;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 }
 
 .promo-banner:hover {
-  transform: translateY(-5px);
+  transform: translateY(-0.3125rem);
   box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.08);
 }
 
@@ -31,7 +31,7 @@
 }
 
 .promo-banner__title {
-  font-size: 1.35rem; /* 21.6px */
+  font-size: 1.35rem;
   font-weight: 700;
   color: #253D4E;
   margin: 0 0 1.5rem 0;

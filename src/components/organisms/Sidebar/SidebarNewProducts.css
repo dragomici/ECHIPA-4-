@@ -11,7 +11,7 @@
 }
 
 .sidebar-new-product__img-wrapper {
-  width: 5rem; /* 80px */
+  width: 5rem;
   height: 5rem;
   flex-shrink: 0;
   border-radius: 0.3125rem;
@@ -35,7 +35,7 @@
 }
 
 .sidebar-new-product__name {
-  font-size: 1.05rem; /* 16.8px */
+  font-size: 1.05rem;
   color: #3bb77e;
   font-weight: 700;
   margin: 0;
@@ -43,7 +43,7 @@
 }
 
 .sidebar-new-product__price {
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
   color: #7E7E7E;
   font-weight: 600;
 }

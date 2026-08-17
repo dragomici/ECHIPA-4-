@@ -79,7 +79,7 @@
 }
 
 .newsletter-banner__form .input-group__field {
-  border: 1px solid transparent;
+  border: 0.0625rem solid transparent;
   border-radius: 1.25rem;
   background: transparent;
   padding: 0.625rem 0.625rem;
@@ -88,7 +88,7 @@
 }
 
 .newsletter-banner__form .input-group__field--error {
-  border: 1px solid var(--color-error);
+  border: 0.0625rem solid var(--color-error);
 }
 
 .newsletter-banner__form .input-group__field:focus {

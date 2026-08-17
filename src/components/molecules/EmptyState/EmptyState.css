@@ -7,9 +7,9 @@
   padding: 4rem 2rem;
   background-color: #ffffff;
   border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.03);
   margin: 2rem auto;
-  max-width: 600px;
+  max-width: 37.5rem;
 }
 
 .empty-state__icon-wrapper {
@@ -28,7 +28,7 @@
   font-size: 1rem;
   color: #7E7E7E;
   margin-bottom: 2rem;
-  max-width: 400px;
+  max-width: 25rem;
   line-height: 1.6;
 }
 
@@ -38,12 +38,12 @@
 
 @keyframes float {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-0.625rem);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
