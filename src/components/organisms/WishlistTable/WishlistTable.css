@@ -142,3 +142,18 @@
   transform: translateY(-0.125rem);
   box-shadow: 0 0.375rem 1rem rgba(59, 183, 126, 0.35);
 }
+
+@media (max-width: 48rem) {
+  .wishlist-table-wrapper {
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .wishlist-table {
+    min-width: 100% !important;
+  }
+
+  .wishlist-table thead {
+    display: none;
+  }
+}
