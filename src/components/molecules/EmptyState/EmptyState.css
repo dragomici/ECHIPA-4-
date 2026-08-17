@@ -5,7 +5,7 @@
   justify-content: center;
   text-align: center;
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-radius: 1rem;
   box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.03);
   margin: 2rem auto;
@@ -20,13 +20,13 @@
 .empty-state__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   margin-bottom: 0.5rem;
 }
 
 .empty-state__description {
   font-size: 1rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   margin-bottom: 2rem;
   max-width: 25rem;
   line-height: 1.6;

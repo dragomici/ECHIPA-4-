@@ -8,13 +8,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-main, #333333);
+  color: var(--color-text-main);
   transition: color 0.3s ease, transform 0.2s ease;
   text-decoration: none;
 }
 
 .social-group__link:hover {
-  color: var(--color-primary, #007bff);
+  color: var(--color-primary);
   transform: translateY(-0.125rem);
 }
 

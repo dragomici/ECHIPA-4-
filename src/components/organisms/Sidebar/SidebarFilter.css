@@ -8,7 +8,7 @@
 .sidebar-filter__reset-btn {
   background: none;
   border: none;
-  color: #fd6e6e;
+  color: var(--color-danger-light);
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
@@ -18,7 +18,7 @@
 }
 
 .sidebar-filter__reset-btn:hover {
-  color: #d93838;
+  color: var(--color-danger);
 }
 
 .sidebar-filter__price-slider {
@@ -31,13 +31,13 @@
 
 .price-slider__range-input {
   width: 100%;
-  accent-color: #3bb77e;
+  accent-color: var(--color-brand-green);
   cursor: pointer;
 }
 
 .price-slider__track {
   height: 0.25rem;
-  background-color: #ececec;
+  background-color: var(--color-brand-border);
   border-radius: 0.25rem;
   position: relative;
   margin: 1.25rem 0.5rem 1rem 0.5rem;
@@ -46,7 +46,7 @@
 .price-slider__progress {
   position: absolute;
   height: 100%;
-  background-color: #3bb77e;
+  background-color: var(--color-brand-green);
   border-radius: 0.25rem;
 }
 
@@ -56,7 +56,7 @@
   transform: translate(-50%, -50%);
   width: 1rem;
   height: 1rem;
-  background-color: #3bb77e;
+  background-color: var(--color-brand-green);
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
@@ -66,12 +66,12 @@
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   font-weight: 500;
 }
 
 .text-brand {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-weight: 700;
 }
 
@@ -81,7 +81,7 @@
 
 .sidebar-filter__group-title {
   font-size: 1.05rem;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   font-weight: 600;
   margin: 0 0 1rem 0;
 }
@@ -91,7 +91,7 @@
   align-items: center;
   margin-bottom: 0.75rem;
   font-size: 1.05rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   cursor: pointer;
   position: relative;
   padding-left: 1.875rem;
@@ -112,19 +112,19 @@
   left: 0;
   height: 1.125rem;
   width: 1.125rem;
-  background-color: #fff;
-  border: 0.0625rem solid #ececec;
+  background-color: var(--color-white);
+  border: 0.0625rem solid var(--color-brand-border);
   border-radius: 0.1875rem;
   transition: all 0.2s ease;
 }
 
 .sidebar-filter__checkbox-label:hover input ~ .checkmark {
-  border-color: #bce3c9;
+  border-color: var(--color-brand-border-green);
 }
 
 .sidebar-filter__checkbox-label input:checked ~ .checkmark {
-  background-color: #3bb77e;
-  border-color: #3bb77e;
+  background-color: var(--color-brand-green);
+  border-color: var(--color-brand-green);
 }
 
 .sidebar-filter__checkbox-label .checkmark:after {
@@ -159,8 +159,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #3bb77e;
-  color: #ffffff;
+  background-color: var(--color-brand-green);
+  color: var(--color-white);
   border: none;
   border-radius: 0.25rem;
   padding: 0.625rem 1.25rem;
@@ -172,7 +172,7 @@
 }
 
 .sidebar-filter__btn:hover {
-  background-color: #29a56c;
+  background-color: var(--color-brand-green-hover);
 }
 
 .filter-icon {

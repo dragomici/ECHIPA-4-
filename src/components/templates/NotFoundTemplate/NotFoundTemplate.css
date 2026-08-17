@@ -6,7 +6,7 @@
   width: 100%;
   padding: 1.5rem;
   box-sizing: border-box;
-  background-color: var(--color-bg-page, #ffffff);
+  background-color: var(--color-background);
 }
 
 .not-found-template__content {
@@ -21,14 +21,14 @@
 .not-found-template__title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-text-title, #111827);
+  color: var(--color-gray-900);
   margin: 0 0 1rem 0;
   line-height: 1.2;
 }
 
 .not-found-template__description {
   font-size: 1.125rem;
-  color: var(--color-text-subtle, #4b5563);
+  color: var(--color-gray-600);
   margin: 0 0 1.5rem 0;
   line-height: 1.5;
 }

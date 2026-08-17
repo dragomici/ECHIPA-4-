@@ -13,14 +13,14 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--color-text-title, #111827);
+  color: var(--color-gray-900);
   margin: 0;
 }
 
 .hero-text-block__description {
   font-size: 1.25rem;
   line-height: 1.6;
-  color: var(--color-text-subtle, #4b5563);
+  color: var(--color-gray-600);
   margin: 0;
 }
 

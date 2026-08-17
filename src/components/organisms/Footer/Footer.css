@@ -1,8 +1,8 @@
 .footer {
-  background-color: #ffffff;
-  color: #253D4E;
+  background-color: var(--color-white);
+  color: var(--color-brand-dark);
   padding: 4rem 1.5rem 2rem;
-  border-top: 0.0625rem solid #ececec;
+  border-top: 0.0625rem solid var(--color-brand-border);
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -39,7 +39,7 @@
 
 .footer__tagline {
   font-size: 1.05rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   margin: 0;
   line-height: 1.6;
 }
@@ -58,14 +58,14 @@
   align-items: flex-start;
   gap: 0.5rem;
   font-size: 0.95rem;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   line-height: 1.5;
 }
 
 .footer__contact-icon {
   width: 1.125rem;
   height: 1.125rem;
-  color: #3bb77e;
+  color: var(--color-brand-green);
   flex-shrink: 0;
   margin-top: 0.125rem;
 }
@@ -73,7 +73,7 @@
 .footer__col-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   margin: 0 0 1.5rem 0;
 }
 
@@ -87,14 +87,14 @@
 }
 
 .footer__links a {
-  color: #253D4E;
+  color: var(--color-brand-dark);
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s ease;
 }
 
 .footer__links a:hover {
-  color: #3bb77e;
+  color: var(--color-brand-green);
 }
 
 .footer__app-buttons {
@@ -120,7 +120,7 @@
 
 .footer__payment-desc {
   font-size: 0.9rem;
-  color: #253D4E;
+  color: var(--color-brand-dark);
   margin-top: 2rem;
 }
 
@@ -128,7 +128,7 @@
   max-width: 87.5rem;
   margin: 3rem auto 0;
   padding-top: 2rem;
-  border-top: 0.0625rem solid #ececec;
+  border-top: 0.0625rem solid var(--color-brand-border);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,7 +147,7 @@
 
 .footer__bottom-left {
   font-size: 0.95rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   line-height: 1.6;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .text-brand {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-weight: 700;
 }
 
@@ -182,7 +182,7 @@
   width: 2.5rem;
   height: 2.5rem;
   background-color: transparent;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 .footer__phone-icon svg {
   width: 100%;
@@ -195,7 +195,7 @@
 }
 
 .footer__phone-number {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1;
@@ -203,7 +203,7 @@
 
 .footer__phone-desc {
   font-size: 0.85rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   margin-top: 0.25rem;
 }
 
@@ -228,28 +228,28 @@
 
 .footer__social-label {
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 
 .footer__discount-text {
   font-size: 0.85rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   margin: 0;
 }
 
 .footer__social-wrapper .social-group__link {
   width: 2rem;
   height: 2rem;
-  background-color: #3bb77e;
+  background-color: var(--color-brand-green);
   border-radius: 50%;
-  color: white;
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .footer__social-wrapper .social-group__link:hover {
-  background-color: #29a066;
+  background-color: var(--color-brand-green-dark);
 }
 
 .footer__social-wrapper .social-group__icon {

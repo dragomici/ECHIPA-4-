@@ -279,7 +279,7 @@
 }
 
 .about-stats__banner {
-  background: linear-gradient(135deg, #1b4d3e 0%, #2f6b57 100%);
+  background: linear-gradient(135deg, var(--color-gradient-dark-start) 0%, var(--color-gradient-dark-end) 100%);
   border-radius: 1.25rem;
   padding: 3.5rem 2rem;
   display: grid;

@@ -9,7 +9,7 @@
 .daily-best-sells__title {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--color-text-title, #111827);
+  color: var(--color-gray-900);
   margin: 0;
 }
 
@@ -20,7 +20,7 @@
 
 .daily-best-sells__banner {
   flex: 0 0 17.5rem;
-  background-color: var(--color-bg-subtle, #f3f4f6);
+  background-color: var(--color-bg-subtle);
   background-size: cover;
   background-position: center;
   border-radius: 0.75rem;
@@ -42,14 +42,14 @@
 .daily-best-sells__banner-title {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--color-text-title, #111827);
+  color: var(--color-gray-900);
   margin: 0;
   line-height: 1.2;
 }
 
 .daily-best-sells__banner-subtitle {
   font-size: 0.95rem;
-  color: var(--color-text-subtle, #4b5563);
+  color: var(--color-gray-600);
   margin: 0;
 }
 

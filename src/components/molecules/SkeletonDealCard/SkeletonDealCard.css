@@ -18,7 +18,7 @@
 }
 
 .skeleton-deal-card__content {
-  background: #ffffff;
+  background: var(--color-white);
   border-radius: 0.75rem;
   padding: 1.5rem;
   box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.05);

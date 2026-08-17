@@ -24,8 +24,8 @@
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background-color: #ffffff;
-  border: 0.0625rem solid #ececec;
+  background-color: var(--color-white);
+  border: 0.0625rem solid var(--color-brand-border);
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -33,25 +33,25 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #adadad;
+  color: var(--color-brand-light-gray);
   transition: all 0.2s ease;
   z-index: 2;
 }
 
 .deal-card__wishlist-btn:hover {
-  background-color: #3bb77e;
-  border-color: #3bb77e;
-  color: #ffffff;
+  background-color: var(--color-brand-green);
+  border-color: var(--color-brand-green);
+  color: var(--color-white);
 }
 
 .deal-card__wishlist-btn--active {
-  color: #3bb77e;
-  border-color: #3bb77e;
+  color: var(--color-brand-green);
+  border-color: var(--color-brand-green);
 }
 
 .deal-card__wishlist-btn--active:hover {
-  background-color: #ffffff;
-  color: #3bb77e;
+  background-color: var(--color-white);
+  color: var(--color-brand-green);
 }
 
 .deal-card__countdown {
@@ -66,7 +66,7 @@
 }
 
 .deal-card__time-box {
-  background: #ffffff;
+  background: var(--color-white);
   border-radius: 0.375rem;
   display: flex;
   flex-direction: column;
@@ -78,14 +78,14 @@
 }
 
 .deal-card__time-value {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
 }
 
 .deal-card__time-label {
-  color: #7e7e7e;
+  color: var(--color-brand-gray);
   font-size: 0.75rem;
   font-weight: 500;
 }
@@ -98,7 +98,7 @@
 }
 
 .deal-card__content {
-  background: #ffffff;
+  background: var(--color-white);
   border-radius: 0.75rem;
   padding: 1.5rem;
   box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.05);
@@ -108,7 +108,7 @@
 }
 
 .deal-card__title {
-  color: #253D4E;
+  color: var(--color-brand-dark);
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.4;
@@ -131,17 +131,17 @@
 }
 
 .deal-card__rating-count {
-  color: #B6B6B6;
+  color: var(--color-brand-lighter-gray);
   font-size: 0.875rem;
 }
 
 .deal-card__brand {
   font-size: 0.875rem;
-  color: #B6B6B6;
+  color: var(--color-brand-lighter-gray);
 }
 
 .deal-card__brand-name {
-  color: #3bb77e;
+  color: var(--color-brand-green);
 }
 
 .deal-card__footer {
@@ -158,21 +158,21 @@
 }
 
 .deal-card__price-current {
-  color: #3bb77e;
+  color: var(--color-brand-green);
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 .deal-card__price-old {
-  color: #B6B6B6;
+  color: var(--color-brand-lighter-gray);
   font-size: 0.875rem;
   text-decoration: line-through;
   font-weight: 600;
 }
 
 .deal-card__add-btn {
-  background-color: #def9ec;
-  color: #3bb77e;
+  background-color: var(--color-brand-mint);
+  color: var(--color-brand-green);
   border: none;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
@@ -186,6 +186,6 @@
 }
 
 .deal-card__add-btn:hover {
-  background-color: #3bb77e;
-  color: #ffffff;
+  background-color: var(--color-brand-green);
+  color: var(--color-white);
 }

@@ -7,12 +7,12 @@
 .product-price__current {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #3bb77e;
+  color: var(--color-brand-green);
 }
 
 .product-price__old {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #adadad;
+  color: var(--color-brand-light-gray);
   text-decoration: line-through;
 }

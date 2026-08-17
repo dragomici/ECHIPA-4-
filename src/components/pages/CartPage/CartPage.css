@@ -1,5 +1,5 @@
 .cart-page {
-  background-color: #f7f8fa;
+  background-color: var(--color-bg-alt);
   min-height: 100vh;
 }
 
@@ -10,7 +10,6 @@
   display: flex;
   gap: 1.5rem;
 }
-
 
 .cart-page__content {
   flex-grow: 1;
@@ -46,14 +45,13 @@
   margin: 0 0 1.5rem 0;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 
 .cart-page__summary-section {
   width: 22rem;
   flex-shrink: 0;
 }
-
 
 @media (max-width: 48rem) {
   .cart-page__top-section,

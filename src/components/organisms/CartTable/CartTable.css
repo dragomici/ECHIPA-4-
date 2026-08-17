@@ -1,5 +1,5 @@
 .cart-table-wrapper {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 0.3125rem 1.25rem rgba(0, 0, 0, 0.05);
@@ -9,7 +9,7 @@
   margin: 0 0 1.5rem 0;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #253D4E;
+  color: var(--color-brand-dark);
 }
 
 .cart-table__container {
@@ -26,13 +26,13 @@
   text-align: left;
   padding: 1rem 0.5rem;
   font-weight: 700;
-  color: #253D4E;
-  border-bottom: 0.125rem solid #ececec;
+  color: var(--color-brand-dark);
+  border-bottom: 0.125rem solid var(--color-brand-border);
   font-size: 1rem;
 }
 
 .cart-table__empty {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-radius: 1rem;
   padding: 4rem 2rem;
   text-align: center;
@@ -41,6 +41,6 @@
 
 .cart-table__empty p {
   font-size: 1.25rem;
-  color: #7E7E7E;
+  color: var(--color-brand-gray);
   margin: 0;
 }
