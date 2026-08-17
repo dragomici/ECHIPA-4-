@@ -553,38 +553,78 @@
 }
 
 @media (max-width: 64rem) {
+  .about-container {
+    padding: 0 1rem;
+  }
+
   .about-welcome__grid,
-  .about-performance__top-grid,
-  .about-promo-banner {
+  .about-performance__top-grid {
     grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .about-welcome__gallery-wrapper {
+    justify-content: center;
+  }
+
+  .about-performance__images {
+    justify-content: center;
+  }
+
+  .about-promo-banner {
     flex-direction: column;
     text-align: center;
+    padding: 2.5rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .about-promo-banner__content {
+    max-width: 100%;
+  }
+
+  .about-promo-banner__image {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    max-width: 100%;
+    height: 12rem;
+    margin-top: 1rem;
+    justify-content: center;
   }
 
   .about-promo-banner__form {
     margin: 0 auto;
+    width: 100%;
   }
-  
+
   .about-provide__grid,
   .about-performance__subcolumns,
   .about-team__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .about-stats__banner {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 1rem;
   }
 }
 
 @media (max-width: 48rem) {
-  .about-provide__grid,
-  .about-performance__subcolumns,
-  .about-team__grid,
   .about-stats__banner {
     grid-template-columns: 1fr;
   }
 
   .about-welcome__img {
-    height: 20rem;
+    height: 18rem;
+  }
+
+  .about-welcome__title,
+  .about-performance__title,
+  .about-section__title,
+  .about-promo-banner__title {
+    font-size: 1.75rem;
   }
 }
