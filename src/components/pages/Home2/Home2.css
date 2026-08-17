@@ -53,6 +53,24 @@
   margin-bottom: 3rem;
 }
 
+.home2__daily-top-products {
+  margin: 3rem auto;
+  max-width: 100rem;
+  padding: 0 0.9375rem;
+  width: 100%;
+}
+
+.home2__daily-top-products-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  margin-bottom: 1.5rem;
+}
+
+.home2__daily-product-slide {
+  width: 15.625rem;
+}
+
 .home2__footer-placeholder {
   min-height: 18.75rem;
   margin-top: auto;
