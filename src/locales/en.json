@@ -1,7 +1,46 @@
 {
+  "common": {
+    "search": "Search",
+    "searchPlaceholder": "Search for items...",
+    "allCategories": "All Categories",
+    "browseAllCategories": "Browse All Categories",
+    "hotline": "1900 - 888",
+    "supportCenter": "24/7 Support Center",
+    "addToCart": "Add",
+    "loading": "Loading...",
+    "pageNotFound": "Page Not Found",
+    "backToHome": "Back to Home",
+    "viewAll": "View All",
+    "by": "By",
+    "sold": "Sold",
+    "save": "Save",
+    "off": "Off",
+    "hot": "Hot",
+    "sale": "Sale",
+    "new": "New"
+  },
+  "header": {
+    "aboutUs": "About Us",
+    "myAccount": "My Account",
+    "wishlist": "Wishlist",
+    "orderTracking": "Order Tracking",
+    "needHelp": "Need help? Call Us:",
+    "allProducts": "All Products",
+    "home": "Home",
+    "deals": "Deals",
+    "shop": "Shop",
+    "vendors": "Vendors",
+    "contact": "Contact",
+    "cart": "Cart",
+    "compare": "Compare",
+    "items": "items"
+  },
   "hero": {
     "title": "Don't miss amazing grocery deals",
-    "subtitle": "Sign up for the daily newsletter"
+    "subtitle": "Sign up for the daily newsletter",
+    "badge": "Don't miss amazing grocery deals",
+    "subscribe": "Subscribe",
+    "placeholder": "Your email address"
   },
   "sections": {
     "popularProducts": "Popular Products",
@@ -12,12 +51,27 @@
     "recentlyAdded": "Recently Added",
     "topRated": "Top Rated"
   },
+  "stockStatus": {
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "lowStock": "Only few left"
+  },
   "footer": {
+    "tagline": "Awesome grocery store website template",
+    "address": "Address: 5171 W Campbell Ave undefined Kent, Utah 53127 United States",
+    "callUs": "Call Us: (+91) - 540-025-124553",
+    "email": "Email: sale@Nest.com",
+    "hours": "Hours: 10:00 - 18:00, Mon - Sat",
     "company": "Company",
     "account": "Account",
     "corporate": "Corporate",
     "popular": "Popular",
-    "installApp": "Install App"
+    "installApp": "Install App",
+    "securedGateways": "Secured Payment Gateways",
+    "rights": "All rights reserved",
+    "discount": "Up to 15% discount on your first subscribe",
+    "followUs": "Follow Us",
+    "workingHours": "Working 8:00 - 22:00"
   },
   "newsletter": {
     "title": "Stay home & get your daily needs from our shop",
@@ -111,5 +165,10 @@
     "orderSuccessTitle": "Order Placed Successfully!",
     "orderRef": "Order Reference",
     "backHome": "Back to Home"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "button": "Back to Home"
   }
 }
