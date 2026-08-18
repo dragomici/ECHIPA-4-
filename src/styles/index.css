@@ -27,6 +27,28 @@
   background-color: var(--color-brand-green-hover);
 }
 
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 0.125rem solid var(--color-brand-green);
+  outline-offset: 0.125rem;
+  box-shadow: 0 0 0 0.25rem var(--color-brand-mint);
+  border-radius: 0.25rem;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 0.125rem solid var(--color-brand-green);
+  outline-offset: 0.125rem;
+  box-shadow: 0 0 0 0.25rem var(--color-brand-mint);
+}
+
 html, body {
   margin: 0;
   padding: 0;
