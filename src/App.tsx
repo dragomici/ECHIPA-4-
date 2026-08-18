@@ -9,6 +9,7 @@ import Spinner from './components/atoms/Spinner/Spinner';
 import { CartProvider } from './hooks/useCart';
 import PageTransition from './components/atoms/PageTransition/PageTransition';
 import { ScrollToTopFAB } from './components/molecules/ScrollToTopFAB/ScrollToTopFAB';
+import { NotFoundPage } from './components/pages/NotFoundPage/NotFoundPage';
 
 const Home2 = React.lazy(() => import('./components/pages/Home2/Home2'));
 const CartPage = React.lazy(() => import('./components/pages/CartPage/CartPage'));
@@ -40,6 +41,7 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </PageTransition>
   );
