@@ -13,7 +13,8 @@ export const mockDeals = [
     imageUrl: Deal1Image,
     rating: 4.0,
     stock: 12,
-    targetDate: new Date(Date.now() + 426 * 24 * 60 * 60 * 1000).toISOString()
+    targetDate: new Date(Date.now() + 426 * 24 * 60 * 60 * 1000).toISOString(),
+    description: 'A nutritious blend of organic whole grains and brown rice. Packed with fiber and essential minerals for healthy meals.'
   },
   {
     id: 'd2',
@@ -24,7 +25,8 @@ export const mockDeals = [
     imageUrl: Deal2Image,
     rating: 4.0,
     stock: 8,
-    targetDate: new Date(Date.now() + 822 * 24 * 60 * 60 * 1000).toISOString()
+    targetDate: new Date(Date.now() + 822 * 24 * 60 * 60 * 1000).toISOString(),
+    description: 'Organic chicken breasts lightly breaded without gluten. Tender, crispy, and ready in minutes for quick dinners.'
   },
   {
     id: 'd3',
@@ -35,7 +37,8 @@ export const mockDeals = [
     imageUrl: Deal3Image,
     rating: 3.0,
     stock: 5,
-    targetDate: new Date(Date.now() + 1156 * 24 * 60 * 60 * 1000).toISOString()
+    targetDate: new Date(Date.now() + 1156 * 24 * 60 * 60 * 1000).toISOString(),
+    description: 'Artisan wood-fired mushrooms paired with a savory herb sauce. Perfect as a rich topping or quick side dish.'
   },
   {
     id: 'd4',
@@ -46,7 +49,8 @@ export const mockDeals = [
     imageUrl: Deal4Image,
     rating: 3.0,
     stock: 20,
-    targetDate: new Date(Date.now() + 398 * 24 * 60 * 60 * 1000).toISOString()
+    targetDate: new Date(Date.now() + 398 * 24 * 60 * 60 * 1000).toISOString(),
+    description: 'Refreshing classic lemonade blended with pure raspberry puree. Delivers a perfectly sweet and tangy thirst-quenching taste.'
   }
 ];
 
@@ -73,7 +77,8 @@ export const mockProducts = [
     ratingCount: 4.0,
     stock: 15,
     badgeText: 'Hot',
-    badgeVariant: 'hot' as const
+    badgeVariant: 'hot' as const,
+    description: 'Rich in plant protein and essential amino acids. An ideal organic grain for salads and balanced bowls.'
   },
   {
     id: '2',
@@ -86,7 +91,8 @@ export const mockProducts = [
     ratingCount: 3.5,
     stock: 7,
     badgeText: 'Sale',
-    badgeVariant: 'sale' as const
+    badgeVariant: 'sale' as const,
+    description: 'Savory meatballs seasoned with Mediterranean spices and garlic. Made from high-quality, sustainably sourced chicken.'
   },
   {
     id: '3',
@@ -99,7 +105,8 @@ export const mockProducts = [
     ratingCount: 4.0,
     stock: 22,
     badgeText: 'New',
-    badgeVariant: 'new' as const
+    badgeVariant: 'new' as const,
+    description: 'Whole grain kettle corn popped with real cane sugar and sea salt. A light, crunchy, and satisfying snack.'
   },
   {
     id: '4',
@@ -110,7 +117,8 @@ export const mockProducts = [
     imageUrl: SahaleBeanImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 10
+    stock: 10,
+    description: 'Extra crispy chicken strips seasoned with classic spices. Oven-baked for restaurant-quality flavor right at home.'
   },
   {
     id: '5',
@@ -123,7 +131,8 @@ export const mockProducts = [
     ratingCount: 4.0,
     stock: 14,
     badgeText: '-14%',
-    badgeVariant: 'discount' as const
+    badgeVariant: 'discount' as const,
+    description: 'Roasted California almonds lightly dusted with pure sea salt. A nutritious snack rich in vitamin E and antioxidants.'
   },
   {
     id: '6',
@@ -134,7 +143,8 @@ export const mockProducts = [
     imageUrl: MightyMuffinImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 18
+    stock: 18,
+    description: 'Creamy Greek yogurt packed with prebiotic fiber and complete protein. Deliciously flavored with real vanilla beans.'
   },
   {
     id: '7',
@@ -145,7 +155,8 @@ export const mockProducts = [
     imageUrl: PistachioButterImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 9
+    stock: 9,
+    description: 'Sparkling ginger ale made with natural ginger extracts. Crisp, bubbly, and refreshing with every single sip.'
   },
   {
     id: '8',
@@ -158,7 +169,8 @@ export const mockProducts = [
     ratingCount: 4.0,
     stock: 11,
     badgeText: 'Sale',
-    badgeVariant: 'sale' as const
+    badgeVariant: 'sale' as const,
+    description: 'Wild Alaskan salmon fillets generously filled with spinach and cheese. A simple yet gourmet meal for seafood lovers.'
   },
   {
     id: '9',
@@ -171,7 +183,8 @@ export const mockProducts = [
     ratingCount: 4.0,
     stock: 16,
     badgeText: 'Hot',
-    badgeVariant: 'hot' as const
+    badgeVariant: 'hot' as const,
+    description: 'Crisp, golden-crusted fish fillets dipped in draft beer batter. Flaky inside and crunchier than ever.'
   },
   {
     id: '10',
@@ -182,7 +195,8 @@ export const mockProducts = [
     imageUrl: PukkaLatteImage,
     rating: 2.0,
     ratingCount: 2.0,
-    stock: 6
+    stock: 6,
+    description: 'Rich caramel ice cream layered with chocolaty waffle cone pieces. Swirled with thick ribbons of golden caramel.'
   }
 ];
 
@@ -207,7 +221,8 @@ export const topSellingProducts = [
     imageUrl: CarrotsImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 25
+    stock: 25,
+    description: 'Crunchy, sweet organic carrots fresh from local farms. Rich in beta-carotene and essential vitamins.'
   },
   {
     id: 'ts2',
@@ -218,7 +233,8 @@ export const topSellingProducts = [
     imageUrl: BellPeppersImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 13
+    stock: 13,
+    description: 'Vibrant mix of sweet and crisp bell peppers. Great for roasting, stir-frying, or fresh salads.'
   },
   {
     id: 'ts3',
@@ -229,7 +245,8 @@ export const topSellingProducts = [
     imageUrl: MangoImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 19
+    stock: 19,
+    description: 'Juicy and fragrant ripe mangoes picked at peak ripeness. Naturally sweet with a smooth, rich texture.'
   },
   {
     id: 'ts4',
@@ -240,7 +257,8 @@ export const topSellingProducts = [
     imageUrl: WatermelonImage,
     rating: 4.5,
     ratingCount: 4.5,
-    stock: 15
+    stock: 15,
+    description: 'Pre-cut refreshing watermelon slices packed with sweet juice. Perfect for hydration on sunny days.'
   },
   {
     id: 'ts5',
@@ -251,7 +269,8 @@ export const topSellingProducts = [
     imageUrl: PomegranateImage,
     rating: 4.8,
     ratingCount: 4.8,
-    stock: 22
+    stock: 22,
+    description: 'Fresh pomegranate packed with ruby-red, antioxidant-loaded seeds. Adds a tart burst of flavor to any dish.'
   }
 ];
 
@@ -265,7 +284,8 @@ export const trendingProducts = [
     imageUrl: BananaImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 30
+    stock: 30,
+    description: 'Naturally ripened organic bananas full of potassium and energy. Ideal for smoothies, cereals, or quick snacking.'
   },
   {
     id: 'tr2',
@@ -276,7 +296,8 @@ export const trendingProducts = [
     imageUrl: MangoImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 8
+    stock: 8,
+    description: 'Chewy and naturally sweet dried mango slices without added fats. A healthy on-the-go snack for everyone.'
   },
   {
     id: 'tr3',
@@ -287,7 +308,8 @@ export const trendingProducts = [
     imageUrl: DurianImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 4
+    stock: 4,
+    description: 'Distinctive tropical fruit known for its creamy texture and bold aroma. A beloved delicacy across Southeast Asia.'
   },
   {
     id: 'tr4',
@@ -298,7 +320,8 @@ export const trendingProducts = [
     imageUrl: AvocadoImage,
     rating: 4.7,
     ratingCount: 4.7,
-    stock: 18
+    stock: 18,
+    description: 'Creamy Hass avocados packed with heart-healthy monounsaturated fats. Essential for guacamole, salads, and toast.'
   },
   {
     id: 'tr5',
@@ -309,7 +332,8 @@ export const trendingProducts = [
     imageUrl: OrangeFruitImage,
     rating: 4.6,
     ratingCount: 4.6,
-    stock: 20
+    stock: 20,
+    description: 'Sweet and citrusy oranges loaded with immune-boosting vitamin C. Perfect for fresh morning juice.'
   }
 ];
 
@@ -323,7 +347,8 @@ export const recentlyAddedProducts = [
     imageUrl: WatermelonImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 12
+    stock: 12,
+    description: 'Freshly prepared crisp watermelon slices with natural sweetness. An effortless and hydrating healthy snack.'
   },
   {
     id: 'ra2',
@@ -334,7 +359,8 @@ export const recentlyAddedProducts = [
     imageUrl: VeggiePopsImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 17
+    stock: 17,
+    description: 'High-grade whole quinoa grains perfect for plant-based nutrition. Cooks quickly with a light, fluffy texture.'
   },
   {
     id: 'ra3',
@@ -345,7 +371,8 @@ export const recentlyAddedProducts = [
     imageUrl: CornImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 21
+    stock: 21,
+    description: 'Tender sweet corn cobs harvested at early morning freshness. Great for boiling, grilling, and summer BBQs.'
   },
   {
     id: 'ra4',
@@ -356,7 +383,8 @@ export const recentlyAddedProducts = [
     imageUrl: CarrotsImage,
     rating: 4.3,
     ratingCount: 4.3,
-    stock: 14
+    stock: 14,
+    description: 'Crisp organic carrots bundled fresh with vibrant green tops. Excellent for juicing, roasting, and raw snacking.'
   },
   {
     id: 'ra5',
@@ -367,7 +395,8 @@ export const recentlyAddedProducts = [
     imageUrl: BellPeppersImage,
     rating: 4.2,
     ratingCount: 4.2,
-    stock: 11
+    stock: 11,
+    description: 'Colorful selection of sweet, crisp bell peppers. Enhances both the flavor and look of your favorite recipes.'
   }
 ];
 
@@ -381,7 +410,8 @@ export const topRatedProducts = [
     imageUrl: PomegranateImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 15
+    stock: 15,
+    description: 'Top-tier fresh pomegranates brimming with sweet-tart seeds. Known for high antioxidant and nutrient content.'
   },
   {
     id: 'trt2',
@@ -392,7 +422,8 @@ export const topRatedProducts = [
     imageUrl: AvocadoImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 9
+    stock: 9,
+    description: 'Smooth and buttery organic avocados ready for immediate use. A nutrient-dense addition to any healthy meal plan.'
   },
   {
     id: 'trt3',
@@ -403,7 +434,8 @@ export const topRatedProducts = [
     imageUrl: OrangeFruitImage,
     rating: 4.0,
     ratingCount: 4.0,
-    stock: 28
+    stock: 28,
+    description: 'Sun-ripened citrus oranges full of aromatic sweetness and juice. Great for immunity and everyday vitality.'
   },
   {
     id: 'trt4',
@@ -414,7 +446,8 @@ export const topRatedProducts = [
     imageUrl: BananaImage,
     rating: 4.9,
     ratingCount: 4.9,
-    stock: 24
+    stock: 24,
+    description: 'Farm-fresh organic bananas with smooth sweetness. Perfect portable fuel for workouts and morning routines.'
   },
   {
     id: 'trt5',
@@ -425,7 +458,8 @@ export const topRatedProducts = [
     imageUrl: MangoImage,
     rating: 4.8,
     ratingCount: 4.8,
-    stock: 16
+    stock: 16,
+    description: 'Hand-selected premium sweet mangoes with tender golden pulp. Brings exotic tropical flavor to desserts.'
   }
 ];
 
