@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SocialGroup, type SocialItem } from '../../molecules/SocialGroup/SocialGroup';
 import NestLogo from '../../../assets/NestIcon.svg';
 import AppleStoreImg from '../../../assets/AppleStore.png';
@@ -11,7 +12,7 @@ export const Footer: React.FC = () => {
   const socialItems: SocialItem[] = [
     {
       id: 'fb',
-      href: '#',
+      href: 'https://facebook.com',
       label: 'Facebook',
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -21,7 +22,7 @@ export const Footer: React.FC = () => {
     },
     {
       id: 'tw',
-      href: '#',
+      href: 'https://twitter.com',
       label: 'Twitter',
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -31,7 +32,7 @@ export const Footer: React.FC = () => {
     },
     {
       id: 'ig',
-      href: '#',
+      href: 'https://instagram.com',
       label: 'Instagram',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,7 +44,7 @@ export const Footer: React.FC = () => {
     },
     {
       id: 'pi',
-      href: '#',
+      href: 'https://pinterest.com',
       label: 'Pinterest',
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -53,7 +54,7 @@ export const Footer: React.FC = () => {
     },
     {
       id: 'yt',
-      href: '#',
+      href: 'https://youtube.com',
       label: 'YouTube',
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -68,7 +69,9 @@ export const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer__top">
         <div className="footer__col footer__col--info">
-          <img src={NestLogo} alt="Nest Logo" className="footer__logo" />
+          <Link to="/">
+            <img src={NestLogo} alt="Nest Logo" className="footer__logo" />
+          </Link>
           <p className="footer__tagline">Awesome grocery store website template</p>
           
           <ul className="footer__contact-list">
@@ -113,52 +116,52 @@ export const Footer: React.FC = () => {
         <div className="footer__col">
           <h4 className="footer__col-title">Company</h4>
           <ul className="footer__links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Delivery Information</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms &amp; Conditions</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Support Center</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/delivery">Delivery Information</Link></li>
+            <li><Link to="/privacy">Privacy Policy</Link></li>
+            <li><Link to="/terms">Terms &amp; Conditions</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/support">Support Center</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
           </ul>
         </div>
 
         <div className="footer__col">
           <h4 className="footer__col-title">Account</h4>
           <ul className="footer__links">
-            <li><a href="#">Sign In</a></li>
-            <li><a href="#">View Cart</a></li>
-            <li><a href="#">My Wishlist</a></li>
-            <li><a href="#">Track My Order</a></li>
-            <li><a href="#">Help Ticket</a></li>
-            <li><a href="#">Shipping Details</a></li>
-            <li><a href="#">Compare products</a></li>
+            <li><Link to="/login">Sign In</Link></li>
+            <li><Link to="/cart">View Cart</Link></li>
+            <li><Link to="/wishlist">My Wishlist</Link></li>
+            <li><Link to="/orders">Track My Order</Link></li>
+            <li><Link to="/help">Help Ticket</Link></li>
+            <li><Link to="/shipping">Shipping Details</Link></li>
+            <li><Link to="/compare">Compare products</Link></li>
           </ul>
         </div>
 
         <div className="footer__col">
           <h4 className="footer__col-title">Corporate</h4>
           <ul className="footer__links">
-            <li><a href="#">Become a Vendor</a></li>
-            <li><a href="#">Affiliate Program</a></li>
-            <li><a href="#">Farm Business</a></li>
-            <li><a href="#">Farm Careers</a></li>
-            <li><a href="#">Our Suppliers</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Promotions</a></li>
+            <li><Link to="/vendor">Become a Vendor</Link></li>
+            <li><Link to="/affiliate">Affiliate Program</Link></li>
+            <li><Link to="/farm-business">Farm Business</Link></li>
+            <li><Link to="/farm-careers">Farm Careers</Link></li>
+            <li><Link to="/suppliers">Our Suppliers</Link></li>
+            <li><Link to="/accessibility">Accessibility</Link></li>
+            <li><Link to="/promotions">Promotions</Link></li>
           </ul>
         </div>
 
         <div className="footer__col">
           <h4 className="footer__col-title">Popular</h4>
           <ul className="footer__links">
-            <li><a href="#">Milk &amp; Flavoured Milk</a></li>
-            <li><a href="#">Butter and Margarine</a></li>
-            <li><a href="#">Eggs Substitutes</a></li>
-            <li><a href="#">Marmalades</a></li>
-            <li><a href="#">Sour Cream and Dips</a></li>
-            <li><a href="#">Tea &amp; Kombucha</a></li>
-            <li><a href="#">Cheese</a></li>
+            <li><Link to="/category/milk">Milk &amp; Flavoured Milk</Link></li>
+            <li><Link to="/category/butter">Butter and Margarine</Link></li>
+            <li><Link to="/category/eggs">Eggs Substitutes</Link></li>
+            <li><Link to="/category/marmalades">Marmalades</Link></li>
+            <li><Link to="/category/sour-cream">Sour Cream and Dips</Link></li>
+            <li><Link to="/category/tea">Tea &amp; Kombucha</Link></li>
+            <li><Link to="/category/cheese">Cheese</Link></li>
           </ul>
         </div>
 
@@ -166,10 +169,10 @@ export const Footer: React.FC = () => {
           <h4 className="footer__col-title">Install App</h4>
           
           <div className="footer__app-buttons">
-            <a href="#" className="footer__store-link" aria-label="Download on the App Store">
+            <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer" className="footer__store-link" aria-label="Download on the App Store">
               <img src={AppleStoreImg} alt="App Store" />
             </a>
-            <a href="#" className="footer__store-link" aria-label="Get it on Google Play">
+            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="footer__store-link" aria-label="Get it on Google Play">
               <img src={GooglePlayImg} alt="Google Play" />
             </a>
           </div>
@@ -198,7 +201,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className="footer__phone-block">
             <div className="footer__phone-icon">
-               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
             </div>
@@ -219,4 +222,4 @@ export const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+};
