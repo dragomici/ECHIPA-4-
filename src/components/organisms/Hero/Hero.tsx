@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import heroBg1 from '../../../assets/hero-bg.png';
 import heroBg2 from '../../../assets/hero-bg-2.png';
+import { useToast } from '../../../hooks/useToast';
 
 export const Hero: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [email, setEmail] = useState('');
+  const { addToast } = useToast();
   const slides = [heroBg1, heroBg2];
 
   useEffect(() => {
@@ -16,6 +19,10 @@ export const Hero: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (email) {
+      addToast('Thank you for subscribing to our daily newsletter!', 'success');
+      setEmail('');
+    }
   };
 
   return (
@@ -39,6 +46,8 @@ export const Hero: React.FC = () => {
               type="email" 
               placeholder="Your email address" 
               required 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
               onInvalid={(e) => (e.target as HTMLInputElement).setCustomValidity('Invalid email address')}
               onInput={(e) => (e.target as HTMLInputElement).setCustomValidity('')}
