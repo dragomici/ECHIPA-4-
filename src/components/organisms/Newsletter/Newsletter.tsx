@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
 import Button from '../../atoms/Button/Button';
+import { useToast } from '../../../hooks/useToast';
 import DeliveryGuy from '../../../assets/delivery-guy.png';
 import EmailIcon from '../../../assets/emailus.svg';
 import './Newsletter.css';
@@ -8,6 +9,7 @@ import './Newsletter.css';
 const Newsletter: React.FC = () => {
   const [email, setEmail] = useState('');
   const [isValid, setIsValid] = useState(true);
+  const { addToast } = useToast();
 
   const validateEmail = (val: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -28,7 +30,7 @@ const Newsletter: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email && validateEmail(email)) {
-      console.log('Subscribed with:', email);
+      addToast('Thank you for subscribing to our newsletter!', 'success');
       setEmail('');
       setIsValid(true);
     } else {
